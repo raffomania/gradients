@@ -20,20 +20,25 @@
     (+ (* (- value old-min) (/ new-spread old-spread))
        new-min)))
 
-(def square-count 30)
+(def square-count 50)
 (def colors [[229, 56, 100] [245, 54, 64]
-             [35, 18, 100] [15, 37, 99]
+             [45, 18, 100] [15, 47, 99]
              [184 46 100] [215 60 100]])
-(def color-n 2)
+(def color-n 1)
 (def start-color (nth colors (* 2 color-n)))
 (def end-color (nth colors (+ 1 (* 2 color-n))))
-(def seeds [1 1])
+(def seeds [50 65])
+(def noise-detail 6)
+(def y-spread 2)
+(def x-spread 1)
 
 (defn pos-factor [x y]
-  (let [noise (* 1.2 (q/noise (* 5 x) (* 5 y)))
+  (let [noise (* 1.2 (q/noise
+                      (* noise-detail x)
+                      (* noise-detail y)))
         [gx gy] [0 0.5]
-        distance (q/dist gx gy (* 1.5 x) (+ 0.5 (* 3 (- y 0.5))))]
-    (+ (- noise 0.5) distance)))
+        distance (q/dist gx gy (* (/ 1 x-spread) x) (+ 0.5 (* y-spread (- y 0.5))))]
+    (min 1 (max 0 (+ (- noise 0.5) distance)))))
 
 (defn color [x y]
   (let [qstart-color (apply q/color start-color)
@@ -48,38 +53,42 @@
 
 (defn pos-tri [x y]
   (let [factor (pos-factor x y)
-        scale (- 1 factor)
+        scale (- 7.5 (* 1 factor))
         sx (* scale (/ (q/width) square-count))
-        sy (* scale (/ (q/height) square-count))
+        sy (* scale (/ (q/width) square-count))
         wx (w x)
-        hx (h y)]
+        hx (h y)
+        sharpness (q/random 0.8)]
     (q/with-translation [wx hx]
-      (q/with-rotation [(* 7 (q/noise (* 5 x) (* 5 y)))]
-        (q/fill (color x y))
+      (q/with-rotation [(* 7 (q/noise (* noise-detail x) (* noise-detail y)))]
+        (q/fill (color x y) (- 1 factor))
         (q/triangle
-          (* sx (q/random 0 0.5)) 0
-          sx (/ sy 10)
-          0 sy)))))
+          0 0
+          sx (* sharpness sy)
+          (* sx sharpness) sy)))))
 
 
 (defn draw-state [state]
   (q/no-loop)
   (q/no-stroke)
-  (q/color-mode :hsb 360 100 100)
+  (q/color-mode :hsb 360 100 100 1)
   (q/random-seed (first seeds))
   (q/noise-seed (second seeds))
   (q/background (apply q/color end-color))
   (doseq [x (range square-count)
+          y (range square-count)])
+    ; (pos-rect (/ x square-count) (/ y square-count)))
+  (doseq [x (range square-count)
           y (range square-count)]
-    (pos-rect (/ x square-count) (/ y square-count))))
+    (pos-tri (/ x square-count) (/ y square-count)))
+  (q/save 'test.png'))
 
 (defn ^:export run-sketch []
   (q/defsketch gradients
     :host "gradients"
-    :size [500 500]
+    :size [1080 1920]
     :renderer :p2d
     :draw draw-state
     :middleware [m/fun-mode]))
 
 (run-sketch)
-(q/save 'test.png')
