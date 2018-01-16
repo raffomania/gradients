@@ -24,10 +24,10 @@
 (def colors [[150, 26, 100] [245, 54, 54]
              [45, 10, 100] [15, 70, 80]
              [184 46 100] [215 60 100]])
-(def color-n 0)
+(def color-n 1)
 (def start-color (nth colors (* 2 color-n)))
-(def end-color (nth colors (+ 1 (* 2 color-n))))
-(def seeds [15000 5])
+(def end-color (nth colors (inc (* 2 color-n))))
+(def seeds [15000 0])
 (def noise-detail 6)
 (def y-spread 2)
 (def x-spread 1)

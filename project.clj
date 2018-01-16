@@ -9,7 +9,8 @@
                  [org.clojure/math.combinatorics "0.1.4"]]
 
   :plugins [[lein-cljsbuild "1.1.7"]
-            [lein-figwheel "0.5.14"]]
+            [lein-figwheel "0.5.14"]
+            [lein-kibit "0.1.5"]]
   :hooks [leiningen.cljsbuild]
 
   :cljsbuild
