@@ -21,13 +21,13 @@
        new-min)))
 
 (def square-count 50)
-(def colors [[229, 56, 100] [245, 54, 64]
-             [45, 18, 100] [15, 47, 99]
+(def colors [[150, 26, 100] [245, 54, 54]
+             [45, 10, 100] [15, 70, 80]
              [184 46 100] [215 60 100]])
-(def color-n 1)
+(def color-n 0)
 (def start-color (nth colors (* 2 color-n)))
 (def end-color (nth colors (+ 1 (* 2 color-n))))
-(def seeds [50 65])
+(def seeds [15000 5])
 (def noise-detail 6)
 (def y-spread 2)
 (def x-spread 1)
@@ -67,7 +67,6 @@
           sx (* sharpness sy)
           (* sx sharpness) sy)))))
 
-
 (defn draw-state [state]
   (q/no-loop)
   (q/no-stroke)
@@ -86,7 +85,7 @@
 (defn ^:export run-sketch []
   (q/defsketch gradients
     :host "gradients"
-    :size [1080 1920]
+    :size (map #(/ % 1) [1920 1080])
     :renderer :p2d
     :draw draw-state
     :middleware [m/fun-mode]))
