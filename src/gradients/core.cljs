@@ -1,6 +1,7 @@
 (ns gradients.core
   (:require [quil.core :as q :include-macros true]
-            [quil.middleware :as m]))
+            [quil.middleware :as m]
+            [gradients.view :as view]))
 
 (defn w
   ([] (w 1.0))
@@ -79,8 +80,7 @@
     ; (pos-rect (/ x square-count) (/ y square-count)))
   (doseq [x (range square-count)
           y (range square-count)]
-    (pos-tri (/ x square-count) (/ y square-count)))
-  (q/save 'test.png'))
+    (pos-tri (/ x square-count) (/ y square-count))))
 
 (defn ^:export run-sketch []
   (q/defsketch gradients
@@ -91,3 +91,4 @@
     :middleware [m/fun-mode]))
 
 (run-sketch)
+(view/mount)

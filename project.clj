@@ -6,6 +6,7 @@
   :dependencies [[org.clojure/clojure "1.9.0"]
                  [quil "2.6.0"]
                  [org.clojure/clojurescript "1.9.946"]
+                 [reagent "0.8.0-alpha2"]
                  [org.clojure/math.combinatorics "0.1.4"]]
 
   :plugins [[lein-cljsbuild "1.1.7"]
