@@ -1,7 +1,9 @@
 (ns gradients.core
   (:require [quil.core :as q :include-macros true]
             [quil.middleware :as m]
-            [gradients.view :as view]))
+            [gradients.view :as view]
+            [reagent.core]
+            [gradients.params :as params]))
 
 (defn w
   ([] (w 1.0))
@@ -21,7 +23,6 @@
     (+ (* (- value old-min) (/ new-spread old-spread))
        new-min)))
 
-(def square-count 50)
 (def colors [[150, 26, 100] [245, 54, 54]
              [45, 10, 100] [15, 70, 80]
              [184 46 100] [215 60 100]])
@@ -32,6 +33,18 @@
 (def noise-detail 6)
 (def y-spread 2)
 (def x-spread 1)
+
+(defn initial-params []
+  (reduce
+    (fn [map [key specs]]
+      (assoc map key (:default specs)))
+    {}
+    gradients.params/config))
+
+(defonce state (reagent.core/atom {:params (initial-params)}))
+
+(defn get-param [key]
+  (get-in @state [:params key]))
 
 (defn pos-factor [x y]
   (let [noise (* 1.2 (q/noise
@@ -47,16 +60,16 @@
     (q/lerp-color qstart-color qend-color (pos-factor x y))))
 
 (defn pos-rect [x y]
-  (let [sx (/ (q/width) square-count)
-        sy (/ (q/height) square-count)]
+  (let [sx (/ (q/width) (get-param :particle-count))
+        sy (/ (q/height) (get-param :particle-count))]
     (q/fill (color x y))
     (q/rect (w x) (h y) sx sy)))
 
 (defn pos-tri [x y]
   (let [factor (pos-factor x y)
-        scale (- 7.5 (* 1 factor))
-        sx (* scale (/ (q/width) square-count))
-        sy (* scale (/ (q/width) square-count))
+        scale (* (get-param :size) factor)
+        sx (* scale (/ (q/width) (get-param :particle-count)))
+        sy (* scale (/ (q/width) (get-param :particle-count)))
         wx (w x)
         hx (h y)
         sharpness (q/random 0.8)]
@@ -68,27 +81,29 @@
           sx (* sharpness sy)
           (* sx sharpness) sy)))))
 
-(defn draw-state [state]
-  (q/no-loop)
+(defn draw []
   (q/no-stroke)
   (q/color-mode :hsb 360 100 100 1)
   (q/random-seed (first seeds))
   (q/noise-seed (second seeds))
   (q/background (apply q/color end-color))
-  (doseq [x (range square-count)
-          y (range square-count)])
-    ; (pos-rect (/ x square-count) (/ y square-count)))
-  (doseq [x (range square-count)
-          y (range square-count)]
-    (pos-tri (/ x square-count) (/ y square-count))))
+  (doseq [x (range (get-param :particle-count))
+          y (range (get-param :particle-count))])
+    ; (pos-rect (/ x (get-param :particle-count)) (/ y (get-param :particle-count))))
+  (doseq [x (range (get-param :particle-count))
+          y (range (get-param :particle-count))]
+    (pos-tri (/ x (get-param :particle-count)) (/ y (get-param :particle-count)))))
+
+(defn screen-res []
+  [(aget js/window "screen" "availWidth")
+   (aget js/window "screen" "availHeight")])
 
 (defn ^:export run-sketch []
   (q/defsketch gradients
     :host "gradients"
-    :size (map #(/ % 1) [1920 1080])
+    :size (map #(/ % 2) (screen-res))
     :renderer :p2d
-    :draw draw-state
-    :middleware [m/fun-mode]))
+    :draw draw))
 
 (run-sketch)
-(view/mount)
+(view/mount state)
