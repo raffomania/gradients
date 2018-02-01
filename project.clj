@@ -23,7 +23,8 @@
              {:main "gradients.core"
               :output-to "resources/public/js/main.js"
               :output-dir "resources/public/js/development"
-              :asset-path "js/development"}}
+              :asset-path "js/development"
+              :source-map true}}
             ; minified and bundled build for deployment
             {:id "optimized"
              :source-paths ["src"]
