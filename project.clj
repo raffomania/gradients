@@ -7,11 +7,13 @@
                  [quil "2.6.0"]
                  [org.clojure/clojurescript "1.9.946"]
                  [reagent "0.8.0-alpha2"]
-                 [org.clojure/math.combinatorics "0.1.4"]]
+                 [org.clojure/math.combinatorics "0.1.4"]
+                 [binaryage/devtools "0.9.9"]]
 
   :plugins [[lein-cljsbuild "1.1.7"]
             [lein-figwheel "0.5.14"]
             [lein-kibit "0.1.5"]]
+
   :hooks [leiningen.cljsbuild]
 
   :cljsbuild
@@ -21,10 +23,15 @@
              :figwheel true
              :compiler
              {:main "gradients.core"
+              :preloads [devtools.preload]
               :output-to "resources/public/js/main.js"
               :output-dir "resources/public/js/development"
               :asset-path "js/development"
-              :source-map true}}
+              :source-map true
+              :optimizations :none
+              :external-config
+              {:devtools/config
+                {:features-to-install [:formatters :hints :async]}}}}
             ; minified and bundled build for deployment
             {:id "optimized"
              :source-paths ["src"]

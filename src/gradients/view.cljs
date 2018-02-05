@@ -23,9 +23,11 @@
 
 (defn view [state]
   [:div
-   (map
+   [:div
+    (map
      #(identity ^{:key %} [param-input state %])
-     (keys (:params @state)))])
+     (keys (:params @state)))]
+   [:button {:on-click #(js/alert "save")} "download"]])
 
 
 (defn mount [state]

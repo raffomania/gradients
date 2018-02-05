@@ -4,16 +4,8 @@
             [gradients.view :as view]
             [reagent.core]
             [gradients.params :as params]
-            [gradients.draw :refer [draw]]))
-
-(defn initial-params []
-  (reduce
-    (fn [map [key specs]]
-      (assoc map key (:default specs)))
-    {}
-    gradients.params/config))
-
-(defonce state (reagent.core/atom {:params (initial-params)}))
+            [gradients.draw :refer [draw]]
+            [gradients.state :refer [state]]))
 
 (defn screen-res []
   [(aget js/window "screen" "availWidth")
@@ -30,6 +22,5 @@
     :renderer :p2d
     :draw draw))
 
-(gradients.draw/set-state! state)
 (run-sketch)
 (view/mount state)

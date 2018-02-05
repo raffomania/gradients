@@ -20,12 +20,8 @@
     :noise-seed {:max 500}});
 
 
-(defn config-entry [specs]
-  (merge defs specs))
+(defn config-entry [[key specs]]
+  [key (merge defs specs)])
 
 (def config
-  (reduce
-    (fn [map [key spec]]
-      (assoc map key (config-entry spec)))
-    {}
-    specifics))
+  (into {} (map config-entry specifics)))

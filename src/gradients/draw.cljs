@@ -1,6 +1,7 @@
 (ns gradients.draw
   (:require [quil.core :as q :include-macros true]
-            [gradients.util :refer [w h]]))
+            [gradients.util :refer [w h]]
+            [gradients.state :refer [state]]))
 
 
 (def colors [[150, 26, 100] [245, 54, 54]
@@ -9,7 +10,6 @@
 (def color-n 0)
 (def start-color (nth colors (* 2 color-n)))
 (def end-color (nth colors (inc (* 2 color-n))))
-(declare state)
 
 (defn p [key]
   (get-in @state [:params key]))
@@ -67,6 +67,3 @@
   (doseq [x (range (p :particle-count))
           y (range (p :particle-count))]
     (pos-tri (/ x (p :particle-count)) (/ y (p :particle-count)))))
-
-(defn set-state! [state]
-  (def state state))
