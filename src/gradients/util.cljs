@@ -18,3 +18,7 @@
         new-spread (- new-max new-min)]
     (+ (* (- value old-min) (/ new-spread old-spread))
        new-min)))
+
+(defn screen-res []
+  [(aget js/window "screen" "availWidth")
+   (aget js/window "screen" "availHeight")])

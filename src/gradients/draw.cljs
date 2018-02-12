@@ -1,8 +1,8 @@
 (ns gradients.draw
   (:require [quil.core :as q :include-macros true]
             [gradients.util :refer [w h]]
-            [gradients.state :refer [state]]))
-
+            [gradients.state :refer [state commands]]
+            [clojure.core.async :as async]))
 
 (def colors [[150, 26, 100] [245, 54, 54]
              [45, 10, 100] [15, 70, 80]
@@ -19,14 +19,14 @@
 
 (defn pos-factor [x y]
   (let [noise (q/noise
-                  (* (p :noise-scale) x)
-                  (* (p :noise-scale) y))
-        ox (/ (p :origin-x-pct) 100)
-        oy (/ (p :origin-y-pct) 100)
+                  (* (p :noisiness) x)
+                  (* (p :noisiness) y))
+        ox (/ (p :origin-x) 100)
+        oy (/ (p :origin-y) 100)
         distance (q/dist ox oy
                   (center-scale ox x (/ 1 (p :spread-x)))
                   (center-scale oy y (/ 1 (p :spread-y))))]
-    (min 1 (max 0 distance))))
+    (min 1 (max 0 (* noise distance)))))
 
 (defn color [x y]
   (let [qstart-color (apply q/color start-color)
@@ -39,6 +39,14 @@
     (q/fill (color x y))
     (q/rect (w x) (h y) sx sy)))
 
+(defn centered-triangle [width height]
+  (let [w2 (/ width 2)
+        h2 (/ height 2)]
+    (q/triangle
+      (- w2) (- h2)
+      (- w2) h2
+      w2 (- h2))))
+
 (defn pos-tri [x y]
   (let [factor (pos-factor x y)
         scale (* (p :size) factor)
@@ -46,14 +54,14 @@
         sy (* scale (/ (q/width) (p :particle-count)))
         wx (w x)
         hx (h y)
-        sharpness (q/random 0.8)]
+        sharpness factor]
     (q/with-translation [wx hx]
-      (q/with-rotation [(* 7 (q/noise (* (p :noise-scale) x) (* (p :noise-scale) y)))]
+      (q/with-rotation [(* 2 Math/PI factor)]
         (q/fill (color x y) (- 1 factor))
-        (q/triangle
-          0 0
-          sx (* sharpness sy)
-          (* sx sharpness) sy)))))
+        (centered-triangle sx sy)))))
+
+(defn save []
+  (q/save-frame))
 
 (defn draw []
   (q/no-stroke)
@@ -62,8 +70,12 @@
   (q/noise-seed (p :noise-seed))
   (q/background (apply q/color end-color))
   ; (doseq [x (range (p :particle-count))
-  ;         y (range (p :particle-count))])
-    ; (pos-rect (/ x (p :particle-count)) (/ y (p :particle-count))))
-  (doseq [x (range (p :particle-count))
-          y (range (p :particle-count))]
-    (pos-tri (/ x (p :particle-count)) (/ y (p :particle-count)))))
+  ;         y (range (p :particle-count))]
+  ;   (pos-rect (/ x (p :particle-count)) (/ y (p :particle-count))))
+  ; draw some particles outside of canvas
+  (doseq [x (range -2 (+ 2 (p :particle-count)))
+          y (range -2 (+ 2 (p :particle-count)))]
+    (pos-tri (/ x (p :particle-count)) (/ y (p :particle-count))))
+  (case (async/poll! commands)
+    :save (save)
+    nil))

@@ -1,9 +1,11 @@
 (ns gradients.view
   (:require [reagent.core :as r]
-            [gradients.params :refer [config]]))
+            [gradients.params :refer [config]]
+            [clojure.core.async :as async]
+            [gradients.state :as state]))
 
 (defn event-val [event]
-  (.. event -target -value))
+  (float (.. event -target -value)))
 
 (defn set-param [state key]
   #(swap! state assoc-in [:params key] (event-val %)))
@@ -21,13 +23,17 @@
               :on-change (set-param state key)}]
      [:span val]]))
 
+(defn command [key]
+  (async/put! state/commands key))
+
 (defn view [state]
   [:div
    [:div
     (map
      #(identity ^{:key %} [param-input state %])
      (keys (:params @state)))]
-   [:button {:on-click #(js/alert "save")} "download"]])
+   [:button {:on-click #(command :save)} "download"]
+   [:button {:on-click #(swap! state state/randomize)} "randomize"]])
 
 
 (defn mount [state]

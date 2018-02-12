@@ -8,7 +8,8 @@
                  [org.clojure/clojurescript "1.9.946"]
                  [reagent "0.8.0-alpha2"]
                  [org.clojure/math.combinatorics "0.1.4"]
-                 [binaryage/devtools "0.9.9"]]
+                 [binaryage/devtools "0.9.9"]
+                 [org.clojure/core.async "0.4.474"]]
 
   :plugins [[lein-cljsbuild "1.1.7"]
             [lein-figwheel "0.5.14"]
@@ -17,9 +18,9 @@
   :hooks [leiningen.cljsbuild]
 
   :cljsbuild
-  {:builds [; development build with figwheel hot swap
-            {:id "development"
-             :source-paths ["src"]
+  {:builds {
+            :development
+            {:source-paths ["src"]
              :figwheel true
              :compiler
              {:main "gradients.core"
@@ -32,12 +33,13 @@
               :external-config
               {:devtools/config
                 {:features-to-install [:formatters :hints :async]}}}}
-            ; minified and bundled build for deployment
-            {:id "optimized"
-             :source-paths ["src"]
+            :optimized
+            {:source-paths ["src"]
              :compiler
-             {:main "gradients.core"
+             {
               :output-to "resources/public/js/main.js"
               :output-dir "resources/public/js/optimized"
               :asset-path "js/optimized"
-              :optimizations :advanced}}]})
+              :optimizations :advanced
+              :pretty-print false
+              :closure-defines {"goog.DEBUG" false}}}}})
