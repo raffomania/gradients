@@ -5,7 +5,7 @@
             [gradients.state :as state]))
 
 (defn event-val [event]
-  (float (.. event -target -value)))
+  (js/parseFloat (.. event -target -value)))
 
 (defn set-param [state key]
   #(swap! state assoc-in [:params key] (event-val %)))
@@ -34,7 +34,6 @@
      (keys (:params @state)))]
    [:button {:on-click #(command :save)} "download"]
    [:button {:on-click #(swap! state state/randomize)} "randomize"]])
-
 
 (defn mount [state]
  (r/render [view state]
