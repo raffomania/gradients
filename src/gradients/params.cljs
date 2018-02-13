@@ -17,7 +17,8 @@
     :spread-x {:min 0.05 :step 0.05 :max 5}
     :spread-y {:min 0.05 :step 0.05 :max 5}
     :random-seed {:max 500}
-    :noise-seed {:max 500}});
+    :noise-seed {:max 500};
+    :min-size {:default 0 :step 0.1}})
 
 
 (defn config-entry [[key specs]]

@@ -49,7 +49,7 @@
 
 (defn pos-tri [x y]
   (let [factor (pos-factor x y)
-        scale (* (p :size) factor)
+        scale (max (p :min-size) (* (p :size) factor))
         sx (* scale (/ (q/width) (p :particle-count)))
         sy (* scale (/ (q/width) (p :particle-count)))
         wx (w x)
@@ -73,6 +73,7 @@
   ;         y (range (p :particle-count))]
   ;   (pos-rect (/ x (p :particle-count)) (/ y (p :particle-count))))
   ; draw some particles outside of canvas
+  (println (p :particle-count))
   (doseq [x (range -2 (+ 2 (p :particle-count)))
           y (range -2 (+ 2 (p :particle-count)))]
     (pos-tri (/ x (p :particle-count)) (/ y (p :particle-count))))
