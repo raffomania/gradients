@@ -16,8 +16,8 @@
     :origin-y {:min -100 :max 200 :default 50}
     :spread-x {:min 0.05 :step 0.05 :max 5}
     :spread-y {:min 0.05 :step 0.05 :max 5}
-    :random-seed {:max 500}
-    :noise-seed {:max 500};
+    :random-seed {:max 100}
+    :noise-seed {:max 100};
     :min-size {:default 0 :step 0.1}})
 
 
