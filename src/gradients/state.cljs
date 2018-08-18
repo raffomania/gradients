@@ -2,7 +2,6 @@
   (:require [reagent.core]
             [gradients.params]
             [clojure.core.async :as async]
-            [quil.core :as q]
             [gradients.util :as util]))
 
 (defn initial-params []

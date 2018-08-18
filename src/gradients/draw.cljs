@@ -1,6 +1,5 @@
 (ns gradients.draw
-  (:require [quil.core :as q :include-macros true]
-            [gradients.util :refer [w h]]
+  (:require [gradients.util :refer [w h]]
             [gradients.state :refer [state commands]]
             [clojure.core.async :as async]))
 

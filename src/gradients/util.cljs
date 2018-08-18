@@ -1,5 +1,4 @@
-(ns gradients.util
-  (:require [quil.core :as q]))
+(ns gradients.util)
 
 (defn w
   ([] (w 1.0))
