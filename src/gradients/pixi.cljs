@@ -33,7 +33,7 @@
           (.clear)
           (.beginFill 0xFFFFFF)
           (.drawPolygon #js [0 (- th)
-                             (- tw) (- th)
+                             (- tw) th
                              tw th])
           (.endFill)
           (oset! "x" x)
