@@ -1,15 +1,19 @@
 (ns gradients.util)
 
+(defn screen-res []
+  [(aget js/window "screen" "availWidth")
+   (aget js/window "screen" "availHeight")])
+
 (defn w
   ([] (w 1.0))
-  ([p] (* (q/width) p)))
+  ([p] (* (first (screen-res)) p)))
 
 (defn h
   ([] (h 1.0))
-  ([p] (* (q/height) p)))
+  ([p] (* (second (screen-res)) p)))
 
 (defn random-neg [max]
-  (- (q/random max) (/ max 2)))
+  (- (rand max) (/ max 2)))
 
 (defn rescale [value old-min old-max new-min new-max]
   "Rescales value from range [old-min, old-max] to [new-min, new-max]"
@@ -18,6 +22,3 @@
     (+ (* (- value old-min) (/ new-spread old-spread))
        new-min)))
 
-(defn screen-res []
-  [(aget js/window "screen" "availWidth")
-   (aget js/window "screen" "availHeight")])

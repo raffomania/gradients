@@ -2,23 +2,17 @@
   (:require [gradients.view :as view]
             [reagent.core]
             [gradients.params :as params]
-            [gradients.draw :refer [draw]]
+            [gradients.draw :as draw]
             [gradients.state :refer [state]]
             [gradients.pixi :as pixi]
             [gradients.util :as util]))
 
-(defonce app (pixi/init-app))
+(defn update-pixi [app dt]
+  (let [tris (draw/get-tris)]
+    (pixi/update-tri-count (.-stage app) (count tris))
+    (pixi/update-tris app tris)))
 
-(defn add-triangle [app]
-  (let [tri (-> (js/PIXI.Graphics.)
-                (.beginFill 0xFFFFFF)
-                (.drawPolygon #js [0 0 0 100 200 100])
-                ;; (.drawRect 0 0 100 100)
-                (.endFill))]
-    (set! (.-x tri) 100)
-    (set! (.-y tri) 100)
-    (.addChild (.-stage app) tri)))
 
-(add-triangle app)
+(defonce app (pixi/init-app update-pixi))
 
 (view/mount state)
