@@ -31,7 +31,7 @@
             th (* sh (/ (:height spec) 2))]
         (-> child
           (.clear)
-          (.beginFill 0xFFFFFF)
+          (.beginFill (:color spec))
           (.drawPolygon #js [0 (- th)
                              (- tw) th
                              tw th])

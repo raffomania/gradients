@@ -1,10 +1,13 @@
 (ns gradients.params)
 
-(def defs
-  {:min 0
-   :max 10
-   :default 1
-   :step 1})
+(def defaults
+  {:int
+   {:min 0
+    :max 10
+    :default 1
+    :step 1
+    :type :int}
+   :color {}})
 
 (def specifics
   { :size
@@ -17,12 +20,14 @@
     :spread-x {:min 0.05 :step 0.05 :max 5}
     :spread-y {:min 0.05 :step 0.05 :max 5}
     :random-seed {:max 100}
+    :start-color {:type :color}
     :noise-seed {:max 100};
     :min-size {:default 0 :step 0.1}})
 
 
 (defn config-entry [[key specs]]
-  [key (merge defs specs)])
+  (let [type (get specs :type :int)]
+    [key (merge (get defaults type) specs)]))
 
 (def config
   (into {} (map config-entry specifics)))

@@ -2,15 +2,24 @@
   (:require [reagent.core :as r]
             [gradients.params :refer [config]]
             [clojure.core.async :as async]
-            [gradients.state :as state]))
+            [gradients.state :as state]
+            [clojure.string :as str]))
 
 (defn event-val [event]
-  (js/parseFloat (.. event -target -value)))
+  (.. event -target -value))
 
-(defn set-param [state key]
-  #(swap! state assoc-in [:params key] (event-val %)))
+(defn float-val [string]
+  (js/parseFloat string))
 
-(defn param-input [state key]
+; parse a hexagonal number to get a color value
+(defn color-val [string]
+  (js/parseInt (str/replace-first string "#" "") 16))
+
+(defn set-param [state key extraction-fn]
+  #(swap! state assoc-in [:params key] (extraction-fn (event-val %))))
+
+
+(defn input-int [state key]
   (let [val (get-in @state [:params key])]
     [:div
      [:span key]
@@ -20,8 +29,28 @@
               :max (get-in config [key :max])
               :value val
               :step (get-in config [key :step])
-              :on-change (set-param state key)}]
+              :on-change (set-param state key float-val)}]
      [:span val]]))
+
+(defn input-color [state key]
+  (let [val (get-in @state [:params key])]
+    [:div
+     [:span key]
+     [:input {
+              :type "color"
+              ;; :value (str "#" val)
+              :on-change (set-param state key color-val)}]]))
+
+(defn unknown-input [state key]
+  [:div "unknown parameter type"])
+
+(def input-fns {
+                :int input-int
+                :color input-color})
+
+(defn input [state key]
+  (let [type (get-in config [key :type])]
+    ((get input-fns type unknown-input) state key)))
 
 (defn command [key]
   (async/put! state/commands key))
@@ -30,7 +59,7 @@
   [:div
    [:div
     (map
-     #(identity ^{:key %} [param-input state %])
+     #(identity ^{:key %} [input state %])
      (keys (:params @state)))]
    [:button {:on-click #(command :save)} "download"]
    [:button {:on-click #(swap! state state/randomize)} "randomize"]])

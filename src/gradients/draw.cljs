@@ -75,6 +75,7 @@
     (let [scale (max (p :min-size) (p :size))]
       {:x (/ x (p :particle-count))
        :y (/ y (p :particle-count))
+       :color (p :start-color)
        :width (* scale (/ 1 (p :particle-count)))
        :height (* scale (/ 1 (p :particle-count)))})))
 
