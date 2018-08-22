@@ -21,7 +21,7 @@
    :offset-x {:min -1.5 :max 1.5}
    :offset-y {:min -1.5 :max 1.5}
    :alpha-y {}
-   :sin-y {:min -5 :max 5}})
+   :sin-y {:min -2 :max 2}})
 
 
 (defn config-entry [[key specs]]
