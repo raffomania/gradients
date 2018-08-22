@@ -8,9 +8,8 @@
             [gradients.util :as util]))
 
 (defn update-pixi [app dt]
-  (let [tris (draw/get-tris)]
-    (pixi/update-tri-count (.-stage app) (count tris))
-    (pixi/update-tris app tris)))
+  (let [image (draw/draw)]
+    (pixi/update-pixi app image)))
 
 
 (defonce app (pixi/init-app update-pixi))

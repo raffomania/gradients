@@ -19,7 +19,7 @@
   #(swap! state assoc-in [:params key] (extraction-fn (event-val %))))
 
 
-(defn input-int [state key]
+(defn input-float [state key]
   (let [val (get-in @state [:params key])]
     [:div
      [:span key]
@@ -38,14 +38,14 @@
      [:span key]
      [:input {
               :type "color"
-              ;; :value (str "#" val)
+              :value (js/PIXI.utils.hex2string val)
               :on-change (set-param state key color-val)}]]))
 
 (defn unknown-input [state key]
   [:div "unknown parameter type"])
 
 (def input-fns {
-                :int input-int
+                :float input-float
                 :color input-color})
 
 (defn input [state key]

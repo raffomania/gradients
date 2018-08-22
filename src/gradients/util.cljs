@@ -4,14 +4,6 @@
   [(aget js/window "screen" "availWidth")
    (aget js/window "screen" "availHeight")])
 
-(defn w
-  ([] (w 1.0))
-  ([p] (* (first (screen-res)) p)))
-
-(defn h
-  ([] (h 1.0))
-  ([p] (* (second (screen-res)) p)))
-
 (defn random-neg [max]
   (- (rand max) (/ max 2)))
 

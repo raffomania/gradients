@@ -19,11 +19,14 @@
                     (.addChild stage (js/PIXI.Graphics.)))
       (< delta 0) (.removeChildren stage 0 (js/Math.abs delta)))))
 
-(defn update-tris [app specs]
+(defn update-pixi [app specs]
   (let [sw (oget app "renderer.width")
         sh (oget app "renderer.height")
-        stage (oget app "stage")]
-    (doseq [[i spec] (map-indexed vector specs)]
+        stage (oget app "stage")
+        tris (:tris specs)]
+    (update-tri-count stage (count tris))
+    (oset! app "renderer.backgroundColor" (:background-color specs))
+    (doseq [[i spec] (map-indexed vector tris)]
       (let [child (.getChildAt stage i)
             x (* sw (:x spec))
             y (* sh (:y spec))
@@ -36,5 +39,7 @@
                              (- tw) th
                              tw th])
           (.endFill)
+          (oset! "alpha" (:alpha spec))
+          (oset! "rotation" (:rotation spec))
           (oset! "x" x)
           (oset! "y" y))))))

@@ -1,32 +1,31 @@
 (ns gradients.params)
 
 (def defaults
-  {:int
+  {:float
    {:min 0
-    :max 10
-    :default 1
-    :step 1
-    :type :int}
-   :color {}})
+    :max 1
+    :default 0
+    :step 0.01
+    :type :float}
+   :color {:default 0xFFFFFF}})
 
 (def specifics
-  { :size
-      {:max 15 :step 0.1}
-    :particle-count
-      {:max 30 :default 10}
-    :noisiness {:max 20 :step 0.1}
-    :origin-x {:min -100 :max 200 :default 0}
-    :origin-y {:min -100 :max 200 :default 50}
-    :spread-x {:min 0.05 :step 0.05 :max 5}
-    :spread-y {:min 0.05 :step 0.05 :max 5}
-    :random-seed {:max 100}
-    :start-color {:type :color}
-    :noise-seed {:max 100};
-    :min-size {:default 0 :step 0.1}})
+  {:size
+     {:default 1 :max 15 :step 0.1}
+   :particle-count
+     {:max 40 :default 20 :step 1}
+   :start-color {:type :color}
+   :end-color {:type :color}
+   :background-color {:type :color :default 0x000000}
+   :min-size {:step 0.1}
+   :offset-x {:min -1.5 :max 1.5}
+   :offset-y {:min -1.5 :max 1.5}
+   :alpha-y {}
+   :sin-y {:min -5 :max 5}})
 
 
 (defn config-entry [[key specs]]
-  (let [type (get specs :type :int)]
+  (let [type (get specs :type :float)]
     [key (merge (get defaults type) specs)]))
 
 (def config
