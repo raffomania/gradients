@@ -9,6 +9,8 @@
                  [org.clojure/math.combinatorics "0.1.4"]
                  [binaryage/devtools "0.9.9"]
                  [cljsjs/pixi "4.7.0-0"]
+                 [thi.ng/math "0.2.2-SNAPSHOT"]
+                 [thi.ng/color "1.3.0"]
                  [binaryage/oops "0.6.2"]
                  [org.clojure/core.async "0.4.474"]]
 

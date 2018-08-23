@@ -11,7 +11,6 @@
   (let [image (draw/draw)]
     (pixi/update-pixi app image)))
 
-
 (defonce app (pixi/init-app update-pixi))
 
 (view/mount state)
