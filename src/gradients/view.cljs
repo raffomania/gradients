@@ -30,7 +30,7 @@
               :value val
               :step (get-in config [key :step])
               :on-change (set-param state key float-val)}]
-     [:span val]]))
+     [:span (str/replace (str (.toFixed val 2)) #"\.0+$" "")]]))
 
 (defn input-color [state key]
   (let [val (get-in @state [:params key])]

@@ -16,9 +16,11 @@
 
 (defn random-param [key]
   (let [conf (key gradients.params/config)]
-    [key (round-to-step
-          (util/rescale (rand) 0 1 (:min conf) (:max conf))
-          (:step conf))]))
+    (case (:type conf)
+      :float [key (round-to-step
+                    (util/rescale (rand) 0 1 (:min conf) (:max conf))
+                    (:step conf))]
+      :color [key (:default conf)])))
 
 (defn randomize [state]
   (update state :params

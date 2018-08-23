@@ -10,6 +10,9 @@
 (defn lerp [val a b]
   (- (* val b) a))
 
+(defn sqr [val]
+  (* val val))
+
 (defn mixmul [orig param factor]
   (+
    (* orig (- 1 param))

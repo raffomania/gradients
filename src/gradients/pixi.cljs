@@ -1,6 +1,7 @@
 (ns gradients.pixi
   (:require [cljsjs.pixi]
             [gradients.util :as util]
+            [gradients.draw :refer [p]]
             [oops.core :refer [oset! oget]]))
 
 (defn init-app [update-fn]
@@ -24,7 +25,9 @@
         sh (oget app "renderer.height")
         stage (oget app "stage")
         tris (:tris specs)]
-    (update-tri-count stage (count tris))
+    ; We are not using (count tris) because it is very slow
+    ; instead we calculate the tri count again
+    (update-tri-count stage (util/sqr (+ 4 (p :particle-count))))
     (oset! app "renderer.backgroundColor" (:background-color specs))
     (doseq [[i spec] (map-indexed vector tris)]
       (let [child (.getChildAt stage i)
