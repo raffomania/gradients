@@ -7,12 +7,12 @@
   (let [[width height] (map #(/ % 2) (util/screen-res))
         app (js/PIXI.Application. #js {:width width :height height})
         container (.getElementById js/document "wp-preview")]
-    (.appendChild container (.-view app))
-    (.add (.-ticker app) (partial update-fn app))
+    (.appendChild container (oget app "view"))
+    (.add (oget app "ticker") (partial update-fn app))
     app))
 
 (defn update-tri-count [stage wanted]
-  (let [current (.-length (.-children stage))
+  (let [current (oget stage "children.length")
         delta (- wanted current)]
     (cond
       (> delta 0) (doseq [_ (range delta)]
