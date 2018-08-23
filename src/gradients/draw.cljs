@@ -50,8 +50,8 @@
 ; todo update this for x distance as well
 (defn vignette [tri]
   (let [closeness-to-center (* 2 (- 0.5 (js/Math.abs (- (:y tri) 0.5))))
-        factor (* (p :alpha-y) closeness-to-center)]
-    (update tri :alpha #(+ (* % (- 1 (p :alpha-y))) factor))))
+        noise (- 1 (noise-factor (:x tri) (:y tri)))]
+    (update tri :alpha #(util/mixmul % (* noise (p :vignette)) closeness-to-center))))
 
 (defn get-tris []
   (for [x (range -2 (+ 2 (p :particle-count)))
