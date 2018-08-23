@@ -2,7 +2,9 @@
   (:require [gradients.util :as util]
             [gradients.state :refer [state commands]]
             [clojure.core.async :as async]
-            [thi.ng.math.noise :as noise]))
+            [thi.ng.math.noise :as noise]
+            [thi.ng.math.core :as math]
+            [thi.ng.color.core :as color]))
 
 (defn p [key]
   (get-in @state [:params key]))
@@ -24,12 +26,13 @@
 
 (defn noise [tri]
   (let [noise (noise-factor (:x tri) (:y tri))
+        rescaled-noise (util/rescale noise -1 1 0 1)
         rot-factor (* noise (p :noise-rot))]
     (-> tri
         (update :width #(+ % (* (p :noise-size) noise)))
         (update :height #(+ % (* (p :noise-size) noise)))
         (update :rotation #(+ % rot-factor))
-        (update :alpha #(util/mixmul % (p :noise-alpha) noise))
+        (update :alpha #(util/mixmul % (p :noise-alpha) rescaled-noise))
         (update :height #(+ % (* (p :noise-sharpness) noise))))))
 
 (defn min-size [tri]
@@ -47,6 +50,13 @@
       (update :width #(* % (p :size)))
       (update :height #(* % (p :size)))))
 
+(defn color [tri]
+  (let [start (p :start-color)
+        end (p :end-color)
+        noise (util/rescale (noise-factor (:x tri) (:y tri)) -1 1 0 1)
+        mix (math/mix start end noise)]
+    (assoc tri :color mix)))
+
 ; todo update this for x distance as well
 (defn vignette [tri]
   (let [closeness-to-center (* 2 (- 0.5 (js/Math.abs (- (:y tri) 0.5))))
@@ -58,7 +68,6 @@
         y (range -2 (+ 2 (p :particle-count)))]
     {:x (/ x (p :particle-count))
       :y (/ y (p :particle-count))
-      :color (p :start-color)
       :alpha 1
       :rotation 0
       :width 1
@@ -70,6 +79,7 @@
               (map size)
               (map min-size)
               (map screen-relative-size)
+              (map color)
               (map vignette))
    :background-color (p :background-color)})
 

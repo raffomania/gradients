@@ -3,7 +3,8 @@
             [gradients.params :refer [config]]
             [clojure.core.async :as async]
             [gradients.state :as state]
-            [clojure.string :as str]))
+            [clojure.string :as str]
+            [thi.ng.color.core :as color]))
 
 (defn event-val [event]
   (.. event -target -value))
@@ -13,7 +14,7 @@
 
 ; parse a hexagonal number to get a color value
 (defn color-val [string]
-  (js/parseInt (str/replace-first string "#" "") 16))
+  (color/css string))
 
 (defn set-param [state key extraction-fn]
   #(swap! state assoc-in [:params key] (extraction-fn (event-val %))))
@@ -38,7 +39,7 @@
      [:span key]
      [:input {
               :type "color"
-              :value (js/PIXI.utils.hex2string val)
+              :value @(color/as-css val)
               :on-change (set-param state key color-val)}]]))
 
 (defn unknown-input [state key]

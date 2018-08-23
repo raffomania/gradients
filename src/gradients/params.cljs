@@ -1,4 +1,5 @@
-(ns gradients.params)
+(ns gradients.params
+  (:require [thi.ng.color.core :as color]))
 
 (def defaults
   {:float
@@ -7,16 +8,16 @@
     :default 0
     :step 0.01
     :type :float}
-   :color {:default 0xFFFFFF}})
+   :color {:default (color/css "#fff")}})
 
 (def specifics
   {:size
      {:default 1 :max 5}
    :particle-count
      {:min 5 :max 40 :default 20 :step 1}
-   :start-color {:type :color :default 0xff8b2c}
+   :start-color {:type :color :default (color/css "#ff8b2c")}
    :end-color {:type :color}
-   :background-color {:type :color :default 0xffd145}
+   :background-color {:type :color :default (color/css "#ffd145")}
    :min-size {:max 5}
    :offset-x {:min -1.5 :max 1.5}
    :offset-y {:min -1.5 :max 1.5}

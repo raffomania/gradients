@@ -2,7 +2,8 @@
   (:require [cljsjs.pixi]
             [gradients.util :as util]
             [gradients.draw :refer [p]]
-            [oops.core :refer [oset! oget]]))
+            [oops.core :refer [oset! oget]]
+            [thi.ng.color.core :as color]))
 
 (defn init-app [update-fn]
   (let [[width height] (map #(/ % 2) (util/screen-res))
@@ -37,7 +38,7 @@
             th (* sh (/ (:height spec) 2))]
         (-> child
           (.clear)
-          (.beginFill (:color spec))
+          (.beginFill @(color/as-int24 (:color spec)))
           (.drawPolygon #js [0 (- th)
                              (- tw) th
                              tw th])
