@@ -2,7 +2,8 @@
   (:require [reagent.core]
             [gradients.params]
             [clojure.core.async :as async]
-            [gradients.util :as util]))
+            [gradients.util :as util]
+            [thi.ng.color.core :as color]))
 
 (defn initial-params []
   (reduce
@@ -20,7 +21,7 @@
       :float [key (round-to-step
                     (util/rescale (rand) 0 1 (:min conf) (:max conf))
                     (:step conf))]
-      :color [key (:default conf)])))
+      :color [key (color/random-rgb)])))
 
 (defn randomize [state]
   (update state :params

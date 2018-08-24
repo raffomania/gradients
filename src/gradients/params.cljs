@@ -12,7 +12,7 @@
 
 (def specifics
   {:size
-     {:default 1 :max 5}
+     {:default 1 :min 0.01 :max 5}
    :particle-count
      {:min 5 :max 40 :default 20 :step 1}
    :start-color {:type :color :default (color/css "#ff8b2c")}

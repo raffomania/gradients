@@ -7,8 +7,19 @@
 
 (defn init-app [update-fn]
   (let [[width height] (map #(/ % 2) (util/screen-res))
-        app (js/PIXI.Application. #js {:width width :height height})
-        container (.getElementById js/document "wp-preview")]
+        app-opts {:width width
+                  :height height
+                  :antialias true
+                  :transparent false
+                  :backgroundColor 0xFFFFFF
+                  :preserveDrawingBuffer true}
+        app (js/PIXI.Application. (clj->js app-opts))
+        stage (oget app "stage")
+        container (.getElementById js/document "wp-preview")
+        tris (-> (js/PIXI.Container.) (oset! "name" "tris"))
+        bg (-> (js/PIXI.Graphics.) (oset! "name" "bg"))]
+    (.addChild stage bg)
+    (.addChild stage tris)
     (.appendChild container (oget app "view"))
     (.add (oget app "ticker") (partial update-fn app))
     app))
@@ -25,13 +36,17 @@
   (let [sw (oget app "renderer.width")
         sh (oget app "renderer.height")
         stage (oget app "stage")
+        tris-container (.getChildByName stage "tris")
         tris (:tris specs)]
+    (-> (.getChildByName stage "bg")
+        (.beginFill @(color/as-int24 (:background-color specs)))
+        (.drawRect 0 0 sw sh)
+        (.endFill))
     ; We are not using (count tris) because it is very slow
     ; instead we calculate the tri count again
-    (update-tri-count stage (util/sqr (+ 4 (p :particle-count))))
-    (oset! app "renderer.backgroundColor" (:background-color specs))
+    (update-tri-count tris-container (util/sqr (+ 4 (p :particle-count))))
     (doseq [[i spec] (map-indexed vector tris)]
-      (let [child (.getChildAt stage i)
+      (let [child (.getChildAt tris-container i)
             x (* sw (:x spec))
             y (* sh (:y spec))
             tw (* sw (/ (:width spec) 2))
@@ -47,3 +62,21 @@
           (oset! "rotation" (:rotation spec))
           (oset! "x" x)
           (oset! "y" y))))))
+
+(defn save-png [app specs]
+  (let [renderer (oget app "renderer")
+        original-width (oget renderer "width")
+        original-height (oget renderer "height")
+        [width height] (util/screen-res)
+        extract-plugin (oget renderer "extract")
+        link (.createElement js/document "a")
+        stage (oget app "stage")
+        texture (js/PIXI.RenderTexture.create width height)]
+    (.resize renderer width height)
+    (update-pixi app specs)
+    (.render renderer stage texture)
+    (.setAttribute link "href" (.base64 extract-plugin texture))
+    (oset! link "innerHTML" "image link")
+    (.setAttribute link "download" "gradients.png")
+    (.click link)
+    (.resize renderer original-width original-height)))
