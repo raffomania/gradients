@@ -20,6 +20,8 @@
 
   :hooks [leiningen.cljsbuild]
 
+  :clean-targets ^{:protect false} ["resources/public/js" :target-path]
+
   :cljsbuild
   {:builds {
             :development
