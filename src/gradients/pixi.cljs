@@ -74,8 +74,8 @@
           ;; (.endFill)
           (oset! "width" tw)
           (oset! "height" th)
-          ;; (oset! "alpha" (:alpha spec))
-          ;; (oset! "rotation" (:rotation spec))
+          (oset! "alpha" (:alpha spec))
+          (oset! "rotation" (:rotation spec))
           (oset! "x" x)
           (oset! "y" y))))))
 
