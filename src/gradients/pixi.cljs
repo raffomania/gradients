@@ -32,7 +32,7 @@
         stage (oget app "stage")
         container (.getElementById js/document "wp-preview")
         tris (-> (js/PIXI.Container.) (oset! "name" "tris"))
-        bg (-> (js/PIXI.Graphics.) (oset! "name" "bg") (.beginFill 0xFFFFFF) (.drawRect 0 0 width height) (.endFill) (oset! "cacheAsBitmap" true))]
+        bg (-> (js/PIXI.Graphics.) (oset! "name" "bg") (.beginFill 0xFFFFFF) (.drawRect 0 0 width height) (.endFill))]
     (.addChild stage bg)
     (.addChild stage tris)
     (.appendChild container (oget app "view"))
