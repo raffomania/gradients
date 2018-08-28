@@ -84,7 +84,9 @@
         tris-container (.getChildByName stage "tris")
         tris (:tris specs)]
     (-> (.getChildByName stage "bg")
-        (oset! "tint" @(color/as-int24 (:background-color specs))))
+        (oset! "tint" @(color/as-int24 (:background-color specs)))
+        (oset! "width" sw)
+        (oset! "height" sh))
     ; We are not using (count tris) because it is very slow
     ; instead we calculate the tri count again
     (update-tri-count tris-container (util/sqr (+ 4 (p :particle-count))))
