@@ -17,6 +17,7 @@
         (.drawPolygon #js [(/ size 2) 0
                            0 size
                            size size])
+        ;; (.drawRect 0 0 size size)
         (.endFill))
     (.generateTexture renderer graphics js/PIXI.SCALE_MODES.LINEAR 1)))
 
@@ -40,12 +41,16 @@
     (reset! tri-texture (create-tri-texture (oget app "renderer")))
     app))
 
+(defn create-tri []
+  (-> (js/PIXI.Sprite. @tri-texture)
+      (oset! "pivot" (js/PIXI.Point. (/ (.-width @tri-texture) 2) (/ (.-height @tri-texture) 2)))))
+
 (defn update-tri-count [stage wanted]
   (let [current (oget stage "children.length")
         delta (- wanted current)]
     (cond
       (> delta 0) (doseq [_ (range delta)]
-                    (.addChild stage (js/PIXI.Sprite. @tri-texture)))
+                    (.addChild stage (create-tri)))
       (< delta 0) (.removeChildren stage 0 (js/Math.abs delta)))))
 
 (defn update-tri [tris-container sw sh spec]
