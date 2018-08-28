@@ -7,7 +7,7 @@
             [thi.ng.color.core :as color]))
 
 (defn p [key]
-  (get-in @state [:params key]))
+  (get (get @state :params) key))
 
 (defn scale-noise-input [val factor]
   (* val factor (p :noise-zoom)))
@@ -64,22 +64,25 @@
     (update tri :alpha #(util/mixmul % (* noise (p :vignette)) closeness-to-center))))
 
 (defn get-tris []
-  (for [x (range -2 (+ 2 (p :particle-count)))
-        y (range -2 (+ 2 (p :particle-count)))]
-    {:x (/ x (p :particle-count))
-      :y (/ y (p :particle-count))
-      :alpha 1
-      :rotation 0
-      :width 1
-      :height 1}))
+  (let [padding 2
+        bounds (+ padding (p :particle-count) padding)]
+    (for [x (range (- padding) (+ padding (p :particle-count)))
+          y (range (- padding) (+ padding (p :particle-count)))]
+      {:x (/ x (p :particle-count))
+        :y (/ y (p :particle-count))
+        :alpha 1
+        :rotation 0
+        :width 1
+        :height 1
+        :index (+ (+ x padding) (* bounds (+ y padding)))})))
 
 (defn draw []
-  {:tris (->> (get-tris)
-              (map noise)
-              (map size)
-              (map min-size)
-              (map screen-relative-size)
-              (map color)
-              (map vignette))
+  {:tris (doall (->> (get-tris)
+                     (map noise)
+                     (map size)
+                     (map min-size)
+                     (map screen-relative-size)
+                     (map color)
+                     (map vignette)))
    :background-color (p :background-color)})
 

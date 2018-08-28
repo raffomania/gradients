@@ -32,7 +32,7 @@
         stage (oget app "stage")
         container (.getElementById js/document "wp-preview")
         tris (-> (js/PIXI.Container.) (oset! "name" "tris"))
-        bg (-> (js/PIXI.Graphics.) (oset! "name" "bg") (.beginFill 0xFFFFFF) (.drawRect 0 0 width height) (.endFill))]
+        bg (-> (js/PIXI.Graphics.) (oset! "name" "bg") (.beginFill 0xFFFFFF) (.drawRect 0 0 width height) (.endFill) (oset! "cacheAsBitmap" true))]
     (.addChild stage bg)
     (.addChild stage tris)
     (.appendChild container (oget app "view"))
@@ -48,6 +48,30 @@
                     (.addChild stage (js/PIXI.Sprite. @tri-texture)))
       (< delta 0) (.removeChildren stage 0 (js/Math.abs delta)))))
 
+(defn update-tri [tris-container sw sh spec]
+  (let [i (:index spec)
+        child (.getChildAt tris-container i)
+        x (* sw (get spec :x))
+        y (* sh (get spec :y))
+        tw (* sw (/ (get spec :width) 2))
+        th (* sh (/ (get spec :height) 2))]
+    ;; (-> child
+        ;; (.clear)
+        ;; (.beginFill @(color/as-int24 (:color spec)))
+        ;; (.drawPolygon #js [0 (- th)
+        ;;                    (- tw) th
+        ;;                    tw th])
+        ;; (.endFill)
+        ;; (oset! "alpha" (:alpha spec))
+        ;; (oset! "rotation" (:rotation spec))
+    (set! (.-alpha child) (get spec :alpha))
+    (set! (.-rotation child) (get spec :rotation))
+    (set! (.-tint child) @(color/as-int24 (get spec :color)))
+    (set! (.-width child) tw)
+    (set! (.-height child) th)
+    (set! (.-x child) x)
+    (set! (.-y child) y)))
+
 (defn update-pixi [app specs]
   (let [sw (oget app "renderer.width")
         sh (oget app "renderer.height")
@@ -59,25 +83,7 @@
     ; We are not using (count tris) because it is very slow
     ; instead we calculate the tri count again
     (update-tri-count tris-container (util/sqr (+ 4 (p :particle-count))))
-    (doseq [[i spec] (map-indexed vector tris)]
-      (let [child (.getChildAt tris-container i)
-            x (* sw (:x spec))
-            y (* sh (:y spec))
-            tw (* sw (/ (:width spec) 2))
-            th (* sh (/ (:height spec) 2))]
-        (-> child
-          ;; (.clear)
-          ;; (.beginFill @(color/as-int24 (:color spec)))
-          ;; (.drawPolygon #js [0 (- th)
-          ;;                    (- tw) th
-          ;;                    tw th])
-          ;; (.endFill)
-          (oset! "width" tw)
-          (oset! "height" th)
-          (oset! "alpha" (:alpha spec))
-          (oset! "rotation" (:rotation spec))
-          (oset! "x" x)
-          (oset! "y" y))))))
+    (doall (map (partial update-tri tris-container sw sh) tris))))
 
 (defn save-png [app specs]
   (let [renderer (oget app "renderer")
