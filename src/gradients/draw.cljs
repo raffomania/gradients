@@ -25,7 +25,7 @@
    (range 1 (inc (p :noise-detail)))))
 
 (defn noise [tri]
-  (let [noise (noise-factor (:x tri) (:y tri))
+  (let [noise (:noise-factor tri)
         rescaled-noise (util/rescale noise -1 1 0 1)
         rot-factor (* noise (p :noise-rot))]
     (-> tri
@@ -53,14 +53,14 @@
 (defn color [tri]
   (let [start (p :start-color)
         end (p :end-color)
-        noise (util/rescale (noise-factor (:x tri) (:y tri)) -1 1 0 1)
+        noise (util/rescale (:noise-factor tri) -1 1 0 1)
         mix (math/mix start end noise)]
     (assoc tri :color mix)))
 
 ; todo update this for x distance as well
 (defn vignette [tri]
   (let [closeness-to-center (* 2 (- 0.5 (js/Math.abs (- (:y tri) 0.5))))
-        noise (- 1 (noise-factor (:x tri) (:y tri)))]
+        noise (- 1 (:noise-factor tri))]
     (update tri :alpha #(util/mixmul % (* noise (p :vignette)) closeness-to-center))))
 
 (defn get-tris []
@@ -68,13 +68,16 @@
         bounds (+ padding (p :particle-count) padding)]
     (for [x (range (- padding) (+ padding (p :particle-count)))
           y (range (- padding) (+ padding (p :particle-count)))]
-      {:x (/ x (p :particle-count))
-        :y (/ y (p :particle-count))
-        :alpha 1
-        :rotation 0
-        :width 1
-        :height 1
-        :index (+ (+ x padding) (* bounds (+ y padding)))})))
+      (let [relative-x (/ x (p :particle-count))
+            relative-y (/ y (p :particle-count))]
+        {:x relative-x
+         :y relative-y
+         :noise-factor (noise-factor relative-x relative-y)
+         :alpha 1
+         :rotation 0
+         :width 1
+         :height 1
+         :index (+ (+ x padding) (* bounds (+ y padding)))}))))
 
 (defn draw []
   {:tris (doall (->> (get-tris)
