@@ -16,7 +16,7 @@
    :particle-count
      {:min 5 :max 40 :default 20 :step 1}
    :start-color {:type :color :default (color/css "#ff8b2c")}
-   :end-color {:type :color}
+   :end-color {:type :color :default (color/css "#ff6d6d")}
    :background-color {:type :color :default (color/css "#ffd145")}
    :min-size {:max 5}
    :offset-x {:min -1.5 :max 1.5}

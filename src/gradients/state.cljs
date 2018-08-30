@@ -9,7 +9,7 @@
   (reduce
     (fn [map [key specs]]
       (assoc map key (:default specs)))
-    {}
+    (hash-map)
     gradients.params/config))
 
 (defn round-to-step [val step]
@@ -25,8 +25,10 @@
 
 (defn randomize [state]
   (update state :params
-    (fn [params] (into {} (map random-param (keys params))))))
+    (fn [params] (into (hash-map) (map random-param (keys params))))))
 
-(defonce state (reagent.core/atom {:params (initial-params)}))
+(defrecord State [params])
+
+(defonce state (reagent.core/atom (State. (initial-params))))
 
 (defonce commands (async/chan))

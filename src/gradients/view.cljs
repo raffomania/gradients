@@ -19,7 +19,6 @@
 (defn set-param [state key extraction-fn]
   #(swap! state assoc-in [:params key] (extraction-fn (event-val %))))
 
-
 (defn input-float [state key]
   (let [val (get-in @state [:params key])]
     [:div

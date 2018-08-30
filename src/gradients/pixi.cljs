@@ -8,9 +8,7 @@
 (defonce tri-texture (atom nil))
 
 (defn create-tri-texture [renderer]
-  (let [sw (oget renderer "width")
-        sh (oget renderer "height")
-        size (/ (max sw sh) 10)
+  (let [size (apply max (util/screen-res))
         graphics (js/PIXI.Graphics.)]
     (-> graphics
         (.beginFill 0xFFFFFF)

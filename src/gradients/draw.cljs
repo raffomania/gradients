@@ -63,6 +63,8 @@
         noise (- 1 (:noise-factor tri))]
     (update tri :alpha #(util/mixmul % (* noise (p :vignette)) closeness-to-center))))
 
+(defrecord Tri [x y noise-factor alpha rotation width height color index])
+
 (defn get-tris []
   (let [padding 2
         bounds (+ padding (p :particle-count) padding)]
@@ -70,22 +72,25 @@
           y (range (- padding) (+ padding (p :particle-count)))]
       (let [relative-x (/ x (p :particle-count))
             relative-y (/ y (p :particle-count))]
-        {:x relative-x
-         :y relative-y
-         :noise-factor (noise-factor relative-x relative-y)
-         :alpha 1
-         :rotation 0
-         :width 1
-         :height 1
-         :index (+ (+ x padding) (* bounds (+ y padding)))}))))
+        (Tri.
+         relative-x
+         relative-y
+         (noise-factor relative-x relative-y)
+         1
+         0
+         1
+         1
+         (p :start-color)
+         (+ (+ x padding) (* bounds (+ y padding))))))))
 
 (defn draw []
-  {:tris (doall (->> (get-tris)
-                     (map noise)
-                     (map size)
-                     (map min-size)
-                     (map screen-relative-size)
-                     (map color)
-                     (map vignette)))
+  {:tris (map (comp
+                vignette
+                color
+                screen-relative-size
+                min-size
+                size
+                noise)
+              (get-tris))
    :background-color (p :background-color)})
 
