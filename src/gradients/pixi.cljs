@@ -69,7 +69,7 @@
         ;; (oset! "rotation" (:rotation spec))
     (set! (.-alpha child) (get spec :alpha))
     (set! (.-rotation child) (get spec :rotation))
-    (set! (.-tint child) @(color/as-int24 (get spec :color)))
+    (oset! child "tint" @(color/as-int24 (get spec :color)))
     (set! (.-width child) tw)
     (set! (.-height child) th)
     (set! (.-x child) x)
