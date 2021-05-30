@@ -7,10 +7,10 @@ goog.require('cljs.core.async');
 goog.require('gradients.util');
 goog.require('thi.ng.color.core');
 gradients.state.initial_params = (function gradients$state$initial_params(){
-return cljs.core.reduce.call(null,(function (map,p__8706){
-var vec__8707 = p__8706;
-var key = cljs.core.nth.call(null,vec__8707,(0),null);
-var specs = cljs.core.nth.call(null,vec__8707,(1),null);
+return cljs.core.reduce.call(null,(function (map,p__8728){
+var vec__8729 = p__8728;
+var key = cljs.core.nth.call(null,vec__8729,(0),null);
+var specs = cljs.core.nth.call(null,vec__8729,(1),null);
 return cljs.core.assoc.call(null,map,key,new cljs.core.Keyword(null,"default","default",-1987822328).cljs$core$IFn$_invoke$arity$1(specs));
 }),cljs.core.PersistentHashMap.EMPTY,gradients.params.config);
 });
@@ -19,9 +19,9 @@ return (step * (Math.floor((val / step)) | (0)));
 });
 gradients.state.random_param = (function gradients$state$random_param(key){
 var conf = key.call(null,gradients.params.config);
-var G__8710 = new cljs.core.Keyword(null,"type","type",1174270348).cljs$core$IFn$_invoke$arity$1(conf);
-var G__8710__$1 = (((G__8710 instanceof cljs.core.Keyword))?G__8710.fqn:null);
-switch (G__8710__$1) {
+var G__8732 = new cljs.core.Keyword(null,"type","type",1174270348).cljs$core$IFn$_invoke$arity$1(conf);
+var G__8732__$1 = (((G__8732 instanceof cljs.core.Keyword))?G__8732.fqn:null);
+switch (G__8732__$1) {
 case "float":
 return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [key,gradients.state.round_to_step.call(null,gradients.util.rescale.call(null,cljs.core.rand.call(null),(0),(1),new cljs.core.Keyword(null,"min","min",444991522).cljs$core$IFn$_invoke$arity$1(conf),new cljs.core.Keyword(null,"max","max",61366548).cljs$core$IFn$_invoke$arity$1(conf)),new cljs.core.Keyword(null,"step","step",1288888124).cljs$core$IFn$_invoke$arity$1(conf))], null);
 
@@ -31,7 +31,7 @@ return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMP
 
 break;
 default:
-throw (new Error(["No matching clause: ",cljs.core.str.cljs$core$IFn$_invoke$arity$1(G__8710__$1)].join('')));
+throw (new Error(["No matching clause: ",cljs.core.str.cljs$core$IFn$_invoke$arity$1(G__8732__$1)].join('')));
 
 }
 });
@@ -73,18 +73,18 @@ var this__4472__auto____$1 = this;
 return this__4472__auto____$1.cljs$core$ILookup$_lookup$arity$3(null,k__4473__auto__,null);
 }));
 
-(gradients.state.State.prototype.cljs$core$ILookup$_lookup$arity$3 = (function (this__4474__auto__,k8713,else__4475__auto__){
+(gradients.state.State.prototype.cljs$core$ILookup$_lookup$arity$3 = (function (this__4474__auto__,k8735,else__4475__auto__){
 var self__ = this;
 var this__4474__auto____$1 = this;
-var G__8717 = k8713;
-var G__8717__$1 = (((G__8717 instanceof cljs.core.Keyword))?G__8717.fqn:null);
-switch (G__8717__$1) {
+var G__8739 = k8735;
+var G__8739__$1 = (((G__8739 instanceof cljs.core.Keyword))?G__8739.fqn:null);
+switch (G__8739__$1) {
 case "params":
 return self__.params;
 
 break;
 default:
-return cljs.core.get.call(null,self__.__extmap,k8713,else__4475__auto__);
+return cljs.core.get.call(null,self__.__extmap,k8735,else__4475__auto__);
 
 }
 }));
@@ -92,10 +92,10 @@ return cljs.core.get.call(null,self__.__extmap,k8713,else__4475__auto__);
 (gradients.state.State.prototype.cljs$core$IKVReduce$_kv_reduce$arity$3 = (function (this__4492__auto__,f__4493__auto__,init__4494__auto__){
 var self__ = this;
 var this__4492__auto____$1 = this;
-return cljs.core.reduce.call(null,(function (ret__4495__auto__,p__8718){
-var vec__8719 = p__8718;
-var k__4496__auto__ = cljs.core.nth.call(null,vec__8719,(0),null);
-var v__4497__auto__ = cljs.core.nth.call(null,vec__8719,(1),null);
+return cljs.core.reduce.call(null,(function (ret__4495__auto__,p__8740){
+var vec__8741 = p__8740;
+var k__4496__auto__ = cljs.core.nth.call(null,vec__8741,(0),null);
+var v__4497__auto__ = cljs.core.nth.call(null,vec__8741,(1),null);
 return f__4493__auto__.call(null,ret__4495__auto__,k__4496__auto__,v__4497__auto__);
 }),init__4494__auto__,this__4492__auto____$1);
 }));
@@ -109,10 +109,10 @@ return cljs.core.pr_sequential_writer.call(null,writer__4488__auto__,cljs.core.p
 return cljs.core.pr_sequential_writer.call(null,writer__4488__auto__,pr_pair__4490__auto__,"#gradients.state.State{",", ","}",opts__4489__auto__,cljs.core.concat.call(null,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [(new cljs.core.PersistentVector(null,2,(5),cljs.core.PersistentVector.EMPTY_NODE,[new cljs.core.Keyword(null,"params","params",710516235),self__.params],null))], null),self__.__extmap));
 }));
 
-(gradients.state.State.prototype.cljs$core$IIterable$_iterator$arity$1 = (function (G__8712){
+(gradients.state.State.prototype.cljs$core$IIterable$_iterator$arity$1 = (function (G__8734){
 var self__ = this;
-var G__8712__$1 = this;
-return (new cljs.core.RecordIter((0),G__8712__$1,1,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"params","params",710516235)], null),(cljs.core.truth_(self__.__extmap)?cljs.core._iterator.call(null,self__.__extmap):cljs.core.nil_iter.call(null))));
+var G__8734__$1 = this;
+return (new cljs.core.RecordIter((0),G__8734__$1,1,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"params","params",710516235)], null),(cljs.core.truth_(self__.__extmap)?cljs.core._iterator.call(null,self__.__extmap):cljs.core.nil_iter.call(null))));
 }));
 
 (gradients.state.State.prototype.cljs$core$IMeta$_meta$arity$1 = (function (this__4470__auto__){
@@ -149,10 +149,10 @@ return h__4330__auto____$1;
 }
 }));
 
-(gradients.state.State.prototype.cljs$core$IEquiv$_equiv$arity$2 = (function (this8714,other8715){
+(gradients.state.State.prototype.cljs$core$IEquiv$_equiv$arity$2 = (function (this8736,other8737){
 var self__ = this;
-var this8714__$1 = this;
-return (((!((other8715 == null)))) && ((((this8714__$1.constructor === other8715.constructor)) && (((cljs.core._EQ_.call(null,this8714__$1.params,other8715.params)) && (cljs.core._EQ_.call(null,this8714__$1.__extmap,other8715.__extmap)))))));
+var this8736__$1 = this;
+return (((!((other8737 == null)))) && ((((this8736__$1.constructor === other8737.constructor)) && (((cljs.core._EQ_.call(null,this8736__$1.params,other8737.params)) && (cljs.core._EQ_.call(null,this8736__$1.__extmap,other8737.__extmap)))))));
 }));
 
 (gradients.state.State.prototype.cljs$core$IMap$_dissoc$arity$2 = (function (this__4482__auto__,k__4483__auto__){
@@ -165,31 +165,31 @@ return (new gradients.state.State(self__.params,self__.__meta,cljs.core.not_empt
 }
 }));
 
-(gradients.state.State.prototype.cljs$core$IAssociative$_contains_key_QMARK_$arity$2 = (function (this__4479__auto__,k8713){
+(gradients.state.State.prototype.cljs$core$IAssociative$_contains_key_QMARK_$arity$2 = (function (this__4479__auto__,k8735){
 var self__ = this;
 var this__4479__auto____$1 = this;
-var G__8722 = k8713;
-var G__8722__$1 = (((G__8722 instanceof cljs.core.Keyword))?G__8722.fqn:null);
-switch (G__8722__$1) {
+var G__8744 = k8735;
+var G__8744__$1 = (((G__8744 instanceof cljs.core.Keyword))?G__8744.fqn:null);
+switch (G__8744__$1) {
 case "params":
 return true;
 
 break;
 default:
-return cljs.core.contains_QMARK_.call(null,self__.__extmap,k8713);
+return cljs.core.contains_QMARK_.call(null,self__.__extmap,k8735);
 
 }
 }));
 
-(gradients.state.State.prototype.cljs$core$IAssociative$_assoc$arity$3 = (function (this__4480__auto__,k__4481__auto__,G__8712){
+(gradients.state.State.prototype.cljs$core$IAssociative$_assoc$arity$3 = (function (this__4480__auto__,k__4481__auto__,G__8734){
 var self__ = this;
 var this__4480__auto____$1 = this;
-var pred__8723 = cljs.core.keyword_identical_QMARK_;
-var expr__8724 = k__4481__auto__;
-if(cljs.core.truth_(pred__8723.call(null,new cljs.core.Keyword(null,"params","params",710516235),expr__8724))){
-return (new gradients.state.State(G__8712,self__.__meta,self__.__extmap,null));
+var pred__8745 = cljs.core.keyword_identical_QMARK_;
+var expr__8746 = k__4481__auto__;
+if(cljs.core.truth_(pred__8745.call(null,new cljs.core.Keyword(null,"params","params",710516235),expr__8746))){
+return (new gradients.state.State(G__8734,self__.__meta,self__.__extmap,null));
 } else {
-return (new gradients.state.State(self__.params,self__.__meta,cljs.core.assoc.call(null,self__.__extmap,k__4481__auto__,G__8712),null));
+return (new gradients.state.State(self__.params,self__.__meta,cljs.core.assoc.call(null,self__.__extmap,k__4481__auto__,G__8734),null));
 }
 }));
 
@@ -199,10 +199,10 @@ var this__4485__auto____$1 = this;
 return cljs.core.seq.call(null,cljs.core.concat.call(null,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [(new cljs.core.MapEntry(new cljs.core.Keyword(null,"params","params",710516235),self__.params,null))], null),self__.__extmap));
 }));
 
-(gradients.state.State.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = (function (this__4471__auto__,G__8712){
+(gradients.state.State.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = (function (this__4471__auto__,G__8734){
 var self__ = this;
 var this__4471__auto____$1 = this;
-return (new gradients.state.State(self__.params,G__8712,self__.__extmap,self__.__hash));
+return (new gradients.state.State(self__.params,G__8734,self__.__extmap,self__.__hash));
 }));
 
 (gradients.state.State.prototype.cljs$core$ICollection$_conj$arity$2 = (function (this__4477__auto__,entry__4478__auto__){
@@ -239,15 +239,15 @@ return (new gradients.state.State(params,null,null,null));
 /**
  * Factory function for gradients.state/State, taking a map of keywords to field values.
  */
-gradients.state.map__GT_State = (function gradients$state$map__GT_State(G__8716){
-var extmap__4512__auto__ = (function (){var G__8726 = cljs.core.dissoc.call(null,G__8716,new cljs.core.Keyword(null,"params","params",710516235));
-if(cljs.core.record_QMARK_.call(null,G__8716)){
-return cljs.core.into.call(null,cljs.core.PersistentArrayMap.EMPTY,G__8726);
+gradients.state.map__GT_State = (function gradients$state$map__GT_State(G__8738){
+var extmap__4512__auto__ = (function (){var G__8748 = cljs.core.dissoc.call(null,G__8738,new cljs.core.Keyword(null,"params","params",710516235));
+if(cljs.core.record_QMARK_.call(null,G__8738)){
+return cljs.core.into.call(null,cljs.core.PersistentArrayMap.EMPTY,G__8748);
 } else {
-return G__8726;
+return G__8748;
 }
 })();
-return (new gradients.state.State(new cljs.core.Keyword(null,"params","params",710516235).cljs$core$IFn$_invoke$arity$1(G__8716),null,cljs.core.not_empty.call(null,extmap__4512__auto__),null));
+return (new gradients.state.State(new cljs.core.Keyword(null,"params","params",710516235).cljs$core$IFn$_invoke$arity$1(G__8738),null,cljs.core.not_empty.call(null,extmap__4512__auto__),null));
 });
 
 if((typeof gradients !== 'undefined') && (typeof gradients.state !== 'undefined') && (typeof gradients.state.state !== 'undefined')){

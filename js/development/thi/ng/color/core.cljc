@@ -53,10 +53,11 @@
   (black [_]))
 
 (defprotocol IColorOps
-  (rotate-hue [_ theta])
-  (adjust-saturation [_ offset])
-  (adjust-brightness [_ offset])
-  (adjust-alpha [_ offset]))
+  (rotate-hue [_ theta] "Rotate hue by radians.")
+  (adjust-saturation [_ offset] "Adjust saturation up or down, clamping result to 0.0-1.0")
+  (adjust-brightness [_ offset] "Adjust brightness (per HSV norms) up or down, clamping result to 0.0-1.0")
+  (adjust-luminance [_ offset] "Adjust lightness (per HSL) up or down, clamping result to 0.0-1.0")
+  (adjust-alpha [_ offset] "Adjust alpha up or down, clamping result to 0.0-1.0"))
 
 (defrecord RGBA [^double r ^double g ^double b ^double a]
   #?@(:clj [clojure.lang.IDeref (deref [_] [r g b a])] :cljs [IDeref (-deref [_] [r g b a])])
@@ -65,7 +66,10 @@
   IHSVConvert
   (as-hsva
       [_]
-    (let [v (max r g b)
+    (let [r (m/clamp01 r)
+          g (m/clamp01 g)
+          b (m/clamp01 b)
+          v (max r g b)
           d (- v (min r g b))
           s (if (m/delta= 0.0 v) 0.0 (/ d v))
           h (if (m/delta= 0.0 s)
@@ -75,11 +79,15 @@
                 g (+ 2.0 (mm/subdiv b r d))
                 (+ 4.0 (mm/subdiv r g d))))
           h (/ h 6.0)]
-      (hsva (if (neg? h) (inc h) h) s v a)))
+      (hsva (if (neg? h) (inc h) h) s v (m/clamp01 a))))
   IHSLConvert
   (as-hsla
       [_]
-    (let [f1 (min r g b)
+    (let [r (m/clamp01 r)
+          g (m/clamp01 g)
+          b (m/clamp01 b)
+          a (m/clamp01 a)
+          f1 (min r g b)
           f2 (max r g b)
           l  (mm/addm f1 f2 0.5)
           d  (- f2 f1)]
@@ -99,21 +107,23 @@
   ICMYKConvert
   (as-cmyka
       [_]
-    (let [c (- 1.0 r)
-          m (- 1.0 g)
-          y (- 1.0 b)
+    (let [c (- 1.0 (m/clamp01 r))
+          m (- 1.0 (m/clamp01 g))
+          y (- 1.0 (m/clamp01 b))
           k (min (min c m) y)]
       (cmyka
        (max (- c k) 0.0)
        (max (- m k) 0.0)
        (max (- y k) 0.0)
        (max k 0.0)
-       a)))
+       (m/clamp01 a))))
   ICSSConvert
   (as-css
       [_]
     (if (< a 1.0)
-      (let [r (* 0xff r) g (* 0xff g) b (* 0xff b)]
+      (let [r (* 0xff (m/clamp01 r))
+            g (* 0xff (m/clamp01 g))
+            b (* 0xff (m/clamp01 b))]
         (css (str "rgba(" (int r) \, (int g) \, (int b) \, (max 0.0 a) ")")))
       (as-css (as-int24 _))))
   IIntConvert
@@ -122,19 +132,19 @@
     (int24
      (bit-or
       (bit-or
-       (-> r (* 0xff) (+ 0.5) int (bit-shift-left 16))
-       (-> g (* 0xff) (+ 0.5) int (bit-shift-left 8)))
-      (-> b (* 0xff) (+ 0.5) int))))
+       (-> (m/clamp01 r) (* 0xff) (+ 0.5) int (bit-shift-left 16))
+       (-> (m/clamp01 g) (* 0xff) (+ 0.5) int (bit-shift-left 8)))
+      (-> (m/clamp01 b) (* 0xff) (+ 0.5) int))))
   (as-int32
       [_]
     (int32
      (bit-or
       (bit-or
        (bit-or
-        (-> r (* 0xff) (+ 0.5) int (bit-shift-left 16))
-        (-> g (* 0xff) (+ 0.5) int (bit-shift-left 8)))
-       (-> b (* 0xff) (+ 0.5) int))
-      (-> a (* 0xff) (+ 0.5) int (bit-shift-left 24)))))
+        (-> (m/clamp01 r) (* 0xff) (+ 0.5) int (bit-shift-left 16))
+        (-> (m/clamp01 g) (* 0xff) (+ 0.5) int (bit-shift-left 8)))
+       (-> (m/clamp01 b) (* 0xff) (+ 0.5) int))
+      (-> (m/clamp01 a) (* 0xff) (+ 0.5) int (bit-shift-left 24)))))
   IColorComponents
   (red [_] r)
   (green [_] g)
@@ -165,8 +175,10 @@
       [_ offset] (-> _ (as-hsva) (adjust-saturation offset) (as-rgba)))
   (adjust-brightness
       [_ offset] (-> _ (as-hsva) (adjust-brightness offset) (as-rgba)))
+  (adjust-luminance
+      [_ offset] (-> _ (as-hsla) (adjust-luminance offset) (as-rgba)))
   (adjust-alpha
-      [_ offset] (RGBA. r g b (m/clamp (+ a offset) 0.0 1.0)))
+      [_ offset] (RGBA. r g b (m/clamp01 (+ a offset))))
   m/IInvert
   (invert
       [_] (RGBA. (- 1.0 r) (- 1.0 g) (- 1.0 b) a))
@@ -265,6 +277,8 @@
       [_ offset] (-> _ (as-hsva) (adjust-saturation offset) (as-int24)))
   (adjust-brightness
       [_ offset] (-> _ (as-hsva) (adjust-brightness offset) (as-int24)))
+  (adjust-luminance
+      [_ offset] (-> _ (as-hsla) (adjust-luminance offset) (as-int24)))
   (adjust-alpha
       [_ offset] (adjust-alpha (as-int32 _) offset))
   m/IInvert
@@ -353,10 +367,12 @@
       [_ offset] (-> _ (as-hsva) (adjust-saturation offset) (as-int32)))
   (adjust-brightness
       [_ offset] (-> _ (as-hsva) (adjust-brightness offset) (as-int32)))
+  (adjust-luminance
+      [_ offset] (-> _ (as-hsla) (adjust-luminance offset) (as-int32)))
   (adjust-alpha
       [_ offset]
     (let [a (* INV8BIT (bit-and (unsigned-bit-shift-right col 24) 0xff))
-          a (int (* 0xff (m/clamp (+ a offset) 0.0 1.0)))]
+          a (int (* 0xff (m/clamp01 (+ a offset))))]
       (Int32. (bit-or (bit-and col 0xffffff) (bit-shift-left a 24)))))
   m/IInvert
   (invert
@@ -411,7 +427,7 @@
   (as-hsla
       [_]
     (let [l  (* (- 2 s) (* v 0.5))
-          s' (/ (* s v) (- 1 (m/abs* (dec (* 2 l)))))]
+          s' (if (zero? l) 0.0 (/ (* s v) (- 1 (m/abs* (dec (* 2 l))))))]
       (hsla h s' l a)))
   ICMYKConvert
   (as-cmyka
@@ -449,11 +465,13 @@
     (let [h (+ h (/ (rem theta TWO_PI) TWO_PI))]
       (HSVA. (if (neg? h) (inc h) (if (>= h 1.0) (dec h) h)) s v a)))
   (adjust-saturation
-      [_ offset] (HSVA. h (m/clamp (+ offset s) 0.0 1.0) v a))
+      [_ offset] (HSVA. h (m/clamp01 (+ offset s)) v a))
   (adjust-brightness
-      [_ offset] (HSVA. h s (m/clamp (+ offset v) 0.0 1.0) a))
+      [_ offset] (HSVA. h s (m/clamp01 (+ offset v)) a))
+  (adjust-luminance
+      [_ offset] (-> _ (as-hsla) (adjust-luminance offset) (as-hsva)))
   (adjust-alpha
-      [_ offset] (HSVA. h s v (m/clamp (+ offset a) 0.0 1.0)))
+      [_ offset] (HSVA. h s v (m/clamp01 (+ offset a))))
   m/IInvert
   (invert
       [_] (HSVA. (mod (+ 0.5 h) 1.0) (- 1.0 s) (- 1.0 v) a))
@@ -511,16 +529,16 @@
       (let [f2 (if (< l 0.5) (* l (inc s)) (- (+ l s) (* l s)))
             f1 (- (* 2.0 l) f2)]
         (RGBA.
-         (m/clamp (hsl-hue f1 f2 (+ h THIRD)) 0.0 1.0)
-         (m/clamp (hsl-hue f1 f2 h) 0.0 1.0)
-         (m/clamp (hsl-hue f1 f2 (- h THIRD)) 0.0 1.0)
+         (m/clamp01 (hsl-hue f1 f2 (+ h THIRD)))
+         (m/clamp01 (hsl-hue f1 f2 h))
+         (m/clamp01 (hsl-hue f1 f2 (- h THIRD)))
          a))))
   IHSVConvert
   (as-hsva
       [_]
     (let [l2 (* 2 l)
           v  (/ (+ l2 (* s (- 1 (m/abs* (dec l2))))) 2)
-          s' (/ (* 2 (- v l)) v)]
+          s' (if (zero? v) 0.0 (/ (* 2 (- v l)) v))]
       (HSVA. h s' v a)))
   IHSLConvert
   (as-hsla [_] _)
@@ -567,11 +585,13 @@
     (let [h (+ h (/ (rem theta TWO_PI) TWO_PI))]
       (HSLA. (if (neg? h) (inc h) (if (>= h 1.0) (dec h) h)) s l a)))
   (adjust-saturation
-      [_ offset] (HSLA. h (m/clamp (+ offset s) 0.0 1.0) l a))
+      [_ offset] (HSLA. h (m/clamp01 (+ offset s)) l a))
   (adjust-brightness
       [_ offset] (-> _ (as-hsva) (adjust-brightness offset) (as-hsla)))
+  (adjust-luminance
+      [_ offset] (HSLA. h s (m/clamp01 (+ offset l)) a))
   (adjust-alpha
-      [_ offset] (HSLA. h s l (m/clamp (+ offset a) 0.0 1.0)))
+      [_ offset] (HSLA. h s l (m/clamp01 (+ offset a))))
   m/IInvert
   (invert
       [_] (HSLA. (mod (+ 0.5 h) 1.0) (- 1.0 s) (- 1.0 l) a))
@@ -676,8 +696,10 @@
       [_ offset] (-> _ (as-hsva) (adjust-saturation offset) (as-cmyka)))
   (adjust-brightness
       [_ offset] (-> _ (as-hsva) (adjust-brightness offset) (as-cmyka)))
+  (adjust-luminance
+      [_ offset] (-> _ (as-hsla) (adjust-luminance offset) (as-cmyka)))
   (adjust-alpha
-      [_ offset] (CMYKA. c m y k (m/clamp (+ offset a) 0.0 1.0)))
+      [_ offset] (CMYKA. c m y k (m/clamp01 (+ offset a))))
   m/IInvert
   (invert
       [_] (CMYKA. (- 1.0 c) (- 1.0 m) (- 1.0 y) (- 1.0 k) a))
@@ -761,6 +783,8 @@
       [_ offset] (-> _ (as-hsva) (adjust-saturation offset) (as-css)))
   (adjust-brightness
       [_ offset] (-> _ (as-hsva) (adjust-brightness offset) (as-css)))
+  (adjust-luminance
+      [_ offset] (-> _ (as-hsla) (adjust-luminance offset) (as-css)))
   (adjust-alpha
       [_ offset] (-> _ (as-rgba) (adjust-alpha offset) (as-css)))
   m/IInvert
@@ -836,6 +860,8 @@
           [_ offset] (-> col to-rgba (adjust-saturation offset) from-rgba ctor))
       (adjust-brightness
           [_ offset] (-> col to-rgba (adjust-brightness offset) from-rgba ctor))
+      (adjust-luminance
+          [_ offset] (-> col to-rgba (adjust-luminance offset) from-rgba ctor))
       m/IInvert
       (invert
           [_] (-> col to-rgba m/invert from-rgba ctor))
@@ -864,7 +890,7 @@
 (defn int32
   ([col] (Int32. col))
   ([col alpha]
-   (let [a (int (* 0xff (m/clamp alpha 0.0 1.0)))]
+   (let [a (int (* 0xff (m/clamp01 alpha)))]
      (Int32. (bit-or (bit-and col 0xffffff) (bit-shift-left a 24))))))
 
 (defn hsva
@@ -910,9 +936,9 @@
 (defn- hue->rgb
   [h]
   (let [h (mod (* 6.0 h) 6.0)]
-    [(m/clamp (dec (m/abs* (- h 3.0))) 0.0 1.0)
-     (m/clamp (- 2.0 (m/abs* (- h 2.0))) 0.0 1.0)
-     (m/clamp (- 2.0 (m/abs* (- h 4.0))) 0.0 1.0)]))
+    [(m/clamp01 (dec (m/abs* (- h 3.0))))
+     (m/clamp01 (- 2.0 (m/abs* (- h 2.0))))
+     (m/clamp01 (- 2.0 (m/abs* (- h 4.0))))]))
 
 (defn- rgba->hcva
   [^RGBA rgba]
@@ -924,7 +950,7 @@
         [qx qy qz qw] (if (< r px) [px py pw r] [r py pz px])
         c             (- qx (min qw qy))
         h             (m/abs* (+ (/ (- qw qy) (mm/madd 6.0 c 1e-10)) qz))]
-    [(m/clamp h 0.0 1.0) (m/clamp c 0.0 1.0) (m/clamp qx 0.0 1.0) a]))
+    [(m/clamp01 h) (m/clamp01 c) (m/clamp01 qx) a]))
 
 (defn- rgba->hcya
   [^RGBA rgba]
@@ -938,8 +964,8 @@
       (let [[r' g' b'] (hue->rgb h) ;; FIXME
             z (mm/madd 0.299 r' 0.587 g' 0.114 b')]
         (if (> (- y z) 1e-5)
-          [h (m/clamp (* c (mm/subdiv 1.0 z 1.0 y)) 0.0 1.0) y a]
-          [h (m/clamp (* c (/ z y)) 0.0 1.0) y a])))))
+          [h (m/clamp01 (* c (mm/subdiv 1.0 z 1.0 y))) y a]
+          [h (m/clamp01 (* c (/ z y))) y a])))))
 
 (defn- hcya->rgba
   ([hcya]
@@ -951,9 +977,9 @@
          z (mm/madd 0.299 r 0.587 g 0.114 b)
          c' (if (< y z) (* c (/ y z)) (if (< z 1.0) (* c (mm/subdiv 1.0 y 1.0 z)) c))]
      (RGBA.
-      (m/clamp (mm/submadd r z c' y) 0.0 1.0)
-      (m/clamp (mm/submadd g z c' y) 0.0 1.0)
-      (m/clamp (mm/submadd b z c' y) 0.0 1.0)
+      (m/clamp01 (mm/submadd r z c' y))
+      (m/clamp01 (mm/submadd g z c' y))
+      (m/clamp01 (mm/submadd b z c' y))
       a))))
 
 (defn- ycbcra->rgba
@@ -965,9 +991,9 @@
    (let [cb' (- cb 0.5)
          cr' (- cr 0.5)]
      (RGBA.
-      (m/clamp (mm/madd cr' 1.402 y) 0.0 1.0)
-      (m/clamp (- y (mm/madd cb' 0.34414 cr' 0.71414)) 0.0 1.0)
-      (m/clamp (mm/madd cb' 1.772 y) 0.0 1.0)
+      (m/clamp01 (mm/madd cr' 1.402 y))
+      (m/clamp01 (- y (mm/madd cb' 0.34414 cr' 0.71414)))
+      (m/clamp01 (mm/madd cb' 1.772 y))
       a))))
 
 (defn- rgba->ycbcra
@@ -976,9 +1002,9 @@
         g (.-g rgba)
         b (.-b rgba)
         a (.-a rgba)]
-    [(m/clamp (mm/madd 0.299 r 0.587 g 0.114 b) 0.0 1.0)
-     (m/clamp (+ (- (- 0.5 (* 0.16874 r)) (* 0.33126 g)) (* 0.5 b)) 0.0 1.0)
-     (m/clamp (- (- (+ 0.5 (* 0.5 r)) (* 0.418688 g)) (* 0.081312 b)) 0.0 1.0)]))
+    [(m/clamp01 (mm/madd 0.299 r 0.587 g 0.114 b))
+     (m/clamp01 (+ (- (- 0.5 (* 0.16874 r)) (* 0.33126 g)) (* 0.5 b)))
+     (m/clamp01 (- (- (+ 0.5 (* 0.5 r)) (* 0.418688 g)) (* 0.081312 b)))]))
 
 (defn- rgba->yuva
   [^RGBA rgba]
@@ -998,18 +1024,17 @@
    (yuva->rgba y u v 1.0))
   ([y u v a]
    (RGBA.
-    (m/clamp (mm/madd 1.13983 v y) 0.0 1.0)
-    (m/clamp (- y (mm/madd 0.39465 u 0.5806 v)) 0.0 1.0)
-    (m/clamp (mm/madd 2.03211 u y) 0.0 1.0)
+    (m/clamp01 (mm/madd 1.13983 v y))
+    (m/clamp01 (- y (mm/madd 0.39465 u 0.5806 v)))
+    (m/clamp01 (mm/madd 2.03211 u y))
     a)))
 
 (defn- cie1931-gamma-correct
   [x]
-  (m/clamp
+  (m/clamp01
    (if (< x 0.0031308)
      (* 12.92 x)
-     (mm/msub 1.055 (Math/pow x (/ 2.4)) 0.055))
-   0.0 1.0))
+     (mm/msub 1.055 (Math/pow x (/ 2.4)) 0.055))))
 
 (defn- cie1931->rgba
   ([xyz]

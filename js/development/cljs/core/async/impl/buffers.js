@@ -8,8 +8,8 @@ while(true){
 if((cnt < len)){
 (dest[(dest_start + cnt)] = (src[(src_start + cnt)]));
 
-var G__2573 = (cnt + (1));
-cnt = G__2573;
+var G__2106 = (cnt + (1));
+cnt = G__2106;
 continue;
 } else {
 return null;
@@ -113,14 +113,14 @@ var n__4706__auto__ = self__.length;
 var x = (0);
 while(true){
 if((x < n__4706__auto__)){
-var v_2574 = this$.pop();
-if(keep_QMARK_.call(null,v_2574)){
-this$.unshift(v_2574);
+var v_2107 = this$.pop();
+if(keep_QMARK_.call(null,v_2107)){
+this$.unshift(v_2107);
 } else {
 }
 
-var G__2575 = (x + (1));
-x = G__2575;
+var G__2108 = (x + (1));
+x = G__2108;
 continue;
 } else {
 return null;
@@ -173,7 +173,7 @@ this.cljs$lang$protocol_mask$partition1$ = 0;
 (cljs.core.async.impl.buffers.FixedBuffer.prototype.cljs$core$async$impl$protocols$Buffer$full_QMARK_$arity$1 = (function (this$){
 var self__ = this;
 var this$__$1 = this;
-return (self__.buf.length === self__.n);
+return (self__.buf.length >= self__.n);
 }));
 
 (cljs.core.async.impl.buffers.FixedBuffer.prototype.cljs$core$async$impl$protocols$Buffer$remove_BANG_$arity$1 = (function (this$){

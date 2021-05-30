@@ -25,41 +25,41 @@ gradients.draw.noise = (function gradients$draw$noise(tri){
 var noise = new cljs.core.Keyword(null,"noise-factor","noise-factor",-965615468).cljs$core$IFn$_invoke$arity$1(tri);
 var rescaled_noise = gradients.util.rescale.call(null,noise,(-1),(1),(0),(1));
 var rot_factor = (noise * gradients.draw.p.call(null,new cljs.core.Keyword(null,"noise-rot","noise-rot",1290658452)));
-return cljs.core.update.call(null,cljs.core.update.call(null,cljs.core.update.call(null,cljs.core.update.call(null,cljs.core.update.call(null,tri,new cljs.core.Keyword(null,"width","width",-384071477),(function (p1__8735_SHARP_){
-return (p1__8735_SHARP_ + (gradients.draw.p.call(null,new cljs.core.Keyword(null,"noise-size","noise-size",-1945450551)) * noise));
-})),new cljs.core.Keyword(null,"height","height",1025178622),(function (p1__8736_SHARP_){
-return (p1__8736_SHARP_ + (gradients.draw.p.call(null,new cljs.core.Keyword(null,"noise-size","noise-size",-1945450551)) * noise));
-})),new cljs.core.Keyword(null,"rotation","rotation",-1728051644),(function (p1__8737_SHARP_){
-return (p1__8737_SHARP_ + rot_factor);
-})),new cljs.core.Keyword(null,"alpha","alpha",-1574982441),(function (p1__8738_SHARP_){
-return gradients.util.mixmul.call(null,p1__8738_SHARP_,gradients.draw.p.call(null,new cljs.core.Keyword(null,"noise-alpha","noise-alpha",1003989259)),rescaled_noise);
-})),new cljs.core.Keyword(null,"height","height",1025178622),(function (p1__8739_SHARP_){
-return (p1__8739_SHARP_ + (gradients.draw.p.call(null,new cljs.core.Keyword(null,"noise-sharpness","noise-sharpness",1716311874)) * noise));
+return cljs.core.update.call(null,cljs.core.update.call(null,cljs.core.update.call(null,cljs.core.update.call(null,cljs.core.update.call(null,tri,new cljs.core.Keyword(null,"width","width",-384071477),(function (p1__8810_SHARP_){
+return (p1__8810_SHARP_ + (gradients.draw.p.call(null,new cljs.core.Keyword(null,"noise-size","noise-size",-1945450551)) * noise));
+})),new cljs.core.Keyword(null,"height","height",1025178622),(function (p1__8811_SHARP_){
+return (p1__8811_SHARP_ + (gradients.draw.p.call(null,new cljs.core.Keyword(null,"noise-size","noise-size",-1945450551)) * noise));
+})),new cljs.core.Keyword(null,"rotation","rotation",-1728051644),(function (p1__8812_SHARP_){
+return (p1__8812_SHARP_ + rot_factor);
+})),new cljs.core.Keyword(null,"alpha","alpha",-1574982441),(function (p1__8813_SHARP_){
+return gradients.util.mixmul.call(null,p1__8813_SHARP_,gradients.draw.p.call(null,new cljs.core.Keyword(null,"noise-alpha","noise-alpha",1003989259)),rescaled_noise);
+})),new cljs.core.Keyword(null,"height","height",1025178622),(function (p1__8814_SHARP_){
+return (p1__8814_SHARP_ + (gradients.draw.p.call(null,new cljs.core.Keyword(null,"noise-sharpness","noise-sharpness",1716311874)) * noise));
 }));
 });
 gradients.draw.min_size = (function gradients$draw$min_size(tri){
-return cljs.core.update.call(null,cljs.core.update.call(null,tri,new cljs.core.Keyword(null,"width","width",-384071477),(function (p1__8740_SHARP_){
-var x__4306__auto__ = p1__8740_SHARP_;
+return cljs.core.update.call(null,cljs.core.update.call(null,tri,new cljs.core.Keyword(null,"width","width",-384071477),(function (p1__8815_SHARP_){
+var x__4306__auto__ = p1__8815_SHARP_;
 var y__4307__auto__ = gradients.draw.p.call(null,new cljs.core.Keyword(null,"min-size","min-size",1058361905));
 return ((x__4306__auto__ > y__4307__auto__) ? x__4306__auto__ : y__4307__auto__);
-})),new cljs.core.Keyword(null,"height","height",1025178622),(function (p1__8741_SHARP_){
-var x__4306__auto__ = p1__8741_SHARP_;
+})),new cljs.core.Keyword(null,"height","height",1025178622),(function (p1__8816_SHARP_){
+var x__4306__auto__ = p1__8816_SHARP_;
 var y__4307__auto__ = gradients.draw.p.call(null,new cljs.core.Keyword(null,"min-size","min-size",1058361905));
 return ((x__4306__auto__ > y__4307__auto__) ? x__4306__auto__ : y__4307__auto__);
 }));
 });
 gradients.draw.screen_relative_size = (function gradients$draw$screen_relative_size(tri){
-return cljs.core.update.call(null,cljs.core.update.call(null,tri,new cljs.core.Keyword(null,"width","width",-384071477),(function (p1__8742_SHARP_){
-return (p1__8742_SHARP_ * ((1) / gradients.draw.p.call(null,new cljs.core.Keyword(null,"particle-count","particle-count",-1413139825))));
-})),new cljs.core.Keyword(null,"height","height",1025178622),(function (p1__8743_SHARP_){
-return (p1__8743_SHARP_ * ((1) / gradients.draw.p.call(null,new cljs.core.Keyword(null,"particle-count","particle-count",-1413139825))));
+return cljs.core.update.call(null,cljs.core.update.call(null,tri,new cljs.core.Keyword(null,"width","width",-384071477),(function (p1__8817_SHARP_){
+return (p1__8817_SHARP_ * ((1) / gradients.draw.p.call(null,new cljs.core.Keyword(null,"particle-count","particle-count",-1413139825))));
+})),new cljs.core.Keyword(null,"height","height",1025178622),(function (p1__8818_SHARP_){
+return (p1__8818_SHARP_ * ((1) / gradients.draw.p.call(null,new cljs.core.Keyword(null,"particle-count","particle-count",-1413139825))));
 }));
 });
 gradients.draw.size = (function gradients$draw$size(tri){
-return cljs.core.update.call(null,cljs.core.update.call(null,tri,new cljs.core.Keyword(null,"width","width",-384071477),(function (p1__8744_SHARP_){
-return (p1__8744_SHARP_ * gradients.draw.p.call(null,new cljs.core.Keyword(null,"size","size",1098693007)));
-})),new cljs.core.Keyword(null,"height","height",1025178622),(function (p1__8745_SHARP_){
-return (p1__8745_SHARP_ * gradients.draw.p.call(null,new cljs.core.Keyword(null,"size","size",1098693007)));
+return cljs.core.update.call(null,cljs.core.update.call(null,tri,new cljs.core.Keyword(null,"width","width",-384071477),(function (p1__8819_SHARP_){
+return (p1__8819_SHARP_ * gradients.draw.p.call(null,new cljs.core.Keyword(null,"size","size",1098693007)));
+})),new cljs.core.Keyword(null,"height","height",1025178622),(function (p1__8820_SHARP_){
+return (p1__8820_SHARP_ * gradients.draw.p.call(null,new cljs.core.Keyword(null,"size","size",1098693007)));
 }));
 });
 gradients.draw.color = (function gradients$draw$color(tri){
@@ -72,8 +72,8 @@ return cljs.core.assoc.call(null,tri,new cljs.core.Keyword(null,"color","color",
 gradients.draw.vignette = (function gradients$draw$vignette(tri){
 var closeness_to_center = ((2) * (0.5 - Math.abs((new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(tri) - 0.5))));
 var noise = ((1) - new cljs.core.Keyword(null,"noise-factor","noise-factor",-965615468).cljs$core$IFn$_invoke$arity$1(tri));
-return cljs.core.update.call(null,tri,new cljs.core.Keyword(null,"alpha","alpha",-1574982441),(function (p1__8746_SHARP_){
-return gradients.util.mixmul.call(null,p1__8746_SHARP_,(noise * gradients.draw.p.call(null,new cljs.core.Keyword(null,"vignette","vignette",-336473712))),closeness_to_center);
+return cljs.core.update.call(null,tri,new cljs.core.Keyword(null,"alpha","alpha",-1574982441),(function (p1__8821_SHARP_){
+return gradients.util.mixmul.call(null,p1__8821_SHARP_,(noise * gradients.draw.p.call(null,new cljs.core.Keyword(null,"vignette","vignette",-336473712))),closeness_to_center);
 }));
 });
 
@@ -117,12 +117,12 @@ var this__4472__auto____$1 = this;
 return this__4472__auto____$1.cljs$core$ILookup$_lookup$arity$3(null,k__4473__auto__,null);
 }));
 
-(gradients.draw.Tri.prototype.cljs$core$ILookup$_lookup$arity$3 = (function (this__4474__auto__,k8748,else__4475__auto__){
+(gradients.draw.Tri.prototype.cljs$core$ILookup$_lookup$arity$3 = (function (this__4474__auto__,k8823,else__4475__auto__){
 var self__ = this;
 var this__4474__auto____$1 = this;
-var G__8752 = k8748;
-var G__8752__$1 = (((G__8752 instanceof cljs.core.Keyword))?G__8752.fqn:null);
-switch (G__8752__$1) {
+var G__8827 = k8823;
+var G__8827__$1 = (((G__8827 instanceof cljs.core.Keyword))?G__8827.fqn:null);
+switch (G__8827__$1) {
 case "x":
 return self__.x;
 
@@ -160,7 +160,7 @@ return self__.index;
 
 break;
 default:
-return cljs.core.get.call(null,self__.__extmap,k8748,else__4475__auto__);
+return cljs.core.get.call(null,self__.__extmap,k8823,else__4475__auto__);
 
 }
 }));
@@ -168,10 +168,10 @@ return cljs.core.get.call(null,self__.__extmap,k8748,else__4475__auto__);
 (gradients.draw.Tri.prototype.cljs$core$IKVReduce$_kv_reduce$arity$3 = (function (this__4492__auto__,f__4493__auto__,init__4494__auto__){
 var self__ = this;
 var this__4492__auto____$1 = this;
-return cljs.core.reduce.call(null,(function (ret__4495__auto__,p__8753){
-var vec__8754 = p__8753;
-var k__4496__auto__ = cljs.core.nth.call(null,vec__8754,(0),null);
-var v__4497__auto__ = cljs.core.nth.call(null,vec__8754,(1),null);
+return cljs.core.reduce.call(null,(function (ret__4495__auto__,p__8828){
+var vec__8829 = p__8828;
+var k__4496__auto__ = cljs.core.nth.call(null,vec__8829,(0),null);
+var v__4497__auto__ = cljs.core.nth.call(null,vec__8829,(1),null);
 return f__4493__auto__.call(null,ret__4495__auto__,k__4496__auto__,v__4497__auto__);
 }),init__4494__auto__,this__4492__auto____$1);
 }));
@@ -185,10 +185,10 @@ return cljs.core.pr_sequential_writer.call(null,writer__4488__auto__,cljs.core.p
 return cljs.core.pr_sequential_writer.call(null,writer__4488__auto__,pr_pair__4490__auto__,"#gradients.draw.Tri{",", ","}",opts__4489__auto__,cljs.core.concat.call(null,new cljs.core.PersistentVector(null, 9, 5, cljs.core.PersistentVector.EMPTY_NODE, [(new cljs.core.PersistentVector(null,2,(5),cljs.core.PersistentVector.EMPTY_NODE,[new cljs.core.Keyword(null,"x","x",2099068185),self__.x],null)),(new cljs.core.PersistentVector(null,2,(5),cljs.core.PersistentVector.EMPTY_NODE,[new cljs.core.Keyword(null,"y","y",-1757859776),self__.y],null)),(new cljs.core.PersistentVector(null,2,(5),cljs.core.PersistentVector.EMPTY_NODE,[new cljs.core.Keyword(null,"noise-factor","noise-factor",-965615468),self__.noise_factor],null)),(new cljs.core.PersistentVector(null,2,(5),cljs.core.PersistentVector.EMPTY_NODE,[new cljs.core.Keyword(null,"alpha","alpha",-1574982441),self__.alpha],null)),(new cljs.core.PersistentVector(null,2,(5),cljs.core.PersistentVector.EMPTY_NODE,[new cljs.core.Keyword(null,"rotation","rotation",-1728051644),self__.rotation],null)),(new cljs.core.PersistentVector(null,2,(5),cljs.core.PersistentVector.EMPTY_NODE,[new cljs.core.Keyword(null,"width","width",-384071477),self__.width],null)),(new cljs.core.PersistentVector(null,2,(5),cljs.core.PersistentVector.EMPTY_NODE,[new cljs.core.Keyword(null,"height","height",1025178622),self__.height],null)),(new cljs.core.PersistentVector(null,2,(5),cljs.core.PersistentVector.EMPTY_NODE,[new cljs.core.Keyword(null,"color","color",1011675173),self__.color],null)),(new cljs.core.PersistentVector(null,2,(5),cljs.core.PersistentVector.EMPTY_NODE,[new cljs.core.Keyword(null,"index","index",-1531685915),self__.index],null))], null),self__.__extmap));
 }));
 
-(gradients.draw.Tri.prototype.cljs$core$IIterable$_iterator$arity$1 = (function (G__8747){
+(gradients.draw.Tri.prototype.cljs$core$IIterable$_iterator$arity$1 = (function (G__8822){
 var self__ = this;
-var G__8747__$1 = this;
-return (new cljs.core.RecordIter((0),G__8747__$1,9,new cljs.core.PersistentVector(null, 9, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"x","x",2099068185),new cljs.core.Keyword(null,"y","y",-1757859776),new cljs.core.Keyword(null,"noise-factor","noise-factor",-965615468),new cljs.core.Keyword(null,"alpha","alpha",-1574982441),new cljs.core.Keyword(null,"rotation","rotation",-1728051644),new cljs.core.Keyword(null,"width","width",-384071477),new cljs.core.Keyword(null,"height","height",1025178622),new cljs.core.Keyword(null,"color","color",1011675173),new cljs.core.Keyword(null,"index","index",-1531685915)], null),(cljs.core.truth_(self__.__extmap)?cljs.core._iterator.call(null,self__.__extmap):cljs.core.nil_iter.call(null))));
+var G__8822__$1 = this;
+return (new cljs.core.RecordIter((0),G__8822__$1,9,new cljs.core.PersistentVector(null, 9, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"x","x",2099068185),new cljs.core.Keyword(null,"y","y",-1757859776),new cljs.core.Keyword(null,"noise-factor","noise-factor",-965615468),new cljs.core.Keyword(null,"alpha","alpha",-1574982441),new cljs.core.Keyword(null,"rotation","rotation",-1728051644),new cljs.core.Keyword(null,"width","width",-384071477),new cljs.core.Keyword(null,"height","height",1025178622),new cljs.core.Keyword(null,"color","color",1011675173),new cljs.core.Keyword(null,"index","index",-1531685915)], null),(cljs.core.truth_(self__.__extmap)?cljs.core._iterator.call(null,self__.__extmap):cljs.core.nil_iter.call(null))));
 }));
 
 (gradients.draw.Tri.prototype.cljs$core$IMeta$_meta$arity$1 = (function (this__4470__auto__){
@@ -225,10 +225,10 @@ return h__4330__auto____$1;
 }
 }));
 
-(gradients.draw.Tri.prototype.cljs$core$IEquiv$_equiv$arity$2 = (function (this8749,other8750){
+(gradients.draw.Tri.prototype.cljs$core$IEquiv$_equiv$arity$2 = (function (this8824,other8825){
 var self__ = this;
-var this8749__$1 = this;
-return (((!((other8750 == null)))) && ((((this8749__$1.constructor === other8750.constructor)) && (((cljs.core._EQ_.call(null,this8749__$1.x,other8750.x)) && (((cljs.core._EQ_.call(null,this8749__$1.y,other8750.y)) && (((cljs.core._EQ_.call(null,this8749__$1.noise_factor,other8750.noise_factor)) && (((cljs.core._EQ_.call(null,this8749__$1.alpha,other8750.alpha)) && (((cljs.core._EQ_.call(null,this8749__$1.rotation,other8750.rotation)) && (((cljs.core._EQ_.call(null,this8749__$1.width,other8750.width)) && (((cljs.core._EQ_.call(null,this8749__$1.height,other8750.height)) && (((cljs.core._EQ_.call(null,this8749__$1.color,other8750.color)) && (((cljs.core._EQ_.call(null,this8749__$1.index,other8750.index)) && (cljs.core._EQ_.call(null,this8749__$1.__extmap,other8750.__extmap)))))))))))))))))))))));
+var this8824__$1 = this;
+return (((!((other8825 == null)))) && ((((this8824__$1.constructor === other8825.constructor)) && (((cljs.core._EQ_.call(null,this8824__$1.x,other8825.x)) && (((cljs.core._EQ_.call(null,this8824__$1.y,other8825.y)) && (((cljs.core._EQ_.call(null,this8824__$1.noise_factor,other8825.noise_factor)) && (((cljs.core._EQ_.call(null,this8824__$1.alpha,other8825.alpha)) && (((cljs.core._EQ_.call(null,this8824__$1.rotation,other8825.rotation)) && (((cljs.core._EQ_.call(null,this8824__$1.width,other8825.width)) && (((cljs.core._EQ_.call(null,this8824__$1.height,other8825.height)) && (((cljs.core._EQ_.call(null,this8824__$1.color,other8825.color)) && (((cljs.core._EQ_.call(null,this8824__$1.index,other8825.index)) && (cljs.core._EQ_.call(null,this8824__$1.__extmap,other8825.__extmap)))))))))))))))))))))));
 }));
 
 (gradients.draw.Tri.prototype.cljs$core$IMap$_dissoc$arity$2 = (function (this__4482__auto__,k__4483__auto__){
@@ -241,12 +241,12 @@ return (new gradients.draw.Tri(self__.x,self__.y,self__.noise_factor,self__.alph
 }
 }));
 
-(gradients.draw.Tri.prototype.cljs$core$IAssociative$_contains_key_QMARK_$arity$2 = (function (this__4479__auto__,k8748){
+(gradients.draw.Tri.prototype.cljs$core$IAssociative$_contains_key_QMARK_$arity$2 = (function (this__4479__auto__,k8823){
 var self__ = this;
 var this__4479__auto____$1 = this;
-var G__8757 = k8748;
-var G__8757__$1 = (((G__8757 instanceof cljs.core.Keyword))?G__8757.fqn:null);
-switch (G__8757__$1) {
+var G__8832 = k8823;
+var G__8832__$1 = (((G__8832 instanceof cljs.core.Keyword))?G__8832.fqn:null);
+switch (G__8832__$1) {
 case "x":
 case "y":
 case "noise-factor":
@@ -260,44 +260,44 @@ return true;
 
 break;
 default:
-return cljs.core.contains_QMARK_.call(null,self__.__extmap,k8748);
+return cljs.core.contains_QMARK_.call(null,self__.__extmap,k8823);
 
 }
 }));
 
-(gradients.draw.Tri.prototype.cljs$core$IAssociative$_assoc$arity$3 = (function (this__4480__auto__,k__4481__auto__,G__8747){
+(gradients.draw.Tri.prototype.cljs$core$IAssociative$_assoc$arity$3 = (function (this__4480__auto__,k__4481__auto__,G__8822){
 var self__ = this;
 var this__4480__auto____$1 = this;
-var pred__8758 = cljs.core.keyword_identical_QMARK_;
-var expr__8759 = k__4481__auto__;
-if(cljs.core.truth_(pred__8758.call(null,new cljs.core.Keyword(null,"x","x",2099068185),expr__8759))){
-return (new gradients.draw.Tri(G__8747,self__.y,self__.noise_factor,self__.alpha,self__.rotation,self__.width,self__.height,self__.color,self__.index,self__.__meta,self__.__extmap,null));
+var pred__8833 = cljs.core.keyword_identical_QMARK_;
+var expr__8834 = k__4481__auto__;
+if(cljs.core.truth_(pred__8833.call(null,new cljs.core.Keyword(null,"x","x",2099068185),expr__8834))){
+return (new gradients.draw.Tri(G__8822,self__.y,self__.noise_factor,self__.alpha,self__.rotation,self__.width,self__.height,self__.color,self__.index,self__.__meta,self__.__extmap,null));
 } else {
-if(cljs.core.truth_(pred__8758.call(null,new cljs.core.Keyword(null,"y","y",-1757859776),expr__8759))){
-return (new gradients.draw.Tri(self__.x,G__8747,self__.noise_factor,self__.alpha,self__.rotation,self__.width,self__.height,self__.color,self__.index,self__.__meta,self__.__extmap,null));
+if(cljs.core.truth_(pred__8833.call(null,new cljs.core.Keyword(null,"y","y",-1757859776),expr__8834))){
+return (new gradients.draw.Tri(self__.x,G__8822,self__.noise_factor,self__.alpha,self__.rotation,self__.width,self__.height,self__.color,self__.index,self__.__meta,self__.__extmap,null));
 } else {
-if(cljs.core.truth_(pred__8758.call(null,new cljs.core.Keyword(null,"noise-factor","noise-factor",-965615468),expr__8759))){
-return (new gradients.draw.Tri(self__.x,self__.y,G__8747,self__.alpha,self__.rotation,self__.width,self__.height,self__.color,self__.index,self__.__meta,self__.__extmap,null));
+if(cljs.core.truth_(pred__8833.call(null,new cljs.core.Keyword(null,"noise-factor","noise-factor",-965615468),expr__8834))){
+return (new gradients.draw.Tri(self__.x,self__.y,G__8822,self__.alpha,self__.rotation,self__.width,self__.height,self__.color,self__.index,self__.__meta,self__.__extmap,null));
 } else {
-if(cljs.core.truth_(pred__8758.call(null,new cljs.core.Keyword(null,"alpha","alpha",-1574982441),expr__8759))){
-return (new gradients.draw.Tri(self__.x,self__.y,self__.noise_factor,G__8747,self__.rotation,self__.width,self__.height,self__.color,self__.index,self__.__meta,self__.__extmap,null));
+if(cljs.core.truth_(pred__8833.call(null,new cljs.core.Keyword(null,"alpha","alpha",-1574982441),expr__8834))){
+return (new gradients.draw.Tri(self__.x,self__.y,self__.noise_factor,G__8822,self__.rotation,self__.width,self__.height,self__.color,self__.index,self__.__meta,self__.__extmap,null));
 } else {
-if(cljs.core.truth_(pred__8758.call(null,new cljs.core.Keyword(null,"rotation","rotation",-1728051644),expr__8759))){
-return (new gradients.draw.Tri(self__.x,self__.y,self__.noise_factor,self__.alpha,G__8747,self__.width,self__.height,self__.color,self__.index,self__.__meta,self__.__extmap,null));
+if(cljs.core.truth_(pred__8833.call(null,new cljs.core.Keyword(null,"rotation","rotation",-1728051644),expr__8834))){
+return (new gradients.draw.Tri(self__.x,self__.y,self__.noise_factor,self__.alpha,G__8822,self__.width,self__.height,self__.color,self__.index,self__.__meta,self__.__extmap,null));
 } else {
-if(cljs.core.truth_(pred__8758.call(null,new cljs.core.Keyword(null,"width","width",-384071477),expr__8759))){
-return (new gradients.draw.Tri(self__.x,self__.y,self__.noise_factor,self__.alpha,self__.rotation,G__8747,self__.height,self__.color,self__.index,self__.__meta,self__.__extmap,null));
+if(cljs.core.truth_(pred__8833.call(null,new cljs.core.Keyword(null,"width","width",-384071477),expr__8834))){
+return (new gradients.draw.Tri(self__.x,self__.y,self__.noise_factor,self__.alpha,self__.rotation,G__8822,self__.height,self__.color,self__.index,self__.__meta,self__.__extmap,null));
 } else {
-if(cljs.core.truth_(pred__8758.call(null,new cljs.core.Keyword(null,"height","height",1025178622),expr__8759))){
-return (new gradients.draw.Tri(self__.x,self__.y,self__.noise_factor,self__.alpha,self__.rotation,self__.width,G__8747,self__.color,self__.index,self__.__meta,self__.__extmap,null));
+if(cljs.core.truth_(pred__8833.call(null,new cljs.core.Keyword(null,"height","height",1025178622),expr__8834))){
+return (new gradients.draw.Tri(self__.x,self__.y,self__.noise_factor,self__.alpha,self__.rotation,self__.width,G__8822,self__.color,self__.index,self__.__meta,self__.__extmap,null));
 } else {
-if(cljs.core.truth_(pred__8758.call(null,new cljs.core.Keyword(null,"color","color",1011675173),expr__8759))){
-return (new gradients.draw.Tri(self__.x,self__.y,self__.noise_factor,self__.alpha,self__.rotation,self__.width,self__.height,G__8747,self__.index,self__.__meta,self__.__extmap,null));
+if(cljs.core.truth_(pred__8833.call(null,new cljs.core.Keyword(null,"color","color",1011675173),expr__8834))){
+return (new gradients.draw.Tri(self__.x,self__.y,self__.noise_factor,self__.alpha,self__.rotation,self__.width,self__.height,G__8822,self__.index,self__.__meta,self__.__extmap,null));
 } else {
-if(cljs.core.truth_(pred__8758.call(null,new cljs.core.Keyword(null,"index","index",-1531685915),expr__8759))){
-return (new gradients.draw.Tri(self__.x,self__.y,self__.noise_factor,self__.alpha,self__.rotation,self__.width,self__.height,self__.color,G__8747,self__.__meta,self__.__extmap,null));
+if(cljs.core.truth_(pred__8833.call(null,new cljs.core.Keyword(null,"index","index",-1531685915),expr__8834))){
+return (new gradients.draw.Tri(self__.x,self__.y,self__.noise_factor,self__.alpha,self__.rotation,self__.width,self__.height,self__.color,G__8822,self__.__meta,self__.__extmap,null));
 } else {
-return (new gradients.draw.Tri(self__.x,self__.y,self__.noise_factor,self__.alpha,self__.rotation,self__.width,self__.height,self__.color,self__.index,self__.__meta,cljs.core.assoc.call(null,self__.__extmap,k__4481__auto__,G__8747),null));
+return (new gradients.draw.Tri(self__.x,self__.y,self__.noise_factor,self__.alpha,self__.rotation,self__.width,self__.height,self__.color,self__.index,self__.__meta,cljs.core.assoc.call(null,self__.__extmap,k__4481__auto__,G__8822),null));
 }
 }
 }
@@ -315,10 +315,10 @@ var this__4485__auto____$1 = this;
 return cljs.core.seq.call(null,cljs.core.concat.call(null,new cljs.core.PersistentVector(null, 9, 5, cljs.core.PersistentVector.EMPTY_NODE, [(new cljs.core.MapEntry(new cljs.core.Keyword(null,"x","x",2099068185),self__.x,null)),(new cljs.core.MapEntry(new cljs.core.Keyword(null,"y","y",-1757859776),self__.y,null)),(new cljs.core.MapEntry(new cljs.core.Keyword(null,"noise-factor","noise-factor",-965615468),self__.noise_factor,null)),(new cljs.core.MapEntry(new cljs.core.Keyword(null,"alpha","alpha",-1574982441),self__.alpha,null)),(new cljs.core.MapEntry(new cljs.core.Keyword(null,"rotation","rotation",-1728051644),self__.rotation,null)),(new cljs.core.MapEntry(new cljs.core.Keyword(null,"width","width",-384071477),self__.width,null)),(new cljs.core.MapEntry(new cljs.core.Keyword(null,"height","height",1025178622),self__.height,null)),(new cljs.core.MapEntry(new cljs.core.Keyword(null,"color","color",1011675173),self__.color,null)),(new cljs.core.MapEntry(new cljs.core.Keyword(null,"index","index",-1531685915),self__.index,null))], null),self__.__extmap));
 }));
 
-(gradients.draw.Tri.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = (function (this__4471__auto__,G__8747){
+(gradients.draw.Tri.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = (function (this__4471__auto__,G__8822){
 var self__ = this;
 var this__4471__auto____$1 = this;
-return (new gradients.draw.Tri(self__.x,self__.y,self__.noise_factor,self__.alpha,self__.rotation,self__.width,self__.height,self__.color,self__.index,G__8747,self__.__extmap,self__.__hash));
+return (new gradients.draw.Tri(self__.x,self__.y,self__.noise_factor,self__.alpha,self__.rotation,self__.width,self__.height,self__.color,self__.index,G__8822,self__.__extmap,self__.__hash));
 }));
 
 (gradients.draw.Tri.prototype.cljs$core$ICollection$_conj$arity$2 = (function (this__4477__auto__,entry__4478__auto__){
@@ -355,52 +355,52 @@ return (new gradients.draw.Tri(x,y,noise_factor,alpha,rotation,width,height,colo
 /**
  * Factory function for gradients.draw/Tri, taking a map of keywords to field values.
  */
-gradients.draw.map__GT_Tri = (function gradients$draw$map__GT_Tri(G__8751){
-var extmap__4512__auto__ = (function (){var G__8761 = cljs.core.dissoc.call(null,G__8751,new cljs.core.Keyword(null,"x","x",2099068185),new cljs.core.Keyword(null,"y","y",-1757859776),new cljs.core.Keyword(null,"noise-factor","noise-factor",-965615468),new cljs.core.Keyword(null,"alpha","alpha",-1574982441),new cljs.core.Keyword(null,"rotation","rotation",-1728051644),new cljs.core.Keyword(null,"width","width",-384071477),new cljs.core.Keyword(null,"height","height",1025178622),new cljs.core.Keyword(null,"color","color",1011675173),new cljs.core.Keyword(null,"index","index",-1531685915));
-if(cljs.core.record_QMARK_.call(null,G__8751)){
-return cljs.core.into.call(null,cljs.core.PersistentArrayMap.EMPTY,G__8761);
+gradients.draw.map__GT_Tri = (function gradients$draw$map__GT_Tri(G__8826){
+var extmap__4512__auto__ = (function (){var G__8836 = cljs.core.dissoc.call(null,G__8826,new cljs.core.Keyword(null,"x","x",2099068185),new cljs.core.Keyword(null,"y","y",-1757859776),new cljs.core.Keyword(null,"noise-factor","noise-factor",-965615468),new cljs.core.Keyword(null,"alpha","alpha",-1574982441),new cljs.core.Keyword(null,"rotation","rotation",-1728051644),new cljs.core.Keyword(null,"width","width",-384071477),new cljs.core.Keyword(null,"height","height",1025178622),new cljs.core.Keyword(null,"color","color",1011675173),new cljs.core.Keyword(null,"index","index",-1531685915));
+if(cljs.core.record_QMARK_.call(null,G__8826)){
+return cljs.core.into.call(null,cljs.core.PersistentArrayMap.EMPTY,G__8836);
 } else {
-return G__8761;
+return G__8836;
 }
 })();
-return (new gradients.draw.Tri(new cljs.core.Keyword(null,"x","x",2099068185).cljs$core$IFn$_invoke$arity$1(G__8751),new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(G__8751),new cljs.core.Keyword(null,"noise-factor","noise-factor",-965615468).cljs$core$IFn$_invoke$arity$1(G__8751),new cljs.core.Keyword(null,"alpha","alpha",-1574982441).cljs$core$IFn$_invoke$arity$1(G__8751),new cljs.core.Keyword(null,"rotation","rotation",-1728051644).cljs$core$IFn$_invoke$arity$1(G__8751),new cljs.core.Keyword(null,"width","width",-384071477).cljs$core$IFn$_invoke$arity$1(G__8751),new cljs.core.Keyword(null,"height","height",1025178622).cljs$core$IFn$_invoke$arity$1(G__8751),new cljs.core.Keyword(null,"color","color",1011675173).cljs$core$IFn$_invoke$arity$1(G__8751),new cljs.core.Keyword(null,"index","index",-1531685915).cljs$core$IFn$_invoke$arity$1(G__8751),null,cljs.core.not_empty.call(null,extmap__4512__auto__),null));
+return (new gradients.draw.Tri(new cljs.core.Keyword(null,"x","x",2099068185).cljs$core$IFn$_invoke$arity$1(G__8826),new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(G__8826),new cljs.core.Keyword(null,"noise-factor","noise-factor",-965615468).cljs$core$IFn$_invoke$arity$1(G__8826),new cljs.core.Keyword(null,"alpha","alpha",-1574982441).cljs$core$IFn$_invoke$arity$1(G__8826),new cljs.core.Keyword(null,"rotation","rotation",-1728051644).cljs$core$IFn$_invoke$arity$1(G__8826),new cljs.core.Keyword(null,"width","width",-384071477).cljs$core$IFn$_invoke$arity$1(G__8826),new cljs.core.Keyword(null,"height","height",1025178622).cljs$core$IFn$_invoke$arity$1(G__8826),new cljs.core.Keyword(null,"color","color",1011675173).cljs$core$IFn$_invoke$arity$1(G__8826),new cljs.core.Keyword(null,"index","index",-1531685915).cljs$core$IFn$_invoke$arity$1(G__8826),null,cljs.core.not_empty.call(null,extmap__4512__auto__),null));
 });
 
 gradients.draw.get_tris = (function gradients$draw$get_tris(){
 var padding = (2);
 var bounds = ((padding + gradients.draw.p.call(null,new cljs.core.Keyword(null,"particle-count","particle-count",-1413139825))) + padding);
-var iter__4622__auto__ = (function gradients$draw$get_tris_$_iter__8764(s__8765){
+var iter__4622__auto__ = (function gradients$draw$get_tris_$_iter__8839(s__8840){
 return (new cljs.core.LazySeq(null,(function (){
-var s__8765__$1 = s__8765;
+var s__8840__$1 = s__8840;
 while(true){
-var temp__5753__auto__ = cljs.core.seq.call(null,s__8765__$1);
+var temp__5753__auto__ = cljs.core.seq.call(null,s__8840__$1);
 if(temp__5753__auto__){
 var xs__6308__auto__ = temp__5753__auto__;
 var x = cljs.core.first.call(null,xs__6308__auto__);
-var iterys__4618__auto__ = ((function (s__8765__$1,x,xs__6308__auto__,temp__5753__auto__,padding,bounds){
-return (function gradients$draw$get_tris_$_iter__8764_$_iter__8766(s__8767){
-return (new cljs.core.LazySeq(null,((function (s__8765__$1,x,xs__6308__auto__,temp__5753__auto__,padding,bounds){
+var iterys__4618__auto__ = ((function (s__8840__$1,x,xs__6308__auto__,temp__5753__auto__,padding,bounds){
+return (function gradients$draw$get_tris_$_iter__8839_$_iter__8841(s__8842){
+return (new cljs.core.LazySeq(null,((function (s__8840__$1,x,xs__6308__auto__,temp__5753__auto__,padding,bounds){
 return (function (){
-var s__8767__$1 = s__8767;
+var s__8842__$1 = s__8842;
 while(true){
-var temp__5753__auto____$1 = cljs.core.seq.call(null,s__8767__$1);
+var temp__5753__auto____$1 = cljs.core.seq.call(null,s__8842__$1);
 if(temp__5753__auto____$1){
-var s__8767__$2 = temp__5753__auto____$1;
-if(cljs.core.chunked_seq_QMARK_.call(null,s__8767__$2)){
-var c__4620__auto__ = cljs.core.chunk_first.call(null,s__8767__$2);
+var s__8842__$2 = temp__5753__auto____$1;
+if(cljs.core.chunked_seq_QMARK_.call(null,s__8842__$2)){
+var c__4620__auto__ = cljs.core.chunk_first.call(null,s__8842__$2);
 var size__4621__auto__ = cljs.core.count.call(null,c__4620__auto__);
-var b__8769 = cljs.core.chunk_buffer.call(null,size__4621__auto__);
-if((function (){var i__8768 = (0);
+var b__8844 = cljs.core.chunk_buffer.call(null,size__4621__auto__);
+if((function (){var i__8843 = (0);
 while(true){
-if((i__8768 < size__4621__auto__)){
-var y = cljs.core._nth.call(null,c__4620__auto__,i__8768);
-cljs.core.chunk_append.call(null,b__8769,(function (){var relative_x = (x / gradients.draw.p.call(null,new cljs.core.Keyword(null,"particle-count","particle-count",-1413139825)));
+if((i__8843 < size__4621__auto__)){
+var y = cljs.core._nth.call(null,c__4620__auto__,i__8843);
+cljs.core.chunk_append.call(null,b__8844,(function (){var relative_x = (x / gradients.draw.p.call(null,new cljs.core.Keyword(null,"particle-count","particle-count",-1413139825)));
 var relative_y = (y / gradients.draw.p.call(null,new cljs.core.Keyword(null,"particle-count","particle-count",-1413139825)));
 return (new gradients.draw.Tri(relative_x,relative_y,gradients.draw.noise_factor.call(null,relative_x,relative_y),(1),(0),(1),(1),gradients.draw.p.call(null,new cljs.core.Keyword(null,"start-color","start-color",-43619883)),((x + padding) + (bounds * (y + padding))),null,null,null));
 })());
 
-var G__8770 = (i__8768 + (1));
-i__8768 = G__8770;
+var G__8845 = (i__8843 + (1));
+i__8843 = G__8845;
 continue;
 } else {
 return true;
@@ -408,32 +408,32 @@ return true;
 break;
 }
 })()){
-return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__8769),gradients$draw$get_tris_$_iter__8764_$_iter__8766.call(null,cljs.core.chunk_rest.call(null,s__8767__$2)));
+return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__8844),gradients$draw$get_tris_$_iter__8839_$_iter__8841.call(null,cljs.core.chunk_rest.call(null,s__8842__$2)));
 } else {
-return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__8769),null);
+return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__8844),null);
 }
 } else {
-var y = cljs.core.first.call(null,s__8767__$2);
+var y = cljs.core.first.call(null,s__8842__$2);
 return cljs.core.cons.call(null,(function (){var relative_x = (x / gradients.draw.p.call(null,new cljs.core.Keyword(null,"particle-count","particle-count",-1413139825)));
 var relative_y = (y / gradients.draw.p.call(null,new cljs.core.Keyword(null,"particle-count","particle-count",-1413139825)));
 return (new gradients.draw.Tri(relative_x,relative_y,gradients.draw.noise_factor.call(null,relative_x,relative_y),(1),(0),(1),(1),gradients.draw.p.call(null,new cljs.core.Keyword(null,"start-color","start-color",-43619883)),((x + padding) + (bounds * (y + padding))),null,null,null));
-})(),gradients$draw$get_tris_$_iter__8764_$_iter__8766.call(null,cljs.core.rest.call(null,s__8767__$2)));
+})(),gradients$draw$get_tris_$_iter__8839_$_iter__8841.call(null,cljs.core.rest.call(null,s__8842__$2)));
 }
 } else {
 return null;
 }
 break;
 }
-});})(s__8765__$1,x,xs__6308__auto__,temp__5753__auto__,padding,bounds))
+});})(s__8840__$1,x,xs__6308__auto__,temp__5753__auto__,padding,bounds))
 ,null,null));
-});})(s__8765__$1,x,xs__6308__auto__,temp__5753__auto__,padding,bounds))
+});})(s__8840__$1,x,xs__6308__auto__,temp__5753__auto__,padding,bounds))
 ;
 var fs__4619__auto__ = cljs.core.seq.call(null,iterys__4618__auto__.call(null,cljs.core.range.call(null,(- padding),(padding + gradients.draw.p.call(null,new cljs.core.Keyword(null,"particle-count","particle-count",-1413139825))))));
 if(fs__4619__auto__){
-return cljs.core.concat.call(null,fs__4619__auto__,gradients$draw$get_tris_$_iter__8764.call(null,cljs.core.rest.call(null,s__8765__$1)));
+return cljs.core.concat.call(null,fs__4619__auto__,gradients$draw$get_tris_$_iter__8839.call(null,cljs.core.rest.call(null,s__8840__$1)));
 } else {
-var G__8771 = cljs.core.rest.call(null,s__8765__$1);
-s__8765__$1 = G__8771;
+var G__8846 = cljs.core.rest.call(null,s__8840__$1);
+s__8840__$1 = G__8846;
 continue;
 }
 } else {

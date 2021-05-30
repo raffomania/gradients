@@ -13,9 +13,9 @@ gradients.core.update_pixi = (function gradients$core$update_pixi(app,dt){
 var image = gradients.draw.draw.call(null);
 gradients.pixi.update_pixi.call(null,app,image);
 
-var G__8903 = cljs.core.async.poll_BANG_.call(null,gradients.state.commands);
-var G__8903__$1 = (((G__8903 instanceof cljs.core.Keyword))?G__8903.fqn:null);
-switch (G__8903__$1) {
+var G__8978 = cljs.core.async.poll_BANG_.call(null,gradients.state.commands);
+var G__8978__$1 = (((G__8978 instanceof cljs.core.Keyword))?G__8978.fqn:null);
+switch (G__8978__$1) {
 case "save":
 return gradients.pixi.save_png.call(null,app,image);
 

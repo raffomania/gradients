@@ -1,5 +1,5 @@
 (ns gradients.view
-  (:require [reagent.core :as r]
+  (:require [reagent.dom :as r]
             [gradients.params :refer [config]]
             [clojure.core.async :as async]
             [gradients.state :as state]

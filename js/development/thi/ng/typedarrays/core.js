@@ -45,16 +45,16 @@ return size_or_coll;
 } else {
 var len = cljs.core.count.call(null,size_or_coll);
 var buf = (new Int8Array(len));
-var i_2824 = (0);
-var coll_2825 = size_or_coll;
+var i_2682 = (0);
+var coll_2683 = size_or_coll;
 while(true){
-if((i_2824 < len)){
-(buf[i_2824] = cljs.core.first.call(null,coll_2825));
+if((i_2682 < len)){
+(buf[i_2682] = cljs.core.first.call(null,coll_2683));
 
-var G__2826 = (i_2824 + (1));
-var G__2827 = cljs.core.next.call(null,coll_2825);
-i_2824 = G__2826;
-coll_2825 = G__2827;
+var G__2684 = (i_2682 + (1));
+var G__2685 = cljs.core.next.call(null,coll_2683);
+i_2682 = G__2684;
+coll_2683 = G__2685;
 continue;
 } else {
 }
@@ -78,16 +78,16 @@ return size_or_coll;
 } else {
 var len = cljs.core.count.call(null,size_or_coll);
 var buf = (new Uint8Array(len));
-var i_2828 = (0);
-var coll_2829 = size_or_coll;
+var i_2686 = (0);
+var coll_2687 = size_or_coll;
 while(true){
-if((i_2828 < len)){
-(buf[i_2828] = cljs.core.first.call(null,coll_2829));
+if((i_2686 < len)){
+(buf[i_2686] = cljs.core.first.call(null,coll_2687));
 
-var G__2830 = (i_2828 + (1));
-var G__2831 = cljs.core.next.call(null,coll_2829);
-i_2828 = G__2830;
-coll_2829 = G__2831;
+var G__2688 = (i_2686 + (1));
+var G__2689 = cljs.core.next.call(null,coll_2687);
+i_2686 = G__2688;
+coll_2687 = G__2689;
 continue;
 } else {
 }
@@ -111,16 +111,16 @@ return size_or_coll;
 } else {
 var len = cljs.core.count.call(null,size_or_coll);
 var buf = (new Uint8ClampedArray(len));
-var i_2832 = (0);
-var coll_2833 = size_or_coll;
+var i_2690 = (0);
+var coll_2691 = size_or_coll;
 while(true){
-if((i_2832 < len)){
-(buf[i_2832] = cljs.core.first.call(null,coll_2833));
+if((i_2690 < len)){
+(buf[i_2690] = cljs.core.first.call(null,coll_2691));
 
-var G__2834 = (i_2832 + (1));
-var G__2835 = cljs.core.next.call(null,coll_2833);
-i_2832 = G__2834;
-coll_2833 = G__2835;
+var G__2692 = (i_2690 + (1));
+var G__2693 = cljs.core.next.call(null,coll_2691);
+i_2690 = G__2692;
+coll_2691 = G__2693;
 continue;
 } else {
 }
@@ -144,16 +144,16 @@ return size_or_coll;
 } else {
 var len = cljs.core.count.call(null,size_or_coll);
 var buf = (new Int16Array(len));
-var i_2836 = (0);
-var coll_2837 = size_or_coll;
+var i_2694 = (0);
+var coll_2695 = size_or_coll;
 while(true){
-if((i_2836 < len)){
-(buf[i_2836] = cljs.core.first.call(null,coll_2837));
+if((i_2694 < len)){
+(buf[i_2694] = cljs.core.first.call(null,coll_2695));
 
-var G__2838 = (i_2836 + (1));
-var G__2839 = cljs.core.next.call(null,coll_2837);
-i_2836 = G__2838;
-coll_2837 = G__2839;
+var G__2696 = (i_2694 + (1));
+var G__2697 = cljs.core.next.call(null,coll_2695);
+i_2694 = G__2696;
+coll_2695 = G__2697;
 continue;
 } else {
 }
@@ -177,16 +177,16 @@ return size_or_coll;
 } else {
 var len = cljs.core.count.call(null,size_or_coll);
 var buf = (new Uint16Array(len));
-var i_2840 = (0);
-var coll_2841 = size_or_coll;
+var i_2698 = (0);
+var coll_2699 = size_or_coll;
 while(true){
-if((i_2840 < len)){
-(buf[i_2840] = cljs.core.first.call(null,coll_2841));
+if((i_2698 < len)){
+(buf[i_2698] = cljs.core.first.call(null,coll_2699));
 
-var G__2842 = (i_2840 + (1));
-var G__2843 = cljs.core.next.call(null,coll_2841);
-i_2840 = G__2842;
-coll_2841 = G__2843;
+var G__2700 = (i_2698 + (1));
+var G__2701 = cljs.core.next.call(null,coll_2699);
+i_2698 = G__2700;
+coll_2699 = G__2701;
 continue;
 } else {
 }
@@ -210,16 +210,16 @@ return size_or_coll;
 } else {
 var len = cljs.core.count.call(null,size_or_coll);
 var buf = (new Int32Array(len));
-var i_2844 = (0);
-var coll_2845 = size_or_coll;
+var i_2702 = (0);
+var coll_2703 = size_or_coll;
 while(true){
-if((i_2844 < len)){
-(buf[i_2844] = cljs.core.first.call(null,coll_2845));
+if((i_2702 < len)){
+(buf[i_2702] = cljs.core.first.call(null,coll_2703));
 
-var G__2846 = (i_2844 + (1));
-var G__2847 = cljs.core.next.call(null,coll_2845);
-i_2844 = G__2846;
-coll_2845 = G__2847;
+var G__2704 = (i_2702 + (1));
+var G__2705 = cljs.core.next.call(null,coll_2703);
+i_2702 = G__2704;
+coll_2703 = G__2705;
 continue;
 } else {
 }
@@ -243,16 +243,16 @@ return size_or_coll;
 } else {
 var len = cljs.core.count.call(null,size_or_coll);
 var buf = (new Uint32Array(len));
-var i_2848 = (0);
-var coll_2849 = size_or_coll;
+var i_2706 = (0);
+var coll_2707 = size_or_coll;
 while(true){
-if((i_2848 < len)){
-(buf[i_2848] = cljs.core.first.call(null,coll_2849));
+if((i_2706 < len)){
+(buf[i_2706] = cljs.core.first.call(null,coll_2707));
 
-var G__2850 = (i_2848 + (1));
-var G__2851 = cljs.core.next.call(null,coll_2849);
-i_2848 = G__2850;
-coll_2849 = G__2851;
+var G__2708 = (i_2706 + (1));
+var G__2709 = cljs.core.next.call(null,coll_2707);
+i_2706 = G__2708;
+coll_2707 = G__2709;
 continue;
 } else {
 }
@@ -276,16 +276,16 @@ return size_or_coll;
 } else {
 var len = cljs.core.count.call(null,size_or_coll);
 var buf = (new Float32Array(len));
-var i_2852 = (0);
-var coll_2853 = size_or_coll;
+var i_2710 = (0);
+var coll_2711 = size_or_coll;
 while(true){
-if((i_2852 < len)){
-(buf[i_2852] = cljs.core.first.call(null,coll_2853));
+if((i_2710 < len)){
+(buf[i_2710] = cljs.core.first.call(null,coll_2711));
 
-var G__2854 = (i_2852 + (1));
-var G__2855 = cljs.core.next.call(null,coll_2853);
-i_2852 = G__2854;
-coll_2853 = G__2855;
+var G__2712 = (i_2710 + (1));
+var G__2713 = cljs.core.next.call(null,coll_2711);
+i_2710 = G__2712;
+coll_2711 = G__2713;
 continue;
 } else {
 }
@@ -309,16 +309,16 @@ return size_or_coll;
 } else {
 var len = cljs.core.count.call(null,size_or_coll);
 var buf = (new Float64Array(len));
-var i_2856 = (0);
-var coll_2857 = size_or_coll;
+var i_2714 = (0);
+var coll_2715 = size_or_coll;
 while(true){
-if((i_2856 < len)){
-(buf[i_2856] = cljs.core.first.call(null,coll_2857));
+if((i_2714 < len)){
+(buf[i_2714] = cljs.core.first.call(null,coll_2715));
 
-var G__2858 = (i_2856 + (1));
-var G__2859 = cljs.core.next.call(null,coll_2857);
-i_2856 = G__2858;
-coll_2857 = G__2859;
+var G__2716 = (i_2714 + (1));
+var G__2717 = cljs.core.next.call(null,coll_2715);
+i_2714 = G__2716;
+coll_2715 = G__2717;
 continue;
 } else {
 }

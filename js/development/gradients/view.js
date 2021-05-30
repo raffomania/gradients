@@ -1,7 +1,7 @@
 // Compiled by ClojureScript 1.10.866 {:optimizations :none}
 goog.provide('gradients.view');
 goog.require('cljs.core');
-goog.require('reagent.core');
+goog.require('reagent.dom');
 goog.require('gradients.params');
 goog.require('cljs.core.async');
 goog.require('gradients.state');
@@ -17,8 +17,8 @@ gradients.view.color_val = (function gradients$view$color_val(string){
 return thi.ng.color.core.css.call(null,string);
 });
 gradients.view.set_param = (function gradients$view$set_param(state,key,extraction_fn){
-return (function (p1__8731_SHARP_){
-return cljs.core.swap_BANG_.call(null,state,cljs.core.assoc_in,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"params","params",710516235),key], null),extraction_fn.call(null,gradients.view.event_val.call(null,p1__8731_SHARP_)));
+return (function (p1__8806_SHARP_){
+return cljs.core.swap_BANG_.call(null,state,cljs.core.assoc_in,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"params","params",710516235),key], null),extraction_fn.call(null,gradients.view.event_val.call(null,p1__8806_SHARP_)));
 });
 });
 gradients.view.input_float = (function gradients$view$input_float(state,key){
@@ -41,8 +41,8 @@ gradients.view.command = (function gradients$view$command(key){
 return cljs.core.async.put_BANG_.call(null,gradients.state.commands,key);
 });
 gradients.view.view = (function gradients$view$view(state){
-return new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"div","div",1057191632),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"div","div",1057191632),cljs.core.map.call(null,(function (p1__8732_SHARP_){
-return cljs.core.identity.call(null,cljs.core.with_meta(new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [gradients.view.input,state,p1__8732_SHARP_], null),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"key","key",-1516042587),p1__8732_SHARP_], null)));
+return new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"div","div",1057191632),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"div","div",1057191632),cljs.core.map.call(null,(function (p1__8807_SHARP_){
+return cljs.core.identity.call(null,cljs.core.with_meta(new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [gradients.view.input,state,p1__8807_SHARP_], null),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"key","key",-1516042587),p1__8807_SHARP_], null)));
 }),cljs.core.keys.call(null,new cljs.core.Keyword(null,"params","params",710516235).cljs$core$IFn$_invoke$arity$1(cljs.core.deref.call(null,state))))], null),new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"button","button",1456579943),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"on-click","on-click",1632826543),(function (){
 return gradients.view.command.call(null,new cljs.core.Keyword(null,"save","save",1850079149));
 })], null),"download"], null),new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"button","button",1456579943),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"on-click","on-click",1632826543),(function (){
@@ -50,7 +50,7 @@ return cljs.core.swap_BANG_.call(null,state,gradients.state.randomize);
 })], null),"randomize"], null)], null);
 });
 gradients.view.mount = (function gradients$view$mount(state){
-return reagent.core.render.call(null,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [gradients.view.view,state], null),document.querySelector(".controls"));
+return reagent.dom.render.call(null,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [gradients.view.view,state], null),document.querySelector(".controls"));
 });
 
 //# sourceMappingURL=view.js.map

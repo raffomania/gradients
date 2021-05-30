@@ -136,7 +136,7 @@
    ([a b] (if (number? b) (<= (abs* (mm/sub a b)) *eps*)))
    ([a b eps] (if (number? b) (<= (abs* (mm/sub a b)) eps))))
 
-    #?(:clj clojure.lang.PersistentVector :cljs PersistentVector)
+  #?(:clj clojure.lang.PersistentVector :cljs PersistentVector)
   (delta=
    ([a b] (delta= a b *eps*))
    ([a b eps]
@@ -209,12 +209,18 @@
      (if (delta= 0.0 x delta) 0
          (if (neg? x) -1 1))))
 (defn clamp
-  "Constraints x to be in closed interval [min max]."
+  "Constraints x to be closed [min .. max] interval."
   [x min max] (if (< x min) min (if (> x max) max x)))
 
 (defn clamp-normalized
-  "Constraints x to be in closed interval [0.0 .. 1.0]"
+  "Constraints x to closed [0.0 .. 1.0] interval."
   [x] (if (< x -1.0) -1.0 (if (> x 1.0) 1.0 x)))
+
+(defn clamp01
+  "Constraints x to closed [0 .. 1] interval."
+  [x] (if (< x 0.0) 0.0 (if (> x 1.0) 1.0 x)))
+
+(def clamp11 clamp-normalized)
 
 (defn map-interval
   "Maps x from one interval into another. Intervals can be defined as

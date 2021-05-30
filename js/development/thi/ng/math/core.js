@@ -7,9 +7,9 @@ goog.require('cljs.core');
  */
 thi.ng.math.core.IMathOps = function(){};
 
-var thi$ng$math$core$IMathOps$_PLUS_$dyn_1452 = (function() {
-var G__1453 = null;
-var G__1453__1 = (function (_){
+var thi$ng$math$core$IMathOps$_PLUS_$dyn_2463 = (function() {
+var G__2464 = null;
+var G__2464__1 = (function (_){
 var x__4521__auto__ = (((_ == null))?null:_);
 var m__4522__auto__ = (thi.ng.math.core._PLUS_[goog.typeOf(x__4521__auto__)]);
 if((!((m__4522__auto__ == null)))){
@@ -23,7 +23,7 @@ throw cljs.core.missing_protocol.call(null,"IMathOps.+",_);
 }
 }
 });
-var G__1453__2 = (function (_,a){
+var G__2464__2 = (function (_,a){
 var x__4521__auto__ = (((_ == null))?null:_);
 var m__4522__auto__ = (thi.ng.math.core._PLUS_[goog.typeOf(x__4521__auto__)]);
 if((!((m__4522__auto__ == null)))){
@@ -37,7 +37,7 @@ throw cljs.core.missing_protocol.call(null,"IMathOps.+",_);
 }
 }
 });
-var G__1453__3 = (function (_,a,b){
+var G__2464__3 = (function (_,a,b){
 var x__4521__auto__ = (((_ == null))?null:_);
 var m__4522__auto__ = (thi.ng.math.core._PLUS_[goog.typeOf(x__4521__auto__)]);
 if((!((m__4522__auto__ == null)))){
@@ -51,7 +51,7 @@ throw cljs.core.missing_protocol.call(null,"IMathOps.+",_);
 }
 }
 });
-var G__1453__4 = (function (_,a,b,c){
+var G__2464__4 = (function (_,a,b,c){
 var x__4521__auto__ = (((_ == null))?null:_);
 var m__4522__auto__ = (thi.ng.math.core._PLUS_[goog.typeOf(x__4521__auto__)]);
 if((!((m__4522__auto__ == null)))){
@@ -65,29 +65,29 @@ throw cljs.core.missing_protocol.call(null,"IMathOps.+",_);
 }
 }
 });
-G__1453 = function(_,a,b,c){
+G__2464 = function(_,a,b,c){
 switch(arguments.length){
 case 1:
-return G__1453__1.call(this,_);
+return G__2464__1.call(this,_);
 case 2:
-return G__1453__2.call(this,_,a);
+return G__2464__2.call(this,_,a);
 case 3:
-return G__1453__3.call(this,_,a,b);
+return G__2464__3.call(this,_,a,b);
 case 4:
-return G__1453__4.call(this,_,a,b,c);
+return G__2464__4.call(this,_,a,b,c);
 }
 throw(new Error('Invalid arity: ' + arguments.length));
 };
-G__1453.cljs$core$IFn$_invoke$arity$1 = G__1453__1;
-G__1453.cljs$core$IFn$_invoke$arity$2 = G__1453__2;
-G__1453.cljs$core$IFn$_invoke$arity$3 = G__1453__3;
-G__1453.cljs$core$IFn$_invoke$arity$4 = G__1453__4;
-return G__1453;
+G__2464.cljs$core$IFn$_invoke$arity$1 = G__2464__1;
+G__2464.cljs$core$IFn$_invoke$arity$2 = G__2464__2;
+G__2464.cljs$core$IFn$_invoke$arity$3 = G__2464__3;
+G__2464.cljs$core$IFn$_invoke$arity$4 = G__2464__4;
+return G__2464;
 })()
 ;
 thi.ng.math.core._PLUS_ = (function thi$ng$math$core$_PLUS_(var_args){
-var G__1445 = arguments.length;
-switch (G__1445) {
+var G__2456 = arguments.length;
+switch (G__2456) {
 case 1:
 return thi.ng.math.core._PLUS_.cljs$core$IFn$_invoke$arity$1((arguments[(0)]));
 
@@ -114,7 +114,7 @@ throw (new Error(["Invalid arity: ",cljs.core.str.cljs$core$IFn$_invoke$arity$1(
 if((((!((_ == null)))) && ((!((_.thi$ng$math$core$IMathOps$_PLUS_$arity$1 == null)))))){
 return _.thi$ng$math$core$IMathOps$_PLUS_$arity$1(_);
 } else {
-return thi$ng$math$core$IMathOps$_PLUS_$dyn_1452.call(null,_);
+return thi$ng$math$core$IMathOps$_PLUS_$dyn_2463.call(null,_);
 }
 }));
 
@@ -122,7 +122,7 @@ return thi$ng$math$core$IMathOps$_PLUS_$dyn_1452.call(null,_);
 if((((!((_ == null)))) && ((!((_.thi$ng$math$core$IMathOps$_PLUS_$arity$2 == null)))))){
 return _.thi$ng$math$core$IMathOps$_PLUS_$arity$2(_,a);
 } else {
-return thi$ng$math$core$IMathOps$_PLUS_$dyn_1452.call(null,_,a);
+return thi$ng$math$core$IMathOps$_PLUS_$dyn_2463.call(null,_,a);
 }
 }));
 
@@ -130,7 +130,7 @@ return thi$ng$math$core$IMathOps$_PLUS_$dyn_1452.call(null,_,a);
 if((((!((_ == null)))) && ((!((_.thi$ng$math$core$IMathOps$_PLUS_$arity$3 == null)))))){
 return _.thi$ng$math$core$IMathOps$_PLUS_$arity$3(_,a,b);
 } else {
-return thi$ng$math$core$IMathOps$_PLUS_$dyn_1452.call(null,_,a,b);
+return thi$ng$math$core$IMathOps$_PLUS_$dyn_2463.call(null,_,a,b);
 }
 }));
 
@@ -138,16 +138,16 @@ return thi$ng$math$core$IMathOps$_PLUS_$dyn_1452.call(null,_,a,b);
 if((((!((_ == null)))) && ((!((_.thi$ng$math$core$IMathOps$_PLUS_$arity$4 == null)))))){
 return _.thi$ng$math$core$IMathOps$_PLUS_$arity$4(_,a,b,c);
 } else {
-return thi$ng$math$core$IMathOps$_PLUS_$dyn_1452.call(null,_,a,b,c);
+return thi$ng$math$core$IMathOps$_PLUS_$dyn_2463.call(null,_,a,b,c);
 }
 }));
 
 (thi.ng.math.core._PLUS_.cljs$lang$maxFixedArity = 4);
 
 
-var thi$ng$math$core$IMathOps$_$dyn_1455 = (function() {
-var G__1456 = null;
-var G__1456__1 = (function (_){
+var thi$ng$math$core$IMathOps$_$dyn_2466 = (function() {
+var G__2467 = null;
+var G__2467__1 = (function (_){
 var x__4521__auto__ = (((_ == null))?null:_);
 var m__4522__auto__ = (thi.ng.math.core._[goog.typeOf(x__4521__auto__)]);
 if((!((m__4522__auto__ == null)))){
@@ -161,7 +161,7 @@ throw cljs.core.missing_protocol.call(null,"IMathOps.-",_);
 }
 }
 });
-var G__1456__2 = (function (_,a){
+var G__2467__2 = (function (_,a){
 var x__4521__auto__ = (((_ == null))?null:_);
 var m__4522__auto__ = (thi.ng.math.core._[goog.typeOf(x__4521__auto__)]);
 if((!((m__4522__auto__ == null)))){
@@ -175,7 +175,7 @@ throw cljs.core.missing_protocol.call(null,"IMathOps.-",_);
 }
 }
 });
-var G__1456__3 = (function (_,a,b){
+var G__2467__3 = (function (_,a,b){
 var x__4521__auto__ = (((_ == null))?null:_);
 var m__4522__auto__ = (thi.ng.math.core._[goog.typeOf(x__4521__auto__)]);
 if((!((m__4522__auto__ == null)))){
@@ -189,7 +189,7 @@ throw cljs.core.missing_protocol.call(null,"IMathOps.-",_);
 }
 }
 });
-var G__1456__4 = (function (_,a,b,c){
+var G__2467__4 = (function (_,a,b,c){
 var x__4521__auto__ = (((_ == null))?null:_);
 var m__4522__auto__ = (thi.ng.math.core._[goog.typeOf(x__4521__auto__)]);
 if((!((m__4522__auto__ == null)))){
@@ -203,29 +203,29 @@ throw cljs.core.missing_protocol.call(null,"IMathOps.-",_);
 }
 }
 });
-G__1456 = function(_,a,b,c){
+G__2467 = function(_,a,b,c){
 switch(arguments.length){
 case 1:
-return G__1456__1.call(this,_);
+return G__2467__1.call(this,_);
 case 2:
-return G__1456__2.call(this,_,a);
+return G__2467__2.call(this,_,a);
 case 3:
-return G__1456__3.call(this,_,a,b);
+return G__2467__3.call(this,_,a,b);
 case 4:
-return G__1456__4.call(this,_,a,b,c);
+return G__2467__4.call(this,_,a,b,c);
 }
 throw(new Error('Invalid arity: ' + arguments.length));
 };
-G__1456.cljs$core$IFn$_invoke$arity$1 = G__1456__1;
-G__1456.cljs$core$IFn$_invoke$arity$2 = G__1456__2;
-G__1456.cljs$core$IFn$_invoke$arity$3 = G__1456__3;
-G__1456.cljs$core$IFn$_invoke$arity$4 = G__1456__4;
-return G__1456;
+G__2467.cljs$core$IFn$_invoke$arity$1 = G__2467__1;
+G__2467.cljs$core$IFn$_invoke$arity$2 = G__2467__2;
+G__2467.cljs$core$IFn$_invoke$arity$3 = G__2467__3;
+G__2467.cljs$core$IFn$_invoke$arity$4 = G__2467__4;
+return G__2467;
 })()
 ;
 thi.ng.math.core._ = (function thi$ng$math$core$_(var_args){
-var G__1447 = arguments.length;
-switch (G__1447) {
+var G__2458 = arguments.length;
+switch (G__2458) {
 case 1:
 return thi.ng.math.core._.cljs$core$IFn$_invoke$arity$1((arguments[(0)]));
 
@@ -252,7 +252,7 @@ throw (new Error(["Invalid arity: ",cljs.core.str.cljs$core$IFn$_invoke$arity$1(
 if((((!((_ == null)))) && ((!((_.thi$ng$math$core$IMathOps$_$arity$1 == null)))))){
 return _.thi$ng$math$core$IMathOps$_$arity$1(_);
 } else {
-return thi$ng$math$core$IMathOps$_$dyn_1455.call(null,_);
+return thi$ng$math$core$IMathOps$_$dyn_2466.call(null,_);
 }
 }));
 
@@ -260,7 +260,7 @@ return thi$ng$math$core$IMathOps$_$dyn_1455.call(null,_);
 if((((!((_ == null)))) && ((!((_.thi$ng$math$core$IMathOps$_$arity$2 == null)))))){
 return _.thi$ng$math$core$IMathOps$_$arity$2(_,a);
 } else {
-return thi$ng$math$core$IMathOps$_$dyn_1455.call(null,_,a);
+return thi$ng$math$core$IMathOps$_$dyn_2466.call(null,_,a);
 }
 }));
 
@@ -268,7 +268,7 @@ return thi$ng$math$core$IMathOps$_$dyn_1455.call(null,_,a);
 if((((!((_ == null)))) && ((!((_.thi$ng$math$core$IMathOps$_$arity$3 == null)))))){
 return _.thi$ng$math$core$IMathOps$_$arity$3(_,a,b);
 } else {
-return thi$ng$math$core$IMathOps$_$dyn_1455.call(null,_,a,b);
+return thi$ng$math$core$IMathOps$_$dyn_2466.call(null,_,a,b);
 }
 }));
 
@@ -276,16 +276,16 @@ return thi$ng$math$core$IMathOps$_$dyn_1455.call(null,_,a,b);
 if((((!((_ == null)))) && ((!((_.thi$ng$math$core$IMathOps$_$arity$4 == null)))))){
 return _.thi$ng$math$core$IMathOps$_$arity$4(_,a,b,c);
 } else {
-return thi$ng$math$core$IMathOps$_$dyn_1455.call(null,_,a,b,c);
+return thi$ng$math$core$IMathOps$_$dyn_2466.call(null,_,a,b,c);
 }
 }));
 
 (thi.ng.math.core._.cljs$lang$maxFixedArity = 4);
 
 
-var thi$ng$math$core$IMathOps$_STAR_$dyn_1458 = (function() {
-var G__1459 = null;
-var G__1459__1 = (function (_){
+var thi$ng$math$core$IMathOps$_STAR_$dyn_2469 = (function() {
+var G__2470 = null;
+var G__2470__1 = (function (_){
 var x__4521__auto__ = (((_ == null))?null:_);
 var m__4522__auto__ = (thi.ng.math.core._STAR_[goog.typeOf(x__4521__auto__)]);
 if((!((m__4522__auto__ == null)))){
@@ -299,7 +299,7 @@ throw cljs.core.missing_protocol.call(null,"IMathOps.*",_);
 }
 }
 });
-var G__1459__2 = (function (_,a){
+var G__2470__2 = (function (_,a){
 var x__4521__auto__ = (((_ == null))?null:_);
 var m__4522__auto__ = (thi.ng.math.core._STAR_[goog.typeOf(x__4521__auto__)]);
 if((!((m__4522__auto__ == null)))){
@@ -313,7 +313,7 @@ throw cljs.core.missing_protocol.call(null,"IMathOps.*",_);
 }
 }
 });
-var G__1459__3 = (function (_,a,b){
+var G__2470__3 = (function (_,a,b){
 var x__4521__auto__ = (((_ == null))?null:_);
 var m__4522__auto__ = (thi.ng.math.core._STAR_[goog.typeOf(x__4521__auto__)]);
 if((!((m__4522__auto__ == null)))){
@@ -327,7 +327,7 @@ throw cljs.core.missing_protocol.call(null,"IMathOps.*",_);
 }
 }
 });
-var G__1459__4 = (function (_,a,b,c){
+var G__2470__4 = (function (_,a,b,c){
 var x__4521__auto__ = (((_ == null))?null:_);
 var m__4522__auto__ = (thi.ng.math.core._STAR_[goog.typeOf(x__4521__auto__)]);
 if((!((m__4522__auto__ == null)))){
@@ -341,29 +341,29 @@ throw cljs.core.missing_protocol.call(null,"IMathOps.*",_);
 }
 }
 });
-G__1459 = function(_,a,b,c){
+G__2470 = function(_,a,b,c){
 switch(arguments.length){
 case 1:
-return G__1459__1.call(this,_);
+return G__2470__1.call(this,_);
 case 2:
-return G__1459__2.call(this,_,a);
+return G__2470__2.call(this,_,a);
 case 3:
-return G__1459__3.call(this,_,a,b);
+return G__2470__3.call(this,_,a,b);
 case 4:
-return G__1459__4.call(this,_,a,b,c);
+return G__2470__4.call(this,_,a,b,c);
 }
 throw(new Error('Invalid arity: ' + arguments.length));
 };
-G__1459.cljs$core$IFn$_invoke$arity$1 = G__1459__1;
-G__1459.cljs$core$IFn$_invoke$arity$2 = G__1459__2;
-G__1459.cljs$core$IFn$_invoke$arity$3 = G__1459__3;
-G__1459.cljs$core$IFn$_invoke$arity$4 = G__1459__4;
-return G__1459;
+G__2470.cljs$core$IFn$_invoke$arity$1 = G__2470__1;
+G__2470.cljs$core$IFn$_invoke$arity$2 = G__2470__2;
+G__2470.cljs$core$IFn$_invoke$arity$3 = G__2470__3;
+G__2470.cljs$core$IFn$_invoke$arity$4 = G__2470__4;
+return G__2470;
 })()
 ;
 thi.ng.math.core._STAR_ = (function thi$ng$math$core$_STAR_(var_args){
-var G__1449 = arguments.length;
-switch (G__1449) {
+var G__2460 = arguments.length;
+switch (G__2460) {
 case 1:
 return thi.ng.math.core._STAR_.cljs$core$IFn$_invoke$arity$1((arguments[(0)]));
 
@@ -390,7 +390,7 @@ throw (new Error(["Invalid arity: ",cljs.core.str.cljs$core$IFn$_invoke$arity$1(
 if((((!((_ == null)))) && ((!((_.thi$ng$math$core$IMathOps$_STAR_$arity$1 == null)))))){
 return _.thi$ng$math$core$IMathOps$_STAR_$arity$1(_);
 } else {
-return thi$ng$math$core$IMathOps$_STAR_$dyn_1458.call(null,_);
+return thi$ng$math$core$IMathOps$_STAR_$dyn_2469.call(null,_);
 }
 }));
 
@@ -398,7 +398,7 @@ return thi$ng$math$core$IMathOps$_STAR_$dyn_1458.call(null,_);
 if((((!((_ == null)))) && ((!((_.thi$ng$math$core$IMathOps$_STAR_$arity$2 == null)))))){
 return _.thi$ng$math$core$IMathOps$_STAR_$arity$2(_,a);
 } else {
-return thi$ng$math$core$IMathOps$_STAR_$dyn_1458.call(null,_,a);
+return thi$ng$math$core$IMathOps$_STAR_$dyn_2469.call(null,_,a);
 }
 }));
 
@@ -406,7 +406,7 @@ return thi$ng$math$core$IMathOps$_STAR_$dyn_1458.call(null,_,a);
 if((((!((_ == null)))) && ((!((_.thi$ng$math$core$IMathOps$_STAR_$arity$3 == null)))))){
 return _.thi$ng$math$core$IMathOps$_STAR_$arity$3(_,a,b);
 } else {
-return thi$ng$math$core$IMathOps$_STAR_$dyn_1458.call(null,_,a,b);
+return thi$ng$math$core$IMathOps$_STAR_$dyn_2469.call(null,_,a,b);
 }
 }));
 
@@ -414,16 +414,16 @@ return thi$ng$math$core$IMathOps$_STAR_$dyn_1458.call(null,_,a,b);
 if((((!((_ == null)))) && ((!((_.thi$ng$math$core$IMathOps$_STAR_$arity$4 == null)))))){
 return _.thi$ng$math$core$IMathOps$_STAR_$arity$4(_,a,b,c);
 } else {
-return thi$ng$math$core$IMathOps$_STAR_$dyn_1458.call(null,_,a,b,c);
+return thi$ng$math$core$IMathOps$_STAR_$dyn_2469.call(null,_,a,b,c);
 }
 }));
 
 (thi.ng.math.core._STAR_.cljs$lang$maxFixedArity = 4);
 
 
-var thi$ng$math$core$IMathOps$div$dyn_1461 = (function() {
-var G__1462 = null;
-var G__1462__1 = (function (_){
+var thi$ng$math$core$IMathOps$div$dyn_2472 = (function() {
+var G__2473 = null;
+var G__2473__1 = (function (_){
 var x__4521__auto__ = (((_ == null))?null:_);
 var m__4522__auto__ = (thi.ng.math.core.div[goog.typeOf(x__4521__auto__)]);
 if((!((m__4522__auto__ == null)))){
@@ -437,7 +437,7 @@ throw cljs.core.missing_protocol.call(null,"IMathOps.div",_);
 }
 }
 });
-var G__1462__2 = (function (_,a){
+var G__2473__2 = (function (_,a){
 var x__4521__auto__ = (((_ == null))?null:_);
 var m__4522__auto__ = (thi.ng.math.core.div[goog.typeOf(x__4521__auto__)]);
 if((!((m__4522__auto__ == null)))){
@@ -451,7 +451,7 @@ throw cljs.core.missing_protocol.call(null,"IMathOps.div",_);
 }
 }
 });
-var G__1462__3 = (function (_,a,b){
+var G__2473__3 = (function (_,a,b){
 var x__4521__auto__ = (((_ == null))?null:_);
 var m__4522__auto__ = (thi.ng.math.core.div[goog.typeOf(x__4521__auto__)]);
 if((!((m__4522__auto__ == null)))){
@@ -465,7 +465,7 @@ throw cljs.core.missing_protocol.call(null,"IMathOps.div",_);
 }
 }
 });
-var G__1462__4 = (function (_,a,b,c){
+var G__2473__4 = (function (_,a,b,c){
 var x__4521__auto__ = (((_ == null))?null:_);
 var m__4522__auto__ = (thi.ng.math.core.div[goog.typeOf(x__4521__auto__)]);
 if((!((m__4522__auto__ == null)))){
@@ -479,29 +479,29 @@ throw cljs.core.missing_protocol.call(null,"IMathOps.div",_);
 }
 }
 });
-G__1462 = function(_,a,b,c){
+G__2473 = function(_,a,b,c){
 switch(arguments.length){
 case 1:
-return G__1462__1.call(this,_);
+return G__2473__1.call(this,_);
 case 2:
-return G__1462__2.call(this,_,a);
+return G__2473__2.call(this,_,a);
 case 3:
-return G__1462__3.call(this,_,a,b);
+return G__2473__3.call(this,_,a,b);
 case 4:
-return G__1462__4.call(this,_,a,b,c);
+return G__2473__4.call(this,_,a,b,c);
 }
 throw(new Error('Invalid arity: ' + arguments.length));
 };
-G__1462.cljs$core$IFn$_invoke$arity$1 = G__1462__1;
-G__1462.cljs$core$IFn$_invoke$arity$2 = G__1462__2;
-G__1462.cljs$core$IFn$_invoke$arity$3 = G__1462__3;
-G__1462.cljs$core$IFn$_invoke$arity$4 = G__1462__4;
-return G__1462;
+G__2473.cljs$core$IFn$_invoke$arity$1 = G__2473__1;
+G__2473.cljs$core$IFn$_invoke$arity$2 = G__2473__2;
+G__2473.cljs$core$IFn$_invoke$arity$3 = G__2473__3;
+G__2473.cljs$core$IFn$_invoke$arity$4 = G__2473__4;
+return G__2473;
 })()
 ;
 thi.ng.math.core.div = (function thi$ng$math$core$div(var_args){
-var G__1451 = arguments.length;
-switch (G__1451) {
+var G__2462 = arguments.length;
+switch (G__2462) {
 case 1:
 return thi.ng.math.core.div.cljs$core$IFn$_invoke$arity$1((arguments[(0)]));
 
@@ -528,7 +528,7 @@ throw (new Error(["Invalid arity: ",cljs.core.str.cljs$core$IFn$_invoke$arity$1(
 if((((!((_ == null)))) && ((!((_.thi$ng$math$core$IMathOps$div$arity$1 == null)))))){
 return _.thi$ng$math$core$IMathOps$div$arity$1(_);
 } else {
-return thi$ng$math$core$IMathOps$div$dyn_1461.call(null,_);
+return thi$ng$math$core$IMathOps$div$dyn_2472.call(null,_);
 }
 }));
 
@@ -536,7 +536,7 @@ return thi$ng$math$core$IMathOps$div$dyn_1461.call(null,_);
 if((((!((_ == null)))) && ((!((_.thi$ng$math$core$IMathOps$div$arity$2 == null)))))){
 return _.thi$ng$math$core$IMathOps$div$arity$2(_,a);
 } else {
-return thi$ng$math$core$IMathOps$div$dyn_1461.call(null,_,a);
+return thi$ng$math$core$IMathOps$div$dyn_2472.call(null,_,a);
 }
 }));
 
@@ -544,7 +544,7 @@ return thi$ng$math$core$IMathOps$div$dyn_1461.call(null,_,a);
 if((((!((_ == null)))) && ((!((_.thi$ng$math$core$IMathOps$div$arity$3 == null)))))){
 return _.thi$ng$math$core$IMathOps$div$arity$3(_,a,b);
 } else {
-return thi$ng$math$core$IMathOps$div$dyn_1461.call(null,_,a,b);
+return thi$ng$math$core$IMathOps$div$dyn_2472.call(null,_,a,b);
 }
 }));
 
@@ -552,14 +552,14 @@ return thi$ng$math$core$IMathOps$div$dyn_1461.call(null,_,a,b);
 if((((!((_ == null)))) && ((!((_.thi$ng$math$core$IMathOps$div$arity$4 == null)))))){
 return _.thi$ng$math$core$IMathOps$div$arity$4(_,a,b,c);
 } else {
-return thi$ng$math$core$IMathOps$div$dyn_1461.call(null,_,a,b,c);
+return thi$ng$math$core$IMathOps$div$dyn_2472.call(null,_,a,b,c);
 }
 }));
 
 (thi.ng.math.core.div.cljs$lang$maxFixedArity = 4);
 
 
-var thi$ng$math$core$IMathOps$madd$dyn_1464 = (function (_,a,b){
+var thi$ng$math$core$IMathOps$madd$dyn_2475 = (function (_,a,b){
 var x__4521__auto__ = (((_ == null))?null:_);
 var m__4522__auto__ = (thi.ng.math.core.madd[goog.typeOf(x__4521__auto__)]);
 if((!((m__4522__auto__ == null)))){
@@ -577,11 +577,11 @@ thi.ng.math.core.madd = (function thi$ng$math$core$madd(_,a,b){
 if((((!((_ == null)))) && ((!((_.thi$ng$math$core$IMathOps$madd$arity$3 == null)))))){
 return _.thi$ng$math$core$IMathOps$madd$arity$3(_,a,b);
 } else {
-return thi$ng$math$core$IMathOps$madd$dyn_1464.call(null,_,a,b);
+return thi$ng$math$core$IMathOps$madd$dyn_2475.call(null,_,a,b);
 }
 });
 
-var thi$ng$math$core$IMathOps$addm$dyn_1465 = (function (_,a,b){
+var thi$ng$math$core$IMathOps$addm$dyn_2476 = (function (_,a,b){
 var x__4521__auto__ = (((_ == null))?null:_);
 var m__4522__auto__ = (thi.ng.math.core.addm[goog.typeOf(x__4521__auto__)]);
 if((!((m__4522__auto__ == null)))){
@@ -599,11 +599,11 @@ thi.ng.math.core.addm = (function thi$ng$math$core$addm(_,a,b){
 if((((!((_ == null)))) && ((!((_.thi$ng$math$core$IMathOps$addm$arity$3 == null)))))){
 return _.thi$ng$math$core$IMathOps$addm$arity$3(_,a,b);
 } else {
-return thi$ng$math$core$IMathOps$addm$dyn_1465.call(null,_,a,b);
+return thi$ng$math$core$IMathOps$addm$dyn_2476.call(null,_,a,b);
 }
 });
 
-var thi$ng$math$core$IMathOps$msub$dyn_1466 = (function (_,a,b){
+var thi$ng$math$core$IMathOps$msub$dyn_2477 = (function (_,a,b){
 var x__4521__auto__ = (((_ == null))?null:_);
 var m__4522__auto__ = (thi.ng.math.core.msub[goog.typeOf(x__4521__auto__)]);
 if((!((m__4522__auto__ == null)))){
@@ -621,11 +621,11 @@ thi.ng.math.core.msub = (function thi$ng$math$core$msub(_,a,b){
 if((((!((_ == null)))) && ((!((_.thi$ng$math$core$IMathOps$msub$arity$3 == null)))))){
 return _.thi$ng$math$core$IMathOps$msub$arity$3(_,a,b);
 } else {
-return thi$ng$math$core$IMathOps$msub$dyn_1466.call(null,_,a,b);
+return thi$ng$math$core$IMathOps$msub$dyn_2477.call(null,_,a,b);
 }
 });
 
-var thi$ng$math$core$IMathOps$subm$dyn_1467 = (function (_,a,b){
+var thi$ng$math$core$IMathOps$subm$dyn_2478 = (function (_,a,b){
 var x__4521__auto__ = (((_ == null))?null:_);
 var m__4522__auto__ = (thi.ng.math.core.subm[goog.typeOf(x__4521__auto__)]);
 if((!((m__4522__auto__ == null)))){
@@ -643,11 +643,11 @@ thi.ng.math.core.subm = (function thi$ng$math$core$subm(_,a,b){
 if((((!((_ == null)))) && ((!((_.thi$ng$math$core$IMathOps$subm$arity$3 == null)))))){
 return _.thi$ng$math$core$IMathOps$subm$arity$3(_,a,b);
 } else {
-return thi$ng$math$core$IMathOps$subm$dyn_1467.call(null,_,a,b);
+return thi$ng$math$core$IMathOps$subm$dyn_2478.call(null,_,a,b);
 }
 });
 
-var thi$ng$math$core$IMathOps$abs$dyn_1468 = (function (_){
+var thi$ng$math$core$IMathOps$abs$dyn_2479 = (function (_){
 var x__4521__auto__ = (((_ == null))?null:_);
 var m__4522__auto__ = (thi.ng.math.core.abs[goog.typeOf(x__4521__auto__)]);
 if((!((m__4522__auto__ == null)))){
@@ -665,7 +665,7 @@ thi.ng.math.core.abs = (function thi$ng$math$core$abs(_){
 if((((!((_ == null)))) && ((!((_.thi$ng$math$core$IMathOps$abs$arity$1 == null)))))){
 return _.thi$ng$math$core$IMathOps$abs$arity$1(_);
 } else {
-return thi$ng$math$core$IMathOps$abs$dyn_1468.call(null,_);
+return thi$ng$math$core$IMathOps$abs$dyn_2479.call(null,_);
 }
 });
 
@@ -675,9 +675,9 @@ return thi$ng$math$core$IMathOps$abs$dyn_1468.call(null,_);
  */
 thi.ng.math.core.IMutableMathOps = function(){};
 
-var thi$ng$math$core$IMutableMathOps$_PLUS__BANG_$dyn_1477 = (function() {
-var G__1478 = null;
-var G__1478__1 = (function (_){
+var thi$ng$math$core$IMutableMathOps$_PLUS__BANG_$dyn_2488 = (function() {
+var G__2489 = null;
+var G__2489__1 = (function (_){
 var x__4521__auto__ = (((_ == null))?null:_);
 var m__4522__auto__ = (thi.ng.math.core._PLUS__BANG_[goog.typeOf(x__4521__auto__)]);
 if((!((m__4522__auto__ == null)))){
@@ -691,7 +691,7 @@ throw cljs.core.missing_protocol.call(null,"IMutableMathOps.+!",_);
 }
 }
 });
-var G__1478__2 = (function (_,a){
+var G__2489__2 = (function (_,a){
 var x__4521__auto__ = (((_ == null))?null:_);
 var m__4522__auto__ = (thi.ng.math.core._PLUS__BANG_[goog.typeOf(x__4521__auto__)]);
 if((!((m__4522__auto__ == null)))){
@@ -705,7 +705,7 @@ throw cljs.core.missing_protocol.call(null,"IMutableMathOps.+!",_);
 }
 }
 });
-var G__1478__3 = (function (_,a,b){
+var G__2489__3 = (function (_,a,b){
 var x__4521__auto__ = (((_ == null))?null:_);
 var m__4522__auto__ = (thi.ng.math.core._PLUS__BANG_[goog.typeOf(x__4521__auto__)]);
 if((!((m__4522__auto__ == null)))){
@@ -719,7 +719,7 @@ throw cljs.core.missing_protocol.call(null,"IMutableMathOps.+!",_);
 }
 }
 });
-var G__1478__4 = (function (_,a,b,c){
+var G__2489__4 = (function (_,a,b,c){
 var x__4521__auto__ = (((_ == null))?null:_);
 var m__4522__auto__ = (thi.ng.math.core._PLUS__BANG_[goog.typeOf(x__4521__auto__)]);
 if((!((m__4522__auto__ == null)))){
@@ -733,29 +733,29 @@ throw cljs.core.missing_protocol.call(null,"IMutableMathOps.+!",_);
 }
 }
 });
-G__1478 = function(_,a,b,c){
+G__2489 = function(_,a,b,c){
 switch(arguments.length){
 case 1:
-return G__1478__1.call(this,_);
+return G__2489__1.call(this,_);
 case 2:
-return G__1478__2.call(this,_,a);
+return G__2489__2.call(this,_,a);
 case 3:
-return G__1478__3.call(this,_,a,b);
+return G__2489__3.call(this,_,a,b);
 case 4:
-return G__1478__4.call(this,_,a,b,c);
+return G__2489__4.call(this,_,a,b,c);
 }
 throw(new Error('Invalid arity: ' + arguments.length));
 };
-G__1478.cljs$core$IFn$_invoke$arity$1 = G__1478__1;
-G__1478.cljs$core$IFn$_invoke$arity$2 = G__1478__2;
-G__1478.cljs$core$IFn$_invoke$arity$3 = G__1478__3;
-G__1478.cljs$core$IFn$_invoke$arity$4 = G__1478__4;
-return G__1478;
+G__2489.cljs$core$IFn$_invoke$arity$1 = G__2489__1;
+G__2489.cljs$core$IFn$_invoke$arity$2 = G__2489__2;
+G__2489.cljs$core$IFn$_invoke$arity$3 = G__2489__3;
+G__2489.cljs$core$IFn$_invoke$arity$4 = G__2489__4;
+return G__2489;
 })()
 ;
 thi.ng.math.core._PLUS__BANG_ = (function thi$ng$math$core$_PLUS__BANG_(var_args){
-var G__1470 = arguments.length;
-switch (G__1470) {
+var G__2481 = arguments.length;
+switch (G__2481) {
 case 1:
 return thi.ng.math.core._PLUS__BANG_.cljs$core$IFn$_invoke$arity$1((arguments[(0)]));
 
@@ -782,7 +782,7 @@ throw (new Error(["Invalid arity: ",cljs.core.str.cljs$core$IFn$_invoke$arity$1(
 if((((!((_ == null)))) && ((!((_.thi$ng$math$core$IMutableMathOps$_PLUS__BANG_$arity$1 == null)))))){
 return _.thi$ng$math$core$IMutableMathOps$_PLUS__BANG_$arity$1(_);
 } else {
-return thi$ng$math$core$IMutableMathOps$_PLUS__BANG_$dyn_1477.call(null,_);
+return thi$ng$math$core$IMutableMathOps$_PLUS__BANG_$dyn_2488.call(null,_);
 }
 }));
 
@@ -790,7 +790,7 @@ return thi$ng$math$core$IMutableMathOps$_PLUS__BANG_$dyn_1477.call(null,_);
 if((((!((_ == null)))) && ((!((_.thi$ng$math$core$IMutableMathOps$_PLUS__BANG_$arity$2 == null)))))){
 return _.thi$ng$math$core$IMutableMathOps$_PLUS__BANG_$arity$2(_,a);
 } else {
-return thi$ng$math$core$IMutableMathOps$_PLUS__BANG_$dyn_1477.call(null,_,a);
+return thi$ng$math$core$IMutableMathOps$_PLUS__BANG_$dyn_2488.call(null,_,a);
 }
 }));
 
@@ -798,7 +798,7 @@ return thi$ng$math$core$IMutableMathOps$_PLUS__BANG_$dyn_1477.call(null,_,a);
 if((((!((_ == null)))) && ((!((_.thi$ng$math$core$IMutableMathOps$_PLUS__BANG_$arity$3 == null)))))){
 return _.thi$ng$math$core$IMutableMathOps$_PLUS__BANG_$arity$3(_,a,b);
 } else {
-return thi$ng$math$core$IMutableMathOps$_PLUS__BANG_$dyn_1477.call(null,_,a,b);
+return thi$ng$math$core$IMutableMathOps$_PLUS__BANG_$dyn_2488.call(null,_,a,b);
 }
 }));
 
@@ -806,16 +806,16 @@ return thi$ng$math$core$IMutableMathOps$_PLUS__BANG_$dyn_1477.call(null,_,a,b);
 if((((!((_ == null)))) && ((!((_.thi$ng$math$core$IMutableMathOps$_PLUS__BANG_$arity$4 == null)))))){
 return _.thi$ng$math$core$IMutableMathOps$_PLUS__BANG_$arity$4(_,a,b,c);
 } else {
-return thi$ng$math$core$IMutableMathOps$_PLUS__BANG_$dyn_1477.call(null,_,a,b,c);
+return thi$ng$math$core$IMutableMathOps$_PLUS__BANG_$dyn_2488.call(null,_,a,b,c);
 }
 }));
 
 (thi.ng.math.core._PLUS__BANG_.cljs$lang$maxFixedArity = 4);
 
 
-var thi$ng$math$core$IMutableMathOps$__BANG_$dyn_1480 = (function() {
-var G__1481 = null;
-var G__1481__1 = (function (_){
+var thi$ng$math$core$IMutableMathOps$__BANG_$dyn_2491 = (function() {
+var G__2492 = null;
+var G__2492__1 = (function (_){
 var x__4521__auto__ = (((_ == null))?null:_);
 var m__4522__auto__ = (thi.ng.math.core.__BANG_[goog.typeOf(x__4521__auto__)]);
 if((!((m__4522__auto__ == null)))){
@@ -829,7 +829,7 @@ throw cljs.core.missing_protocol.call(null,"IMutableMathOps.-!",_);
 }
 }
 });
-var G__1481__2 = (function (_,a){
+var G__2492__2 = (function (_,a){
 var x__4521__auto__ = (((_ == null))?null:_);
 var m__4522__auto__ = (thi.ng.math.core.__BANG_[goog.typeOf(x__4521__auto__)]);
 if((!((m__4522__auto__ == null)))){
@@ -843,7 +843,7 @@ throw cljs.core.missing_protocol.call(null,"IMutableMathOps.-!",_);
 }
 }
 });
-var G__1481__3 = (function (_,a,b){
+var G__2492__3 = (function (_,a,b){
 var x__4521__auto__ = (((_ == null))?null:_);
 var m__4522__auto__ = (thi.ng.math.core.__BANG_[goog.typeOf(x__4521__auto__)]);
 if((!((m__4522__auto__ == null)))){
@@ -857,7 +857,7 @@ throw cljs.core.missing_protocol.call(null,"IMutableMathOps.-!",_);
 }
 }
 });
-var G__1481__4 = (function (_,a,b,c){
+var G__2492__4 = (function (_,a,b,c){
 var x__4521__auto__ = (((_ == null))?null:_);
 var m__4522__auto__ = (thi.ng.math.core.__BANG_[goog.typeOf(x__4521__auto__)]);
 if((!((m__4522__auto__ == null)))){
@@ -871,29 +871,29 @@ throw cljs.core.missing_protocol.call(null,"IMutableMathOps.-!",_);
 }
 }
 });
-G__1481 = function(_,a,b,c){
+G__2492 = function(_,a,b,c){
 switch(arguments.length){
 case 1:
-return G__1481__1.call(this,_);
+return G__2492__1.call(this,_);
 case 2:
-return G__1481__2.call(this,_,a);
+return G__2492__2.call(this,_,a);
 case 3:
-return G__1481__3.call(this,_,a,b);
+return G__2492__3.call(this,_,a,b);
 case 4:
-return G__1481__4.call(this,_,a,b,c);
+return G__2492__4.call(this,_,a,b,c);
 }
 throw(new Error('Invalid arity: ' + arguments.length));
 };
-G__1481.cljs$core$IFn$_invoke$arity$1 = G__1481__1;
-G__1481.cljs$core$IFn$_invoke$arity$2 = G__1481__2;
-G__1481.cljs$core$IFn$_invoke$arity$3 = G__1481__3;
-G__1481.cljs$core$IFn$_invoke$arity$4 = G__1481__4;
-return G__1481;
+G__2492.cljs$core$IFn$_invoke$arity$1 = G__2492__1;
+G__2492.cljs$core$IFn$_invoke$arity$2 = G__2492__2;
+G__2492.cljs$core$IFn$_invoke$arity$3 = G__2492__3;
+G__2492.cljs$core$IFn$_invoke$arity$4 = G__2492__4;
+return G__2492;
 })()
 ;
 thi.ng.math.core.__BANG_ = (function thi$ng$math$core$__BANG_(var_args){
-var G__1472 = arguments.length;
-switch (G__1472) {
+var G__2483 = arguments.length;
+switch (G__2483) {
 case 1:
 return thi.ng.math.core.__BANG_.cljs$core$IFn$_invoke$arity$1((arguments[(0)]));
 
@@ -920,7 +920,7 @@ throw (new Error(["Invalid arity: ",cljs.core.str.cljs$core$IFn$_invoke$arity$1(
 if((((!((_ == null)))) && ((!((_.thi$ng$math$core$IMutableMathOps$__BANG_$arity$1 == null)))))){
 return _.thi$ng$math$core$IMutableMathOps$__BANG_$arity$1(_);
 } else {
-return thi$ng$math$core$IMutableMathOps$__BANG_$dyn_1480.call(null,_);
+return thi$ng$math$core$IMutableMathOps$__BANG_$dyn_2491.call(null,_);
 }
 }));
 
@@ -928,7 +928,7 @@ return thi$ng$math$core$IMutableMathOps$__BANG_$dyn_1480.call(null,_);
 if((((!((_ == null)))) && ((!((_.thi$ng$math$core$IMutableMathOps$__BANG_$arity$2 == null)))))){
 return _.thi$ng$math$core$IMutableMathOps$__BANG_$arity$2(_,a);
 } else {
-return thi$ng$math$core$IMutableMathOps$__BANG_$dyn_1480.call(null,_,a);
+return thi$ng$math$core$IMutableMathOps$__BANG_$dyn_2491.call(null,_,a);
 }
 }));
 
@@ -936,7 +936,7 @@ return thi$ng$math$core$IMutableMathOps$__BANG_$dyn_1480.call(null,_,a);
 if((((!((_ == null)))) && ((!((_.thi$ng$math$core$IMutableMathOps$__BANG_$arity$3 == null)))))){
 return _.thi$ng$math$core$IMutableMathOps$__BANG_$arity$3(_,a,b);
 } else {
-return thi$ng$math$core$IMutableMathOps$__BANG_$dyn_1480.call(null,_,a,b);
+return thi$ng$math$core$IMutableMathOps$__BANG_$dyn_2491.call(null,_,a,b);
 }
 }));
 
@@ -944,16 +944,16 @@ return thi$ng$math$core$IMutableMathOps$__BANG_$dyn_1480.call(null,_,a,b);
 if((((!((_ == null)))) && ((!((_.thi$ng$math$core$IMutableMathOps$__BANG_$arity$4 == null)))))){
 return _.thi$ng$math$core$IMutableMathOps$__BANG_$arity$4(_,a,b,c);
 } else {
-return thi$ng$math$core$IMutableMathOps$__BANG_$dyn_1480.call(null,_,a,b,c);
+return thi$ng$math$core$IMutableMathOps$__BANG_$dyn_2491.call(null,_,a,b,c);
 }
 }));
 
 (thi.ng.math.core.__BANG_.cljs$lang$maxFixedArity = 4);
 
 
-var thi$ng$math$core$IMutableMathOps$_STAR__BANG_$dyn_1483 = (function() {
-var G__1484 = null;
-var G__1484__1 = (function (_){
+var thi$ng$math$core$IMutableMathOps$_STAR__BANG_$dyn_2494 = (function() {
+var G__2495 = null;
+var G__2495__1 = (function (_){
 var x__4521__auto__ = (((_ == null))?null:_);
 var m__4522__auto__ = (thi.ng.math.core._STAR__BANG_[goog.typeOf(x__4521__auto__)]);
 if((!((m__4522__auto__ == null)))){
@@ -967,7 +967,7 @@ throw cljs.core.missing_protocol.call(null,"IMutableMathOps.*!",_);
 }
 }
 });
-var G__1484__2 = (function (_,a){
+var G__2495__2 = (function (_,a){
 var x__4521__auto__ = (((_ == null))?null:_);
 var m__4522__auto__ = (thi.ng.math.core._STAR__BANG_[goog.typeOf(x__4521__auto__)]);
 if((!((m__4522__auto__ == null)))){
@@ -981,7 +981,7 @@ throw cljs.core.missing_protocol.call(null,"IMutableMathOps.*!",_);
 }
 }
 });
-var G__1484__3 = (function (_,a,b){
+var G__2495__3 = (function (_,a,b){
 var x__4521__auto__ = (((_ == null))?null:_);
 var m__4522__auto__ = (thi.ng.math.core._STAR__BANG_[goog.typeOf(x__4521__auto__)]);
 if((!((m__4522__auto__ == null)))){
@@ -995,7 +995,7 @@ throw cljs.core.missing_protocol.call(null,"IMutableMathOps.*!",_);
 }
 }
 });
-var G__1484__4 = (function (_,a,b,c){
+var G__2495__4 = (function (_,a,b,c){
 var x__4521__auto__ = (((_ == null))?null:_);
 var m__4522__auto__ = (thi.ng.math.core._STAR__BANG_[goog.typeOf(x__4521__auto__)]);
 if((!((m__4522__auto__ == null)))){
@@ -1009,29 +1009,29 @@ throw cljs.core.missing_protocol.call(null,"IMutableMathOps.*!",_);
 }
 }
 });
-G__1484 = function(_,a,b,c){
+G__2495 = function(_,a,b,c){
 switch(arguments.length){
 case 1:
-return G__1484__1.call(this,_);
+return G__2495__1.call(this,_);
 case 2:
-return G__1484__2.call(this,_,a);
+return G__2495__2.call(this,_,a);
 case 3:
-return G__1484__3.call(this,_,a,b);
+return G__2495__3.call(this,_,a,b);
 case 4:
-return G__1484__4.call(this,_,a,b,c);
+return G__2495__4.call(this,_,a,b,c);
 }
 throw(new Error('Invalid arity: ' + arguments.length));
 };
-G__1484.cljs$core$IFn$_invoke$arity$1 = G__1484__1;
-G__1484.cljs$core$IFn$_invoke$arity$2 = G__1484__2;
-G__1484.cljs$core$IFn$_invoke$arity$3 = G__1484__3;
-G__1484.cljs$core$IFn$_invoke$arity$4 = G__1484__4;
-return G__1484;
+G__2495.cljs$core$IFn$_invoke$arity$1 = G__2495__1;
+G__2495.cljs$core$IFn$_invoke$arity$2 = G__2495__2;
+G__2495.cljs$core$IFn$_invoke$arity$3 = G__2495__3;
+G__2495.cljs$core$IFn$_invoke$arity$4 = G__2495__4;
+return G__2495;
 })()
 ;
 thi.ng.math.core._STAR__BANG_ = (function thi$ng$math$core$_STAR__BANG_(var_args){
-var G__1474 = arguments.length;
-switch (G__1474) {
+var G__2485 = arguments.length;
+switch (G__2485) {
 case 1:
 return thi.ng.math.core._STAR__BANG_.cljs$core$IFn$_invoke$arity$1((arguments[(0)]));
 
@@ -1058,7 +1058,7 @@ throw (new Error(["Invalid arity: ",cljs.core.str.cljs$core$IFn$_invoke$arity$1(
 if((((!((_ == null)))) && ((!((_.thi$ng$math$core$IMutableMathOps$_STAR__BANG_$arity$1 == null)))))){
 return _.thi$ng$math$core$IMutableMathOps$_STAR__BANG_$arity$1(_);
 } else {
-return thi$ng$math$core$IMutableMathOps$_STAR__BANG_$dyn_1483.call(null,_);
+return thi$ng$math$core$IMutableMathOps$_STAR__BANG_$dyn_2494.call(null,_);
 }
 }));
 
@@ -1066,7 +1066,7 @@ return thi$ng$math$core$IMutableMathOps$_STAR__BANG_$dyn_1483.call(null,_);
 if((((!((_ == null)))) && ((!((_.thi$ng$math$core$IMutableMathOps$_STAR__BANG_$arity$2 == null)))))){
 return _.thi$ng$math$core$IMutableMathOps$_STAR__BANG_$arity$2(_,a);
 } else {
-return thi$ng$math$core$IMutableMathOps$_STAR__BANG_$dyn_1483.call(null,_,a);
+return thi$ng$math$core$IMutableMathOps$_STAR__BANG_$dyn_2494.call(null,_,a);
 }
 }));
 
@@ -1074,7 +1074,7 @@ return thi$ng$math$core$IMutableMathOps$_STAR__BANG_$dyn_1483.call(null,_,a);
 if((((!((_ == null)))) && ((!((_.thi$ng$math$core$IMutableMathOps$_STAR__BANG_$arity$3 == null)))))){
 return _.thi$ng$math$core$IMutableMathOps$_STAR__BANG_$arity$3(_,a,b);
 } else {
-return thi$ng$math$core$IMutableMathOps$_STAR__BANG_$dyn_1483.call(null,_,a,b);
+return thi$ng$math$core$IMutableMathOps$_STAR__BANG_$dyn_2494.call(null,_,a,b);
 }
 }));
 
@@ -1082,16 +1082,16 @@ return thi$ng$math$core$IMutableMathOps$_STAR__BANG_$dyn_1483.call(null,_,a,b);
 if((((!((_ == null)))) && ((!((_.thi$ng$math$core$IMutableMathOps$_STAR__BANG_$arity$4 == null)))))){
 return _.thi$ng$math$core$IMutableMathOps$_STAR__BANG_$arity$4(_,a,b,c);
 } else {
-return thi$ng$math$core$IMutableMathOps$_STAR__BANG_$dyn_1483.call(null,_,a,b,c);
+return thi$ng$math$core$IMutableMathOps$_STAR__BANG_$dyn_2494.call(null,_,a,b,c);
 }
 }));
 
 (thi.ng.math.core._STAR__BANG_.cljs$lang$maxFixedArity = 4);
 
 
-var thi$ng$math$core$IMutableMathOps$div_BANG_$dyn_1486 = (function() {
-var G__1487 = null;
-var G__1487__1 = (function (_){
+var thi$ng$math$core$IMutableMathOps$div_BANG_$dyn_2497 = (function() {
+var G__2498 = null;
+var G__2498__1 = (function (_){
 var x__4521__auto__ = (((_ == null))?null:_);
 var m__4522__auto__ = (thi.ng.math.core.div_BANG_[goog.typeOf(x__4521__auto__)]);
 if((!((m__4522__auto__ == null)))){
@@ -1105,7 +1105,7 @@ throw cljs.core.missing_protocol.call(null,"IMutableMathOps.div!",_);
 }
 }
 });
-var G__1487__2 = (function (_,a){
+var G__2498__2 = (function (_,a){
 var x__4521__auto__ = (((_ == null))?null:_);
 var m__4522__auto__ = (thi.ng.math.core.div_BANG_[goog.typeOf(x__4521__auto__)]);
 if((!((m__4522__auto__ == null)))){
@@ -1119,7 +1119,7 @@ throw cljs.core.missing_protocol.call(null,"IMutableMathOps.div!",_);
 }
 }
 });
-var G__1487__3 = (function (_,a,b){
+var G__2498__3 = (function (_,a,b){
 var x__4521__auto__ = (((_ == null))?null:_);
 var m__4522__auto__ = (thi.ng.math.core.div_BANG_[goog.typeOf(x__4521__auto__)]);
 if((!((m__4522__auto__ == null)))){
@@ -1133,7 +1133,7 @@ throw cljs.core.missing_protocol.call(null,"IMutableMathOps.div!",_);
 }
 }
 });
-var G__1487__4 = (function (_,a,b,c){
+var G__2498__4 = (function (_,a,b,c){
 var x__4521__auto__ = (((_ == null))?null:_);
 var m__4522__auto__ = (thi.ng.math.core.div_BANG_[goog.typeOf(x__4521__auto__)]);
 if((!((m__4522__auto__ == null)))){
@@ -1147,29 +1147,29 @@ throw cljs.core.missing_protocol.call(null,"IMutableMathOps.div!",_);
 }
 }
 });
-G__1487 = function(_,a,b,c){
+G__2498 = function(_,a,b,c){
 switch(arguments.length){
 case 1:
-return G__1487__1.call(this,_);
+return G__2498__1.call(this,_);
 case 2:
-return G__1487__2.call(this,_,a);
+return G__2498__2.call(this,_,a);
 case 3:
-return G__1487__3.call(this,_,a,b);
+return G__2498__3.call(this,_,a,b);
 case 4:
-return G__1487__4.call(this,_,a,b,c);
+return G__2498__4.call(this,_,a,b,c);
 }
 throw(new Error('Invalid arity: ' + arguments.length));
 };
-G__1487.cljs$core$IFn$_invoke$arity$1 = G__1487__1;
-G__1487.cljs$core$IFn$_invoke$arity$2 = G__1487__2;
-G__1487.cljs$core$IFn$_invoke$arity$3 = G__1487__3;
-G__1487.cljs$core$IFn$_invoke$arity$4 = G__1487__4;
-return G__1487;
+G__2498.cljs$core$IFn$_invoke$arity$1 = G__2498__1;
+G__2498.cljs$core$IFn$_invoke$arity$2 = G__2498__2;
+G__2498.cljs$core$IFn$_invoke$arity$3 = G__2498__3;
+G__2498.cljs$core$IFn$_invoke$arity$4 = G__2498__4;
+return G__2498;
 })()
 ;
 thi.ng.math.core.div_BANG_ = (function thi$ng$math$core$div_BANG_(var_args){
-var G__1476 = arguments.length;
-switch (G__1476) {
+var G__2487 = arguments.length;
+switch (G__2487) {
 case 1:
 return thi.ng.math.core.div_BANG_.cljs$core$IFn$_invoke$arity$1((arguments[(0)]));
 
@@ -1196,7 +1196,7 @@ throw (new Error(["Invalid arity: ",cljs.core.str.cljs$core$IFn$_invoke$arity$1(
 if((((!((_ == null)))) && ((!((_.thi$ng$math$core$IMutableMathOps$div_BANG_$arity$1 == null)))))){
 return _.thi$ng$math$core$IMutableMathOps$div_BANG_$arity$1(_);
 } else {
-return thi$ng$math$core$IMutableMathOps$div_BANG_$dyn_1486.call(null,_);
+return thi$ng$math$core$IMutableMathOps$div_BANG_$dyn_2497.call(null,_);
 }
 }));
 
@@ -1204,7 +1204,7 @@ return thi$ng$math$core$IMutableMathOps$div_BANG_$dyn_1486.call(null,_);
 if((((!((_ == null)))) && ((!((_.thi$ng$math$core$IMutableMathOps$div_BANG_$arity$2 == null)))))){
 return _.thi$ng$math$core$IMutableMathOps$div_BANG_$arity$2(_,a);
 } else {
-return thi$ng$math$core$IMutableMathOps$div_BANG_$dyn_1486.call(null,_,a);
+return thi$ng$math$core$IMutableMathOps$div_BANG_$dyn_2497.call(null,_,a);
 }
 }));
 
@@ -1212,7 +1212,7 @@ return thi$ng$math$core$IMutableMathOps$div_BANG_$dyn_1486.call(null,_,a);
 if((((!((_ == null)))) && ((!((_.thi$ng$math$core$IMutableMathOps$div_BANG_$arity$3 == null)))))){
 return _.thi$ng$math$core$IMutableMathOps$div_BANG_$arity$3(_,a,b);
 } else {
-return thi$ng$math$core$IMutableMathOps$div_BANG_$dyn_1486.call(null,_,a,b);
+return thi$ng$math$core$IMutableMathOps$div_BANG_$dyn_2497.call(null,_,a,b);
 }
 }));
 
@@ -1220,14 +1220,14 @@ return thi$ng$math$core$IMutableMathOps$div_BANG_$dyn_1486.call(null,_,a,b);
 if((((!((_ == null)))) && ((!((_.thi$ng$math$core$IMutableMathOps$div_BANG_$arity$4 == null)))))){
 return _.thi$ng$math$core$IMutableMathOps$div_BANG_$arity$4(_,a,b,c);
 } else {
-return thi$ng$math$core$IMutableMathOps$div_BANG_$dyn_1486.call(null,_,a,b,c);
+return thi$ng$math$core$IMutableMathOps$div_BANG_$dyn_2497.call(null,_,a,b,c);
 }
 }));
 
 (thi.ng.math.core.div_BANG_.cljs$lang$maxFixedArity = 4);
 
 
-var thi$ng$math$core$IMutableMathOps$madd_BANG_$dyn_1489 = (function (_,a,b){
+var thi$ng$math$core$IMutableMathOps$madd_BANG_$dyn_2500 = (function (_,a,b){
 var x__4521__auto__ = (((_ == null))?null:_);
 var m__4522__auto__ = (thi.ng.math.core.madd_BANG_[goog.typeOf(x__4521__auto__)]);
 if((!((m__4522__auto__ == null)))){
@@ -1245,11 +1245,11 @@ thi.ng.math.core.madd_BANG_ = (function thi$ng$math$core$madd_BANG_(_,a,b){
 if((((!((_ == null)))) && ((!((_.thi$ng$math$core$IMutableMathOps$madd_BANG_$arity$3 == null)))))){
 return _.thi$ng$math$core$IMutableMathOps$madd_BANG_$arity$3(_,a,b);
 } else {
-return thi$ng$math$core$IMutableMathOps$madd_BANG_$dyn_1489.call(null,_,a,b);
+return thi$ng$math$core$IMutableMathOps$madd_BANG_$dyn_2500.call(null,_,a,b);
 }
 });
 
-var thi$ng$math$core$IMutableMathOps$addm_BANG_$dyn_1490 = (function (_,a,b){
+var thi$ng$math$core$IMutableMathOps$addm_BANG_$dyn_2501 = (function (_,a,b){
 var x__4521__auto__ = (((_ == null))?null:_);
 var m__4522__auto__ = (thi.ng.math.core.addm_BANG_[goog.typeOf(x__4521__auto__)]);
 if((!((m__4522__auto__ == null)))){
@@ -1267,11 +1267,11 @@ thi.ng.math.core.addm_BANG_ = (function thi$ng$math$core$addm_BANG_(_,a,b){
 if((((!((_ == null)))) && ((!((_.thi$ng$math$core$IMutableMathOps$addm_BANG_$arity$3 == null)))))){
 return _.thi$ng$math$core$IMutableMathOps$addm_BANG_$arity$3(_,a,b);
 } else {
-return thi$ng$math$core$IMutableMathOps$addm_BANG_$dyn_1490.call(null,_,a,b);
+return thi$ng$math$core$IMutableMathOps$addm_BANG_$dyn_2501.call(null,_,a,b);
 }
 });
 
-var thi$ng$math$core$IMutableMathOps$msub_BANG_$dyn_1491 = (function (_,a,b){
+var thi$ng$math$core$IMutableMathOps$msub_BANG_$dyn_2502 = (function (_,a,b){
 var x__4521__auto__ = (((_ == null))?null:_);
 var m__4522__auto__ = (thi.ng.math.core.msub_BANG_[goog.typeOf(x__4521__auto__)]);
 if((!((m__4522__auto__ == null)))){
@@ -1289,11 +1289,11 @@ thi.ng.math.core.msub_BANG_ = (function thi$ng$math$core$msub_BANG_(_,a,b){
 if((((!((_ == null)))) && ((!((_.thi$ng$math$core$IMutableMathOps$msub_BANG_$arity$3 == null)))))){
 return _.thi$ng$math$core$IMutableMathOps$msub_BANG_$arity$3(_,a,b);
 } else {
-return thi$ng$math$core$IMutableMathOps$msub_BANG_$dyn_1491.call(null,_,a,b);
+return thi$ng$math$core$IMutableMathOps$msub_BANG_$dyn_2502.call(null,_,a,b);
 }
 });
 
-var thi$ng$math$core$IMutableMathOps$subm_BANG_$dyn_1492 = (function (_,a,b){
+var thi$ng$math$core$IMutableMathOps$subm_BANG_$dyn_2503 = (function (_,a,b){
 var x__4521__auto__ = (((_ == null))?null:_);
 var m__4522__auto__ = (thi.ng.math.core.subm_BANG_[goog.typeOf(x__4521__auto__)]);
 if((!((m__4522__auto__ == null)))){
@@ -1311,11 +1311,11 @@ thi.ng.math.core.subm_BANG_ = (function thi$ng$math$core$subm_BANG_(_,a,b){
 if((((!((_ == null)))) && ((!((_.thi$ng$math$core$IMutableMathOps$subm_BANG_$arity$3 == null)))))){
 return _.thi$ng$math$core$IMutableMathOps$subm_BANG_$arity$3(_,a,b);
 } else {
-return thi$ng$math$core$IMutableMathOps$subm_BANG_$dyn_1492.call(null,_,a,b);
+return thi$ng$math$core$IMutableMathOps$subm_BANG_$dyn_2503.call(null,_,a,b);
 }
 });
 
-var thi$ng$math$core$IMutableMathOps$abs_BANG_$dyn_1493 = (function (_){
+var thi$ng$math$core$IMutableMathOps$abs_BANG_$dyn_2504 = (function (_){
 var x__4521__auto__ = (((_ == null))?null:_);
 var m__4522__auto__ = (thi.ng.math.core.abs_BANG_[goog.typeOf(x__4521__auto__)]);
 if((!((m__4522__auto__ == null)))){
@@ -1333,7 +1333,7 @@ thi.ng.math.core.abs_BANG_ = (function thi$ng$math$core$abs_BANG_(_){
 if((((!((_ == null)))) && ((!((_.thi$ng$math$core$IMutableMathOps$abs_BANG_$arity$1 == null)))))){
 return _.thi$ng$math$core$IMutableMathOps$abs_BANG_$arity$1(_);
 } else {
-return thi$ng$math$core$IMutableMathOps$abs_BANG_$dyn_1493.call(null,_);
+return thi$ng$math$core$IMutableMathOps$abs_BANG_$dyn_2504.call(null,_);
 }
 });
 
@@ -1343,7 +1343,7 @@ return thi$ng$math$core$IMutableMathOps$abs_BANG_$dyn_1493.call(null,_);
  */
 thi.ng.math.core.IConjugate = function(){};
 
-var thi$ng$math$core$IConjugate$conjugate$dyn_1494 = (function (_){
+var thi$ng$math$core$IConjugate$conjugate$dyn_2505 = (function (_){
 var x__4521__auto__ = (((_ == null))?null:_);
 var m__4522__auto__ = (thi.ng.math.core.conjugate[goog.typeOf(x__4521__auto__)]);
 if((!((m__4522__auto__ == null)))){
@@ -1361,7 +1361,7 @@ thi.ng.math.core.conjugate = (function thi$ng$math$core$conjugate(_){
 if((((!((_ == null)))) && ((!((_.thi$ng$math$core$IConjugate$conjugate$arity$1 == null)))))){
 return _.thi$ng$math$core$IConjugate$conjugate$arity$1(_);
 } else {
-return thi$ng$math$core$IConjugate$conjugate$dyn_1494.call(null,_);
+return thi$ng$math$core$IConjugate$conjugate$dyn_2505.call(null,_);
 }
 });
 
@@ -1371,7 +1371,7 @@ return thi$ng$math$core$IConjugate$conjugate$dyn_1494.call(null,_);
  */
 thi.ng.math.core.ICrossProduct = function(){};
 
-var thi$ng$math$core$ICrossProduct$cross$dyn_1495 = (function (_,a){
+var thi$ng$math$core$ICrossProduct$cross$dyn_2506 = (function (_,a){
 var x__4521__auto__ = (((_ == null))?null:_);
 var m__4522__auto__ = (thi.ng.math.core.cross[goog.typeOf(x__4521__auto__)]);
 if((!((m__4522__auto__ == null)))){
@@ -1389,7 +1389,7 @@ thi.ng.math.core.cross = (function thi$ng$math$core$cross(_,a){
 if((((!((_ == null)))) && ((!((_.thi$ng$math$core$ICrossProduct$cross$arity$2 == null)))))){
 return _.thi$ng$math$core$ICrossProduct$cross$arity$2(_,a);
 } else {
-return thi$ng$math$core$ICrossProduct$cross$dyn_1495.call(null,_,a);
+return thi$ng$math$core$ICrossProduct$cross$dyn_2506.call(null,_,a);
 }
 });
 
@@ -1399,9 +1399,9 @@ return thi$ng$math$core$ICrossProduct$cross$dyn_1495.call(null,_,a);
  */
 thi.ng.math.core.IDeltaEquals = function(){};
 
-var thi$ng$math$core$IDeltaEquals$delta_EQ_$dyn_1498 = (function() {
-var G__1499 = null;
-var G__1499__2 = (function (a,b){
+var thi$ng$math$core$IDeltaEquals$delta_EQ_$dyn_2509 = (function() {
+var G__2510 = null;
+var G__2510__2 = (function (a,b){
 var x__4521__auto__ = (((a == null))?null:a);
 var m__4522__auto__ = (thi.ng.math.core.delta_EQ_[goog.typeOf(x__4521__auto__)]);
 if((!((m__4522__auto__ == null)))){
@@ -1415,7 +1415,7 @@ throw cljs.core.missing_protocol.call(null,"IDeltaEquals.delta=",a);
 }
 }
 });
-var G__1499__3 = (function (a,b,eps){
+var G__2510__3 = (function (a,b,eps){
 var x__4521__auto__ = (((a == null))?null:a);
 var m__4522__auto__ = (thi.ng.math.core.delta_EQ_[goog.typeOf(x__4521__auto__)]);
 if((!((m__4522__auto__ == null)))){
@@ -1429,23 +1429,23 @@ throw cljs.core.missing_protocol.call(null,"IDeltaEquals.delta=",a);
 }
 }
 });
-G__1499 = function(a,b,eps){
+G__2510 = function(a,b,eps){
 switch(arguments.length){
 case 2:
-return G__1499__2.call(this,a,b);
+return G__2510__2.call(this,a,b);
 case 3:
-return G__1499__3.call(this,a,b,eps);
+return G__2510__3.call(this,a,b,eps);
 }
 throw(new Error('Invalid arity: ' + arguments.length));
 };
-G__1499.cljs$core$IFn$_invoke$arity$2 = G__1499__2;
-G__1499.cljs$core$IFn$_invoke$arity$3 = G__1499__3;
-return G__1499;
+G__2510.cljs$core$IFn$_invoke$arity$2 = G__2510__2;
+G__2510.cljs$core$IFn$_invoke$arity$3 = G__2510__3;
+return G__2510;
 })()
 ;
 thi.ng.math.core.delta_EQ_ = (function thi$ng$math$core$delta_EQ_(var_args){
-var G__1497 = arguments.length;
-switch (G__1497) {
+var G__2508 = arguments.length;
+switch (G__2508) {
 case 2:
 return thi.ng.math.core.delta_EQ_.cljs$core$IFn$_invoke$arity$2((arguments[(0)]),(arguments[(1)]));
 
@@ -1464,7 +1464,7 @@ throw (new Error(["Invalid arity: ",cljs.core.str.cljs$core$IFn$_invoke$arity$1(
 if((((!((a == null)))) && ((!((a.thi$ng$math$core$IDeltaEquals$delta_EQ_$arity$2 == null)))))){
 return a.thi$ng$math$core$IDeltaEquals$delta_EQ_$arity$2(a,b);
 } else {
-return thi$ng$math$core$IDeltaEquals$delta_EQ_$dyn_1498.call(null,a,b);
+return thi$ng$math$core$IDeltaEquals$delta_EQ_$dyn_2509.call(null,a,b);
 }
 }));
 
@@ -1472,7 +1472,7 @@ return thi$ng$math$core$IDeltaEquals$delta_EQ_$dyn_1498.call(null,a,b);
 if((((!((a == null)))) && ((!((a.thi$ng$math$core$IDeltaEquals$delta_EQ_$arity$3 == null)))))){
 return a.thi$ng$math$core$IDeltaEquals$delta_EQ_$arity$3(a,b,eps);
 } else {
-return thi$ng$math$core$IDeltaEquals$delta_EQ_$dyn_1498.call(null,a,b,eps);
+return thi$ng$math$core$IDeltaEquals$delta_EQ_$dyn_2509.call(null,a,b,eps);
 }
 }));
 
@@ -1485,7 +1485,7 @@ return thi$ng$math$core$IDeltaEquals$delta_EQ_$dyn_1498.call(null,a,b,eps);
  */
 thi.ng.math.core.IDeterminant = function(){};
 
-var thi$ng$math$core$IDeterminant$determinant$dyn_1501 = (function (_){
+var thi$ng$math$core$IDeterminant$determinant$dyn_2512 = (function (_){
 var x__4521__auto__ = (((_ == null))?null:_);
 var m__4522__auto__ = (thi.ng.math.core.determinant[goog.typeOf(x__4521__auto__)]);
 if((!((m__4522__auto__ == null)))){
@@ -1503,7 +1503,7 @@ thi.ng.math.core.determinant = (function thi$ng$math$core$determinant(_){
 if((((!((_ == null)))) && ((!((_.thi$ng$math$core$IDeterminant$determinant$arity$1 == null)))))){
 return _.thi$ng$math$core$IDeterminant$determinant$arity$1(_);
 } else {
-return thi$ng$math$core$IDeterminant$determinant$dyn_1501.call(null,_);
+return thi$ng$math$core$IDeterminant$determinant$dyn_2512.call(null,_);
 }
 });
 
@@ -1513,9 +1513,9 @@ return thi$ng$math$core$IDeterminant$determinant$dyn_1501.call(null,_);
  */
 thi.ng.math.core.IDotProduct = function(){};
 
-var thi$ng$math$core$IDotProduct$dot$dyn_1504 = (function() {
-var G__1505 = null;
-var G__1505__1 = (function (_){
+var thi$ng$math$core$IDotProduct$dot$dyn_2515 = (function() {
+var G__2516 = null;
+var G__2516__1 = (function (_){
 var x__4521__auto__ = (((_ == null))?null:_);
 var m__4522__auto__ = (thi.ng.math.core.dot[goog.typeOf(x__4521__auto__)]);
 if((!((m__4522__auto__ == null)))){
@@ -1529,7 +1529,7 @@ throw cljs.core.missing_protocol.call(null,"IDotProduct.dot",_);
 }
 }
 });
-var G__1505__2 = (function (_,a){
+var G__2516__2 = (function (_,a){
 var x__4521__auto__ = (((_ == null))?null:_);
 var m__4522__auto__ = (thi.ng.math.core.dot[goog.typeOf(x__4521__auto__)]);
 if((!((m__4522__auto__ == null)))){
@@ -1543,23 +1543,23 @@ throw cljs.core.missing_protocol.call(null,"IDotProduct.dot",_);
 }
 }
 });
-G__1505 = function(_,a){
+G__2516 = function(_,a){
 switch(arguments.length){
 case 1:
-return G__1505__1.call(this,_);
+return G__2516__1.call(this,_);
 case 2:
-return G__1505__2.call(this,_,a);
+return G__2516__2.call(this,_,a);
 }
 throw(new Error('Invalid arity: ' + arguments.length));
 };
-G__1505.cljs$core$IFn$_invoke$arity$1 = G__1505__1;
-G__1505.cljs$core$IFn$_invoke$arity$2 = G__1505__2;
-return G__1505;
+G__2516.cljs$core$IFn$_invoke$arity$1 = G__2516__1;
+G__2516.cljs$core$IFn$_invoke$arity$2 = G__2516__2;
+return G__2516;
 })()
 ;
 thi.ng.math.core.dot = (function thi$ng$math$core$dot(var_args){
-var G__1503 = arguments.length;
-switch (G__1503) {
+var G__2514 = arguments.length;
+switch (G__2514) {
 case 1:
 return thi.ng.math.core.dot.cljs$core$IFn$_invoke$arity$1((arguments[(0)]));
 
@@ -1578,7 +1578,7 @@ throw (new Error(["Invalid arity: ",cljs.core.str.cljs$core$IFn$_invoke$arity$1(
 if((((!((_ == null)))) && ((!((_.thi$ng$math$core$IDotProduct$dot$arity$1 == null)))))){
 return _.thi$ng$math$core$IDotProduct$dot$arity$1(_);
 } else {
-return thi$ng$math$core$IDotProduct$dot$dyn_1504.call(null,_);
+return thi$ng$math$core$IDotProduct$dot$dyn_2515.call(null,_);
 }
 }));
 
@@ -1586,7 +1586,7 @@ return thi$ng$math$core$IDotProduct$dot$dyn_1504.call(null,_);
 if((((!((_ == null)))) && ((!((_.thi$ng$math$core$IDotProduct$dot$arity$2 == null)))))){
 return _.thi$ng$math$core$IDotProduct$dot$arity$2(_,a);
 } else {
-return thi$ng$math$core$IDotProduct$dot$dyn_1504.call(null,_,a);
+return thi$ng$math$core$IDotProduct$dot$dyn_2515.call(null,_,a);
 }
 }));
 
@@ -1599,9 +1599,9 @@ return thi$ng$math$core$IDotProduct$dot$dyn_1504.call(null,_,a);
  */
 thi.ng.math.core.IInterpolate = function(){};
 
-var thi$ng$math$core$IInterpolate$mix$dyn_1509 = (function() {
-var G__1510 = null;
-var G__1510__2 = (function (_,x){
+var thi$ng$math$core$IInterpolate$mix$dyn_2520 = (function() {
+var G__2521 = null;
+var G__2521__2 = (function (_,x){
 var x__4521__auto__ = (((_ == null))?null:_);
 var m__4522__auto__ = (thi.ng.math.core.mix[goog.typeOf(x__4521__auto__)]);
 if((!((m__4522__auto__ == null)))){
@@ -1615,7 +1615,7 @@ throw cljs.core.missing_protocol.call(null,"IInterpolate.mix",_);
 }
 }
 });
-var G__1510__3 = (function (_,x,t){
+var G__2521__3 = (function (_,x,t){
 var x__4521__auto__ = (((_ == null))?null:_);
 var m__4522__auto__ = (thi.ng.math.core.mix[goog.typeOf(x__4521__auto__)]);
 if((!((m__4522__auto__ == null)))){
@@ -1629,7 +1629,7 @@ throw cljs.core.missing_protocol.call(null,"IInterpolate.mix",_);
 }
 }
 });
-var G__1510__6 = (function (_,a,b,c,u,v){
+var G__2521__6 = (function (_,a,b,c,u,v){
 var x__4521__auto__ = (((_ == null))?null:_);
 var m__4522__auto__ = (thi.ng.math.core.mix[goog.typeOf(x__4521__auto__)]);
 if((!((m__4522__auto__ == null)))){
@@ -1643,26 +1643,26 @@ throw cljs.core.missing_protocol.call(null,"IInterpolate.mix",_);
 }
 }
 });
-G__1510 = function(_,a,b,c,u,v){
+G__2521 = function(_,a,b,c,u,v){
 switch(arguments.length){
 case 2:
-return G__1510__2.call(this,_,a);
+return G__2521__2.call(this,_,a);
 case 3:
-return G__1510__3.call(this,_,a,b);
+return G__2521__3.call(this,_,a,b);
 case 6:
-return G__1510__6.call(this,_,a,b,c,u,v);
+return G__2521__6.call(this,_,a,b,c,u,v);
 }
 throw(new Error('Invalid arity: ' + arguments.length));
 };
-G__1510.cljs$core$IFn$_invoke$arity$2 = G__1510__2;
-G__1510.cljs$core$IFn$_invoke$arity$3 = G__1510__3;
-G__1510.cljs$core$IFn$_invoke$arity$6 = G__1510__6;
-return G__1510;
+G__2521.cljs$core$IFn$_invoke$arity$2 = G__2521__2;
+G__2521.cljs$core$IFn$_invoke$arity$3 = G__2521__3;
+G__2521.cljs$core$IFn$_invoke$arity$6 = G__2521__6;
+return G__2521;
 })()
 ;
 thi.ng.math.core.mix = (function thi$ng$math$core$mix(var_args){
-var G__1508 = arguments.length;
-switch (G__1508) {
+var G__2519 = arguments.length;
+switch (G__2519) {
 case 2:
 return thi.ng.math.core.mix.cljs$core$IFn$_invoke$arity$2((arguments[(0)]),(arguments[(1)]));
 
@@ -1685,7 +1685,7 @@ throw (new Error(["Invalid arity: ",cljs.core.str.cljs$core$IFn$_invoke$arity$1(
 if((((!((_ == null)))) && ((!((_.thi$ng$math$core$IInterpolate$mix$arity$2 == null)))))){
 return _.thi$ng$math$core$IInterpolate$mix$arity$2(_,x);
 } else {
-return thi$ng$math$core$IInterpolate$mix$dyn_1509.call(null,_,x);
+return thi$ng$math$core$IInterpolate$mix$dyn_2520.call(null,_,x);
 }
 }));
 
@@ -1693,7 +1693,7 @@ return thi$ng$math$core$IInterpolate$mix$dyn_1509.call(null,_,x);
 if((((!((_ == null)))) && ((!((_.thi$ng$math$core$IInterpolate$mix$arity$3 == null)))))){
 return _.thi$ng$math$core$IInterpolate$mix$arity$3(_,x,t);
 } else {
-return thi$ng$math$core$IInterpolate$mix$dyn_1509.call(null,_,x,t);
+return thi$ng$math$core$IInterpolate$mix$dyn_2520.call(null,_,x,t);
 }
 }));
 
@@ -1701,14 +1701,14 @@ return thi$ng$math$core$IInterpolate$mix$dyn_1509.call(null,_,x,t);
 if((((!((_ == null)))) && ((!((_.thi$ng$math$core$IInterpolate$mix$arity$6 == null)))))){
 return _.thi$ng$math$core$IInterpolate$mix$arity$6(_,a,b,c,u,v);
 } else {
-return thi$ng$math$core$IInterpolate$mix$dyn_1509.call(null,_,a,b,c,u,v);
+return thi$ng$math$core$IInterpolate$mix$dyn_2520.call(null,_,a,b,c,u,v);
 }
 }));
 
 (thi.ng.math.core.mix.cljs$lang$maxFixedArity = 6);
 
 
-var thi$ng$math$core$IInterpolate$mix_with$dyn_1512 = (function (_,x,t,f){
+var thi$ng$math$core$IInterpolate$mix_with$dyn_2523 = (function (_,x,t,f){
 var x__4521__auto__ = (((_ == null))?null:_);
 var m__4522__auto__ = (thi.ng.math.core.mix_with[goog.typeOf(x__4521__auto__)]);
 if((!((m__4522__auto__ == null)))){
@@ -1726,11 +1726,11 @@ thi.ng.math.core.mix_with = (function thi$ng$math$core$mix_with(_,x,t,f){
 if((((!((_ == null)))) && ((!((_.thi$ng$math$core$IInterpolate$mix_with$arity$4 == null)))))){
 return _.thi$ng$math$core$IInterpolate$mix_with$arity$4(_,x,t,f);
 } else {
-return thi$ng$math$core$IInterpolate$mix_with$dyn_1512.call(null,_,x,t,f);
+return thi$ng$math$core$IInterpolate$mix_with$dyn_2523.call(null,_,x,t,f);
 }
 });
 
-var thi$ng$math$core$IInterpolate$step$dyn_1513 = (function (_,e){
+var thi$ng$math$core$IInterpolate$step$dyn_2524 = (function (_,e){
 var x__4521__auto__ = (((_ == null))?null:_);
 var m__4522__auto__ = (thi.ng.math.core.step[goog.typeOf(x__4521__auto__)]);
 if((!((m__4522__auto__ == null)))){
@@ -1748,11 +1748,11 @@ thi.ng.math.core.step = (function thi$ng$math$core$step(_,e){
 if((((!((_ == null)))) && ((!((_.thi$ng$math$core$IInterpolate$step$arity$2 == null)))))){
 return _.thi$ng$math$core$IInterpolate$step$arity$2(_,e);
 } else {
-return thi$ng$math$core$IInterpolate$step$dyn_1513.call(null,_,e);
+return thi$ng$math$core$IInterpolate$step$dyn_2524.call(null,_,e);
 }
 });
 
-var thi$ng$math$core$IInterpolate$smoothstep$dyn_1514 = (function (_,e1,e2){
+var thi$ng$math$core$IInterpolate$smoothstep$dyn_2525 = (function (_,e1,e2){
 var x__4521__auto__ = (((_ == null))?null:_);
 var m__4522__auto__ = (thi.ng.math.core.smoothstep[goog.typeOf(x__4521__auto__)]);
 if((!((m__4522__auto__ == null)))){
@@ -1770,7 +1770,7 @@ thi.ng.math.core.smoothstep = (function thi$ng$math$core$smoothstep(_,e1,e2){
 if((((!((_ == null)))) && ((!((_.thi$ng$math$core$IInterpolate$smoothstep$arity$3 == null)))))){
 return _.thi$ng$math$core$IInterpolate$smoothstep$arity$3(_,e1,e2);
 } else {
-return thi$ng$math$core$IInterpolate$smoothstep$dyn_1514.call(null,_,e1,e2);
+return thi$ng$math$core$IInterpolate$smoothstep$dyn_2525.call(null,_,e1,e2);
 }
 });
 
@@ -1780,7 +1780,7 @@ return thi$ng$math$core$IInterpolate$smoothstep$dyn_1514.call(null,_,e1,e2);
  */
 thi.ng.math.core.IInvert = function(){};
 
-var thi$ng$math$core$IInvert$invert$dyn_1515 = (function (_){
+var thi$ng$math$core$IInvert$invert$dyn_2526 = (function (_){
 var x__4521__auto__ = (((_ == null))?null:_);
 var m__4522__auto__ = (thi.ng.math.core.invert[goog.typeOf(x__4521__auto__)]);
 if((!((m__4522__auto__ == null)))){
@@ -1798,7 +1798,7 @@ thi.ng.math.core.invert = (function thi$ng$math$core$invert(_){
 if((((!((_ == null)))) && ((!((_.thi$ng$math$core$IInvert$invert$arity$1 == null)))))){
 return _.thi$ng$math$core$IInvert$invert$arity$1(_);
 } else {
-return thi$ng$math$core$IInvert$invert$dyn_1515.call(null,_);
+return thi$ng$math$core$IInvert$invert$dyn_2526.call(null,_);
 }
 });
 
@@ -1808,9 +1808,9 @@ return thi$ng$math$core$IInvert$invert$dyn_1515.call(null,_);
  */
 thi.ng.math.core.IMinMax = function(){};
 
-var thi$ng$math$core$IMinMax$min$dyn_1520 = (function() {
-var G__1521 = null;
-var G__1521__2 = (function (_,a){
+var thi$ng$math$core$IMinMax$min$dyn_2531 = (function() {
+var G__2532 = null;
+var G__2532__2 = (function (_,a){
 var x__4521__auto__ = (((_ == null))?null:_);
 var m__4522__auto__ = (thi.ng.math.core.min[goog.typeOf(x__4521__auto__)]);
 if((!((m__4522__auto__ == null)))){
@@ -1824,7 +1824,7 @@ throw cljs.core.missing_protocol.call(null,"IMinMax.min",_);
 }
 }
 });
-var G__1521__3 = (function (_,a,b){
+var G__2532__3 = (function (_,a,b){
 var x__4521__auto__ = (((_ == null))?null:_);
 var m__4522__auto__ = (thi.ng.math.core.min[goog.typeOf(x__4521__auto__)]);
 if((!((m__4522__auto__ == null)))){
@@ -1838,23 +1838,23 @@ throw cljs.core.missing_protocol.call(null,"IMinMax.min",_);
 }
 }
 });
-G__1521 = function(_,a,b){
+G__2532 = function(_,a,b){
 switch(arguments.length){
 case 2:
-return G__1521__2.call(this,_,a);
+return G__2532__2.call(this,_,a);
 case 3:
-return G__1521__3.call(this,_,a,b);
+return G__2532__3.call(this,_,a,b);
 }
 throw(new Error('Invalid arity: ' + arguments.length));
 };
-G__1521.cljs$core$IFn$_invoke$arity$2 = G__1521__2;
-G__1521.cljs$core$IFn$_invoke$arity$3 = G__1521__3;
-return G__1521;
+G__2532.cljs$core$IFn$_invoke$arity$2 = G__2532__2;
+G__2532.cljs$core$IFn$_invoke$arity$3 = G__2532__3;
+return G__2532;
 })()
 ;
 thi.ng.math.core.min = (function thi$ng$math$core$min(var_args){
-var G__1517 = arguments.length;
-switch (G__1517) {
+var G__2528 = arguments.length;
+switch (G__2528) {
 case 2:
 return thi.ng.math.core.min.cljs$core$IFn$_invoke$arity$2((arguments[(0)]),(arguments[(1)]));
 
@@ -1873,7 +1873,7 @@ throw (new Error(["Invalid arity: ",cljs.core.str.cljs$core$IFn$_invoke$arity$1(
 if((((!((_ == null)))) && ((!((_.thi$ng$math$core$IMinMax$min$arity$2 == null)))))){
 return _.thi$ng$math$core$IMinMax$min$arity$2(_,a);
 } else {
-return thi$ng$math$core$IMinMax$min$dyn_1520.call(null,_,a);
+return thi$ng$math$core$IMinMax$min$dyn_2531.call(null,_,a);
 }
 }));
 
@@ -1881,16 +1881,16 @@ return thi$ng$math$core$IMinMax$min$dyn_1520.call(null,_,a);
 if((((!((_ == null)))) && ((!((_.thi$ng$math$core$IMinMax$min$arity$3 == null)))))){
 return _.thi$ng$math$core$IMinMax$min$arity$3(_,a,b);
 } else {
-return thi$ng$math$core$IMinMax$min$dyn_1520.call(null,_,a,b);
+return thi$ng$math$core$IMinMax$min$dyn_2531.call(null,_,a,b);
 }
 }));
 
 (thi.ng.math.core.min.cljs$lang$maxFixedArity = 3);
 
 
-var thi$ng$math$core$IMinMax$max$dyn_1523 = (function() {
-var G__1524 = null;
-var G__1524__2 = (function (_,a){
+var thi$ng$math$core$IMinMax$max$dyn_2534 = (function() {
+var G__2535 = null;
+var G__2535__2 = (function (_,a){
 var x__4521__auto__ = (((_ == null))?null:_);
 var m__4522__auto__ = (thi.ng.math.core.max[goog.typeOf(x__4521__auto__)]);
 if((!((m__4522__auto__ == null)))){
@@ -1904,7 +1904,7 @@ throw cljs.core.missing_protocol.call(null,"IMinMax.max",_);
 }
 }
 });
-var G__1524__3 = (function (_,a,b){
+var G__2535__3 = (function (_,a,b){
 var x__4521__auto__ = (((_ == null))?null:_);
 var m__4522__auto__ = (thi.ng.math.core.max[goog.typeOf(x__4521__auto__)]);
 if((!((m__4522__auto__ == null)))){
@@ -1918,23 +1918,23 @@ throw cljs.core.missing_protocol.call(null,"IMinMax.max",_);
 }
 }
 });
-G__1524 = function(_,a,b){
+G__2535 = function(_,a,b){
 switch(arguments.length){
 case 2:
-return G__1524__2.call(this,_,a);
+return G__2535__2.call(this,_,a);
 case 3:
-return G__1524__3.call(this,_,a,b);
+return G__2535__3.call(this,_,a,b);
 }
 throw(new Error('Invalid arity: ' + arguments.length));
 };
-G__1524.cljs$core$IFn$_invoke$arity$2 = G__1524__2;
-G__1524.cljs$core$IFn$_invoke$arity$3 = G__1524__3;
-return G__1524;
+G__2535.cljs$core$IFn$_invoke$arity$2 = G__2535__2;
+G__2535.cljs$core$IFn$_invoke$arity$3 = G__2535__3;
+return G__2535;
 })()
 ;
 thi.ng.math.core.max = (function thi$ng$math$core$max(var_args){
-var G__1519 = arguments.length;
-switch (G__1519) {
+var G__2530 = arguments.length;
+switch (G__2530) {
 case 2:
 return thi.ng.math.core.max.cljs$core$IFn$_invoke$arity$2((arguments[(0)]),(arguments[(1)]));
 
@@ -1953,7 +1953,7 @@ throw (new Error(["Invalid arity: ",cljs.core.str.cljs$core$IFn$_invoke$arity$1(
 if((((!((_ == null)))) && ((!((_.thi$ng$math$core$IMinMax$max$arity$2 == null)))))){
 return _.thi$ng$math$core$IMinMax$max$arity$2(_,a);
 } else {
-return thi$ng$math$core$IMinMax$max$dyn_1523.call(null,_,a);
+return thi$ng$math$core$IMinMax$max$dyn_2534.call(null,_,a);
 }
 }));
 
@@ -1961,7 +1961,7 @@ return thi$ng$math$core$IMinMax$max$dyn_1523.call(null,_,a);
 if((((!((_ == null)))) && ((!((_.thi$ng$math$core$IMinMax$max$arity$3 == null)))))){
 return _.thi$ng$math$core$IMinMax$max$arity$3(_,a,b);
 } else {
-return thi$ng$math$core$IMinMax$max$dyn_1523.call(null,_,a,b);
+return thi$ng$math$core$IMinMax$max$dyn_2534.call(null,_,a,b);
 }
 }));
 
@@ -1974,7 +1974,7 @@ return thi$ng$math$core$IMinMax$max$dyn_1523.call(null,_,a,b);
  */
 thi.ng.math.core.ILimit = function(){};
 
-var thi$ng$math$core$ILimit$limit$dyn_1526 = (function (_,x){
+var thi$ng$math$core$ILimit$limit$dyn_2537 = (function (_,x){
 var x__4521__auto__ = (((_ == null))?null:_);
 var m__4522__auto__ = (thi.ng.math.core.limit[goog.typeOf(x__4521__auto__)]);
 if((!((m__4522__auto__ == null)))){
@@ -1992,7 +1992,7 @@ thi.ng.math.core.limit = (function thi$ng$math$core$limit(_,x){
 if((((!((_ == null)))) && ((!((_.thi$ng$math$core$ILimit$limit$arity$2 == null)))))){
 return _.thi$ng$math$core$ILimit$limit$arity$2(_,x);
 } else {
-return thi$ng$math$core$ILimit$limit$dyn_1526.call(null,_,x);
+return thi$ng$math$core$ILimit$limit$dyn_2537.call(null,_,x);
 }
 });
 
@@ -2002,7 +2002,7 @@ return thi$ng$math$core$ILimit$limit$dyn_1526.call(null,_,x);
  */
 thi.ng.math.core.IMagnitude = function(){};
 
-var thi$ng$math$core$IMagnitude$mag$dyn_1527 = (function (_){
+var thi$ng$math$core$IMagnitude$mag$dyn_2538 = (function (_){
 var x__4521__auto__ = (((_ == null))?null:_);
 var m__4522__auto__ = (thi.ng.math.core.mag[goog.typeOf(x__4521__auto__)]);
 if((!((m__4522__auto__ == null)))){
@@ -2020,11 +2020,11 @@ thi.ng.math.core.mag = (function thi$ng$math$core$mag(_){
 if((((!((_ == null)))) && ((!((_.thi$ng$math$core$IMagnitude$mag$arity$1 == null)))))){
 return _.thi$ng$math$core$IMagnitude$mag$arity$1(_);
 } else {
-return thi$ng$math$core$IMagnitude$mag$dyn_1527.call(null,_);
+return thi$ng$math$core$IMagnitude$mag$dyn_2538.call(null,_);
 }
 });
 
-var thi$ng$math$core$IMagnitude$mag_squared$dyn_1528 = (function (_){
+var thi$ng$math$core$IMagnitude$mag_squared$dyn_2539 = (function (_){
 var x__4521__auto__ = (((_ == null))?null:_);
 var m__4522__auto__ = (thi.ng.math.core.mag_squared[goog.typeOf(x__4521__auto__)]);
 if((!((m__4522__auto__ == null)))){
@@ -2042,7 +2042,7 @@ thi.ng.math.core.mag_squared = (function thi$ng$math$core$mag_squared(_){
 if((((!((_ == null)))) && ((!((_.thi$ng$math$core$IMagnitude$mag_squared$arity$1 == null)))))){
 return _.thi$ng$math$core$IMagnitude$mag_squared$arity$1(_);
 } else {
-return thi$ng$math$core$IMagnitude$mag_squared$dyn_1528.call(null,_);
+return thi$ng$math$core$IMagnitude$mag_squared$dyn_2539.call(null,_);
 }
 });
 
@@ -2052,9 +2052,9 @@ return thi$ng$math$core$IMagnitude$mag_squared$dyn_1528.call(null,_);
  */
 thi.ng.math.core.INormalize = function(){};
 
-var thi$ng$math$core$INormalize$normalize$dyn_1531 = (function() {
-var G__1532 = null;
-var G__1532__1 = (function (_){
+var thi$ng$math$core$INormalize$normalize$dyn_2542 = (function() {
+var G__2543 = null;
+var G__2543__1 = (function (_){
 var x__4521__auto__ = (((_ == null))?null:_);
 var m__4522__auto__ = (thi.ng.math.core.normalize[goog.typeOf(x__4521__auto__)]);
 if((!((m__4522__auto__ == null)))){
@@ -2068,7 +2068,7 @@ throw cljs.core.missing_protocol.call(null,"INormalize.normalize",_);
 }
 }
 });
-var G__1532__2 = (function (_,norm){
+var G__2543__2 = (function (_,norm){
 var x__4521__auto__ = (((_ == null))?null:_);
 var m__4522__auto__ = (thi.ng.math.core.normalize[goog.typeOf(x__4521__auto__)]);
 if((!((m__4522__auto__ == null)))){
@@ -2082,23 +2082,23 @@ throw cljs.core.missing_protocol.call(null,"INormalize.normalize",_);
 }
 }
 });
-G__1532 = function(_,norm){
+G__2543 = function(_,norm){
 switch(arguments.length){
 case 1:
-return G__1532__1.call(this,_);
+return G__2543__1.call(this,_);
 case 2:
-return G__1532__2.call(this,_,norm);
+return G__2543__2.call(this,_,norm);
 }
 throw(new Error('Invalid arity: ' + arguments.length));
 };
-G__1532.cljs$core$IFn$_invoke$arity$1 = G__1532__1;
-G__1532.cljs$core$IFn$_invoke$arity$2 = G__1532__2;
-return G__1532;
+G__2543.cljs$core$IFn$_invoke$arity$1 = G__2543__1;
+G__2543.cljs$core$IFn$_invoke$arity$2 = G__2543__2;
+return G__2543;
 })()
 ;
 thi.ng.math.core.normalize = (function thi$ng$math$core$normalize(var_args){
-var G__1530 = arguments.length;
-switch (G__1530) {
+var G__2541 = arguments.length;
+switch (G__2541) {
 case 1:
 return thi.ng.math.core.normalize.cljs$core$IFn$_invoke$arity$1((arguments[(0)]));
 
@@ -2117,7 +2117,7 @@ throw (new Error(["Invalid arity: ",cljs.core.str.cljs$core$IFn$_invoke$arity$1(
 if((((!((_ == null)))) && ((!((_.thi$ng$math$core$INormalize$normalize$arity$1 == null)))))){
 return _.thi$ng$math$core$INormalize$normalize$arity$1(_);
 } else {
-return thi$ng$math$core$INormalize$normalize$dyn_1531.call(null,_);
+return thi$ng$math$core$INormalize$normalize$dyn_2542.call(null,_);
 }
 }));
 
@@ -2125,14 +2125,14 @@ return thi$ng$math$core$INormalize$normalize$dyn_1531.call(null,_);
 if((((!((_ == null)))) && ((!((_.thi$ng$math$core$INormalize$normalize$arity$2 == null)))))){
 return _.thi$ng$math$core$INormalize$normalize$arity$2(_,norm);
 } else {
-return thi$ng$math$core$INormalize$normalize$dyn_1531.call(null,_,norm);
+return thi$ng$math$core$INormalize$normalize$dyn_2542.call(null,_,norm);
 }
 }));
 
 (thi.ng.math.core.normalize.cljs$lang$maxFixedArity = 2);
 
 
-var thi$ng$math$core$INormalize$normalized_QMARK_$dyn_1534 = (function (_){
+var thi$ng$math$core$INormalize$normalized_QMARK_$dyn_2545 = (function (_){
 var x__4521__auto__ = (((_ == null))?null:_);
 var m__4522__auto__ = (thi.ng.math.core.normalized_QMARK_[goog.typeOf(x__4521__auto__)]);
 if((!((m__4522__auto__ == null)))){
@@ -2150,7 +2150,7 @@ thi.ng.math.core.normalized_QMARK_ = (function thi$ng$math$core$normalized_QMARK
 if((((!((_ == null)))) && ((!((_.thi$ng$math$core$INormalize$normalized_QMARK_$arity$1 == null)))))){
 return _.thi$ng$math$core$INormalize$normalized_QMARK_$arity$1(_);
 } else {
-return thi$ng$math$core$INormalize$normalized_QMARK_$dyn_1534.call(null,_);
+return thi$ng$math$core$INormalize$normalized_QMARK_$dyn_2545.call(null,_);
 }
 });
 
@@ -2160,7 +2160,7 @@ return thi$ng$math$core$INormalize$normalized_QMARK_$dyn_1534.call(null,_);
  */
 thi.ng.math.core.ISetOps = function(){};
 
-var thi$ng$math$core$ISetOps$union$dyn_1535 = (function (_,x){
+var thi$ng$math$core$ISetOps$union$dyn_2546 = (function (_,x){
 var x__4521__auto__ = (((_ == null))?null:_);
 var m__4522__auto__ = (thi.ng.math.core.union[goog.typeOf(x__4521__auto__)]);
 if((!((m__4522__auto__ == null)))){
@@ -2178,11 +2178,11 @@ thi.ng.math.core.union = (function thi$ng$math$core$union(_,x){
 if((((!((_ == null)))) && ((!((_.thi$ng$math$core$ISetOps$union$arity$2 == null)))))){
 return _.thi$ng$math$core$ISetOps$union$arity$2(_,x);
 } else {
-return thi$ng$math$core$ISetOps$union$dyn_1535.call(null,_,x);
+return thi$ng$math$core$ISetOps$union$dyn_2546.call(null,_,x);
 }
 });
 
-var thi$ng$math$core$ISetOps$intersection$dyn_1536 = (function (_,x){
+var thi$ng$math$core$ISetOps$intersection$dyn_2547 = (function (_,x){
 var x__4521__auto__ = (((_ == null))?null:_);
 var m__4522__auto__ = (thi.ng.math.core.intersection[goog.typeOf(x__4521__auto__)]);
 if((!((m__4522__auto__ == null)))){
@@ -2200,11 +2200,11 @@ thi.ng.math.core.intersection = (function thi$ng$math$core$intersection(_,x){
 if((((!((_ == null)))) && ((!((_.thi$ng$math$core$ISetOps$intersection$arity$2 == null)))))){
 return _.thi$ng$math$core$ISetOps$intersection$arity$2(_,x);
 } else {
-return thi$ng$math$core$ISetOps$intersection$dyn_1536.call(null,_,x);
+return thi$ng$math$core$ISetOps$intersection$dyn_2547.call(null,_,x);
 }
 });
 
-var thi$ng$math$core$ISetOps$difference$dyn_1537 = (function (_,x){
+var thi$ng$math$core$ISetOps$difference$dyn_2548 = (function (_,x){
 var x__4521__auto__ = (((_ == null))?null:_);
 var m__4522__auto__ = (thi.ng.math.core.difference[goog.typeOf(x__4521__auto__)]);
 if((!((m__4522__auto__ == null)))){
@@ -2222,7 +2222,7 @@ thi.ng.math.core.difference = (function thi$ng$math$core$difference(_,x){
 if((((!((_ == null)))) && ((!((_.thi$ng$math$core$ISetOps$difference$arity$2 == null)))))){
 return _.thi$ng$math$core$ISetOps$difference$arity$2(_,x);
 } else {
-return thi$ng$math$core$ISetOps$difference$dyn_1537.call(null,_,x);
+return thi$ng$math$core$ISetOps$difference$dyn_2548.call(null,_,x);
 }
 });
 
@@ -2232,7 +2232,7 @@ return thi$ng$math$core$ISetOps$difference$dyn_1537.call(null,_,x);
  */
 thi.ng.math.core.ITranspose = function(){};
 
-var thi$ng$math$core$ITranspose$transpose$dyn_1538 = (function (_){
+var thi$ng$math$core$ITranspose$transpose$dyn_2549 = (function (_){
 var x__4521__auto__ = (((_ == null))?null:_);
 var m__4522__auto__ = (thi.ng.math.core.transpose[goog.typeOf(x__4521__auto__)]);
 if((!((m__4522__auto__ == null)))){
@@ -2250,7 +2250,7 @@ thi.ng.math.core.transpose = (function thi$ng$math$core$transpose(_){
 if((((!((_ == null)))) && ((!((_.thi$ng$math$core$ITranspose$transpose$arity$1 == null)))))){
 return _.thi$ng$math$core$ITranspose$transpose$arity$1(_);
 } else {
-return thi$ng$math$core$ITranspose$transpose$dyn_1538.call(null,_);
+return thi$ng$math$core$ITranspose$transpose$dyn_2549.call(null,_);
 }
 });
 
@@ -2298,33 +2298,33 @@ return (-1);
 goog.object.set(thi.ng.math.core.IDeltaEquals,"number",true);
 
 goog.object.set(thi.ng.math.core.delta_EQ_,"number",(function() {
-var G__1539 = null;
-var G__1539__2 = (function (a,b){
+var G__2550 = null;
+var G__2550__2 = (function (a,b){
 if(typeof b === 'number'){
 return (thi.ng.math.core.abs_STAR_.call(null,(a - b)) <= thi.ng.math.core._STAR_eps_STAR_);
 } else {
 return null;
 }
 });
-var G__1539__3 = (function (a,b,eps){
+var G__2550__3 = (function (a,b,eps){
 if(typeof b === 'number'){
 return (thi.ng.math.core.abs_STAR_.call(null,(a - b)) <= eps);
 } else {
 return null;
 }
 });
-G__1539 = function(a,b,eps){
+G__2550 = function(a,b,eps){
 switch(arguments.length){
 case 2:
-return G__1539__2.call(this,a,b);
+return G__2550__2.call(this,a,b);
 case 3:
-return G__1539__3.call(this,a,b,eps);
+return G__2550__3.call(this,a,b,eps);
 }
 throw(new Error('Invalid arity: ' + arguments.length));
 };
-G__1539.cljs$core$IFn$_invoke$arity$2 = G__1539__2;
-G__1539.cljs$core$IFn$_invoke$arity$3 = G__1539__3;
-return G__1539;
+G__2550.cljs$core$IFn$_invoke$arity$2 = G__2550__2;
+G__2550.cljs$core$IFn$_invoke$arity$3 = G__2550__3;
+return G__2550;
 })()
 );
 
@@ -2344,10 +2344,10 @@ var b__$1 = b;
 while(true){
 if(cljs.core.truth_(a__$2)){
 if(cljs.core.truth_(thi.ng.math.core.delta_EQ_.call(null,cljs.core.first.call(null,a__$2),cljs.core.first.call(null,b__$1),eps))){
-var G__1540 = cljs.core.next.call(null,a__$2);
-var G__1541 = cljs.core.next.call(null,b__$1);
-a__$2 = G__1540;
-b__$1 = G__1541;
+var G__2551 = cljs.core.next.call(null,a__$2);
+var G__2552 = cljs.core.next.call(null,b__$1);
+a__$2 = G__2551;
+b__$1 = G__2552;
 continue;
 } else {
 return false;
@@ -2381,10 +2381,10 @@ var b__$1 = b;
 while(true){
 if(cljs.core.truth_(a__$2)){
 if(cljs.core.truth_(thi.ng.math.core.delta_EQ_.call(null,cljs.core.first.call(null,a__$2),cljs.core.first.call(null,b__$1),eps))){
-var G__1542 = cljs.core.next.call(null,a__$2);
-var G__1543 = cljs.core.next.call(null,b__$1);
-a__$2 = G__1542;
-b__$1 = G__1543;
+var G__2553 = cljs.core.next.call(null,a__$2);
+var G__2554 = cljs.core.next.call(null,b__$1);
+a__$2 = G__2553;
+b__$1 = G__2554;
 continue;
 } else {
 return false;
@@ -2418,10 +2418,10 @@ var b__$1 = b;
 while(true){
 if(cljs.core.truth_(a__$2)){
 if(cljs.core.truth_(thi.ng.math.core.delta_EQ_.call(null,cljs.core.first.call(null,a__$2),cljs.core.first.call(null,b__$1),eps))){
-var G__1544 = cljs.core.next.call(null,a__$2);
-var G__1545 = cljs.core.next.call(null,b__$1);
-a__$2 = G__1544;
-b__$1 = G__1545;
+var G__2555 = cljs.core.next.call(null,a__$2);
+var G__2556 = cljs.core.next.call(null,b__$1);
+a__$2 = G__2555;
+b__$1 = G__2556;
 continue;
 } else {
 return false;
@@ -2455,10 +2455,10 @@ var b__$1 = b;
 while(true){
 if(cljs.core.truth_(a__$2)){
 if(cljs.core.truth_(thi.ng.math.core.delta_EQ_.call(null,cljs.core.first.call(null,a__$2),cljs.core.first.call(null,b__$1),eps))){
-var G__1546 = cljs.core.next.call(null,a__$2);
-var G__1547 = cljs.core.next.call(null,b__$1);
-a__$2 = G__1546;
-b__$1 = G__1547;
+var G__2557 = cljs.core.next.call(null,a__$2);
+var G__2558 = cljs.core.next.call(null,b__$1);
+a__$2 = G__2557;
+b__$1 = G__2558;
 continue;
 } else {
 return false;
@@ -2479,25 +2479,25 @@ return false;
 goog.object.set(thi.ng.math.core.IDeltaEquals,"null",true);
 
 goog.object.set(thi.ng.math.core.delta_EQ_,"null",(function() {
-var G__1548 = null;
-var G__1548__2 = (function (_,b){
+var G__2559 = null;
+var G__2559__2 = (function (_,b){
 return (b == null);
 });
-var G__1548__3 = (function (_,b,___$1){
+var G__2559__3 = (function (_,b,___$1){
 return (b == null);
 });
-G__1548 = function(_,b,___$1){
+G__2559 = function(_,b,___$1){
 switch(arguments.length){
 case 2:
-return G__1548__2.call(this,_,b);
+return G__2559__2.call(this,_,b);
 case 3:
-return G__1548__3.call(this,_,b,___$1);
+return G__2559__3.call(this,_,b,___$1);
 }
 throw(new Error('Invalid arity: ' + arguments.length));
 };
-G__1548.cljs$core$IFn$_invoke$arity$2 = G__1548__2;
-G__1548.cljs$core$IFn$_invoke$arity$3 = G__1548__3;
-return G__1548;
+G__2559.cljs$core$IFn$_invoke$arity$2 = G__2559__2;
+G__2559.cljs$core$IFn$_invoke$arity$3 = G__2559__3;
+return G__2559;
 })()
 );
 /**
@@ -2521,8 +2521,8 @@ return x;
 }
 });
 thi.ng.math.core.signum = (function thi$ng$math$core$signum(var_args){
-var G__1550 = arguments.length;
-switch (G__1550) {
+var G__2561 = arguments.length;
+switch (G__2561) {
 case 1:
 return thi.ng.math.core.signum.cljs$core$IFn$_invoke$arity$1((arguments[(0)]));
 
@@ -2564,7 +2564,7 @@ return (1);
 (thi.ng.math.core.signum.cljs$lang$maxFixedArity = 2);
 
 /**
- * Constraints x to be in closed interval [min max].
+ * Constraints x to be closed [min .. max] interval.
  */
 thi.ng.math.core.clamp = (function thi$ng$math$core$clamp(x,min,max){
 if((x < min)){
@@ -2578,7 +2578,7 @@ return x;
 }
 });
 /**
- * Constraints x to be in closed interval [0.0 .. 1.0]
+ * Constraints x to closed [0.0 .. 1.0] interval.
  */
 thi.ng.math.core.clamp_normalized = (function thi$ng$math$core$clamp_normalized(x){
 if((x < -1.0)){
@@ -2592,13 +2592,28 @@ return x;
 }
 });
 /**
+ * Constraints x to closed [0 .. 1] interval.
+ */
+thi.ng.math.core.clamp01 = (function thi$ng$math$core$clamp01(x){
+if((x < 0.0)){
+return 0.0;
+} else {
+if((x > 1.0)){
+return 1.0;
+} else {
+return x;
+}
+}
+});
+thi.ng.math.core.clamp11 = thi.ng.math.core.clamp_normalized;
+/**
  * Maps x from one interval into another. Intervals can be defined as
  *   vectors. If range of input interval is zero, returns min. bound of
  *   output.
  */
 thi.ng.math.core.map_interval = (function thi$ng$math$core$map_interval(var_args){
-var G__1553 = arguments.length;
-switch (G__1553) {
+var G__2564 = arguments.length;
+switch (G__2564) {
 case 3:
 return thi.ng.math.core.map_interval.cljs$core$IFn$_invoke$arity$3((arguments[(0)]),(arguments[(1)]),(arguments[(2)]));
 
@@ -2613,13 +2628,13 @@ throw (new Error(["Invalid arity: ",cljs.core.str.cljs$core$IFn$_invoke$arity$1(
 }
 });
 
-(thi.ng.math.core.map_interval.cljs$core$IFn$_invoke$arity$3 = (function (x,p__1554,p__1555){
-var vec__1556 = p__1554;
-var in1 = cljs.core.nth.call(null,vec__1556,(0),null);
-var in2 = cljs.core.nth.call(null,vec__1556,(1),null);
-var vec__1559 = p__1555;
-var out1 = cljs.core.nth.call(null,vec__1559,(0),null);
-var out2 = cljs.core.nth.call(null,vec__1559,(1),null);
+(thi.ng.math.core.map_interval.cljs$core$IFn$_invoke$arity$3 = (function (x,p__2565,p__2566){
+var vec__2567 = p__2565;
+var in1 = cljs.core.nth.call(null,vec__2567,(0),null);
+var in2 = cljs.core.nth.call(null,vec__2567,(1),null);
+var vec__2570 = p__2566;
+var out1 = cljs.core.nth.call(null,vec__2570,(0),null);
+var out2 = cljs.core.nth.call(null,vec__2570,(1),null);
 if(cljs.core.not_EQ_.call(null,in1,in2)){
 return (((out2 - out1) * ((x - in1) / (in2 - in1))) + out1);
 } else {
@@ -2644,8 +2659,8 @@ return out1;
  *   output.
  */
 thi.ng.math.core.map_interval_clamped = (function thi$ng$math$core$map_interval_clamped(var_args){
-var G__1564 = arguments.length;
-switch (G__1564) {
+var G__2575 = arguments.length;
+switch (G__2575) {
 case 3:
 return thi.ng.math.core.map_interval_clamped.cljs$core$IFn$_invoke$arity$3((arguments[(0)]),(arguments[(1)]),(arguments[(2)]));
 
@@ -2668,13 +2683,13 @@ throw (new Error(["Invalid arity: ",cljs.core.str.cljs$core$IFn$_invoke$arity$1(
 }
 });
 
-(thi.ng.math.core.map_interval_clamped.cljs$core$IFn$_invoke$arity$3 = (function (x,p__1565,p__1566){
-var vec__1567 = p__1565;
-var in1 = cljs.core.nth.call(null,vec__1567,(0),null);
-var in2 = cljs.core.nth.call(null,vec__1567,(1),null);
-var vec__1570 = p__1566;
-var out1 = cljs.core.nth.call(null,vec__1570,(0),null);
-var out2 = cljs.core.nth.call(null,vec__1570,(1),null);
+(thi.ng.math.core.map_interval_clamped.cljs$core$IFn$_invoke$arity$3 = (function (x,p__2576,p__2577){
+var vec__2578 = p__2576;
+var in1 = cljs.core.nth.call(null,vec__2578,(0),null);
+var in2 = cljs.core.nth.call(null,vec__2578,(1),null);
+var vec__2581 = p__2577;
+var out1 = cljs.core.nth.call(null,vec__2581,(0),null);
+var out2 = cljs.core.nth.call(null,vec__2581,(1),null);
 return thi.ng.math.core.map_interval_clamped.call(null,x,in1,in2,out1,out2);
 }));
 
@@ -2690,16 +2705,16 @@ return thi.ng.math.core.map_interval.call(null,x,in1,in2,out1,out2);
 }
 }));
 
-(thi.ng.math.core.map_interval_clamped.cljs$core$IFn$_invoke$arity$4 = (function (x,p__1573,p__1574,p__1575){
-var vec__1576 = p__1573;
-var in1 = cljs.core.nth.call(null,vec__1576,(0),null);
-var in2 = cljs.core.nth.call(null,vec__1576,(1),null);
-var vec__1579 = p__1574;
-var out1 = cljs.core.nth.call(null,vec__1579,(0),null);
-var out2 = cljs.core.nth.call(null,vec__1579,(1),null);
-var vec__1582 = p__1575;
-var c1 = cljs.core.nth.call(null,vec__1582,(0),null);
-var c2 = cljs.core.nth.call(null,vec__1582,(1),null);
+(thi.ng.math.core.map_interval_clamped.cljs$core$IFn$_invoke$arity$4 = (function (x,p__2584,p__2585,p__2586){
+var vec__2587 = p__2584;
+var in1 = cljs.core.nth.call(null,vec__2587,(0),null);
+var in2 = cljs.core.nth.call(null,vec__2587,(1),null);
+var vec__2590 = p__2585;
+var out1 = cljs.core.nth.call(null,vec__2590,(0),null);
+var out2 = cljs.core.nth.call(null,vec__2590,(1),null);
+var vec__2593 = p__2586;
+var c1 = cljs.core.nth.call(null,vec__2593,(0),null);
+var c2 = cljs.core.nth.call(null,vec__2593,(1),null);
 return thi.ng.math.core.clamp.call(null,thi.ng.math.core.map_interval.call(null,x,in1,in2,out1,out2),c1,c2);
 }));
 
@@ -2713,8 +2728,8 @@ return thi.ng.math.core.clamp.call(null,thi.ng.math.core.map_interval.call(null,
  * Returns true if x >= min and x <= max.
  */
 thi.ng.math.core.in_range_QMARK_ = (function thi$ng$math$core$in_range_QMARK_(var_args){
-var G__1587 = arguments.length;
-switch (G__1587) {
+var G__2598 = arguments.length;
+switch (G__2598) {
 case 2:
 return thi.ng.math.core.in_range_QMARK_.cljs$core$IFn$_invoke$arity$2((arguments[(0)]),(arguments[(1)]));
 
@@ -2729,10 +2744,10 @@ throw (new Error(["Invalid arity: ",cljs.core.str.cljs$core$IFn$_invoke$arity$1(
 }
 });
 
-(thi.ng.math.core.in_range_QMARK_.cljs$core$IFn$_invoke$arity$2 = (function (p__1588,x){
-var vec__1589 = p__1588;
-var min = cljs.core.nth.call(null,vec__1589,(0),null);
-var max = cljs.core.nth.call(null,vec__1589,(1),null);
+(thi.ng.math.core.in_range_QMARK_.cljs$core$IFn$_invoke$arity$2 = (function (p__2599,x){
+var vec__2600 = p__2599;
+var min = cljs.core.nth.call(null,vec__2600,(0),null);
+var max = cljs.core.nth.call(null,vec__2600,(1),null);
 if((x >= min)){
 return (x <= max);
 } else {
@@ -2766,8 +2781,8 @@ return x__$1;
  *   resolution 1/x.
  */
 thi.ng.math.core.norm_range = (function thi$ng$math$core$norm_range(n){
-return cljs.core.map.call(null,(function (p1__1593_SHARP_){
-return (p1__1593_SHARP_ / n);
+return cljs.core.map.call(null,(function (p1__2604_SHARP_){
+return (p1__2604_SHARP_ / n);
 }),cljs.core.range.call(null,(n + (1))));
 });
 thi.ng.math.core.mix_STAR_ = (function thi$ng$math$core$mix_STAR_(a,b,t){
@@ -2834,8 +2849,8 @@ while(true){
 if((pow2 >= x)){
 return pow2;
 } else {
-var G__1594 = (pow2 << (1));
-pow2 = G__1594;
+var G__2605 = (pow2 << (1));
+pow2 = G__2605;
 continue;
 }
 break;
@@ -2927,8 +2942,8 @@ var h = (k * t);
 return (h * Math.exp((1.0 - h)));
 });
 thi.ng.math.core.sinc = (function thi$ng$math$core$sinc(var_args){
-var G__1596 = arguments.length;
-switch (G__1596) {
+var G__2607 = arguments.length;
+switch (G__2607) {
 case 1:
 return thi.ng.math.core.sinc.cljs$core$IFn$_invoke$arity$1((arguments[(0)]));
 
@@ -2963,8 +2978,8 @@ return (Math.sin(x_SINGLEQUOTE_) / x_SINGLEQUOTE_);
 (thi.ng.math.core.sinc.cljs$lang$maxFixedArity = 2);
 
 thi.ng.math.core.random = (function thi$ng$math$core$random(var_args){
-var G__1599 = arguments.length;
-switch (G__1599) {
+var G__2610 = arguments.length;
+switch (G__2610) {
 case 0:
 return thi.ng.math.core.random.cljs$core$IFn$_invoke$arity$0();
 
@@ -3018,14 +3033,14 @@ return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMP
  * Takes a quartile index (1..4) and sorted seq of samples, returns set of items in quartile.
  */
 thi.ng.math.core.quartile = (function thi$ng$math$core$quartile(n,sorted){
-var vec__1601 = thi.ng.math.core.quartile_range.call(null,n,cljs.core.count.call(null,sorted));
-var a = cljs.core.nth.call(null,vec__1601,(0),null);
-var b = cljs.core.nth.call(null,vec__1601,(1),null);
+var vec__2612 = thi.ng.math.core.quartile_range.call(null,n,cljs.core.count.call(null,sorted));
+var a = cljs.core.nth.call(null,vec__2612,(0),null);
+var b = cljs.core.nth.call(null,vec__2612,(1),null);
 return cljs.core.take.call(null,(b - a),cljs.core.drop.call(null,a,sorted));
 });
 thi.ng.math.core.normdist_weights = (function thi$ng$math$core$normdist_weights(var_args){
-var G__1606 = arguments.length;
-switch (G__1606) {
+var G__2617 = arguments.length;
+switch (G__2617) {
 case 1:
 return thi.ng.math.core.normdist_weights.cljs$core$IFn$_invoke$arity$1((arguments[(0)]));
 
@@ -3047,8 +3062,8 @@ return thi.ng.math.core.normdist_weights.call(null,n,1.0);
 (thi.ng.math.core.normdist_weights.cljs$core$IFn$_invoke$arity$2 = (function (n,scale){
 var ws = cljs.core.repeatedly.call(null,n,thi.ng.math.core.random);
 var s = (scale / cljs.core.reduce.call(null,cljs.core._PLUS_,ws));
-return cljs.core.map.call(null,(function (p1__1604_SHARP_){
-return (s * p1__1604_SHARP_);
+return cljs.core.map.call(null,(function (p1__2615_SHARP_){
+return (s * p1__2615_SHARP_);
 }),ws);
 }));
 

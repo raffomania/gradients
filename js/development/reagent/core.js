@@ -6,10 +6,9 @@ goog.require('reagent.impl.template');
 goog.require('reagent.impl.component');
 goog.require('reagent.impl.util');
 goog.require('reagent.impl.batching');
+goog.require('reagent.impl.protocols');
 goog.require('reagent.ratom');
 goog.require('reagent.debug');
-goog.require('reagent.interop');
-goog.require('reagent.dom');
 reagent.core.global$module$react = goog.global["React"];
 reagent.core.is_client = reagent.impl.util.is_client;
 /**
@@ -19,16 +18,20 @@ reagent.core.is_client = reagent.impl.util.is_client;
  *   that any Reagent hiccup forms must be processed with as-element. For example
  *   like this:
  * 
- *  (r/create-element "div" #js{:className "foo"}
- *     "Hi " (r/as-element [:strong "world!"])
+ *   ```cljs
+ *   (r/create-element "div" #js{:className "foo"}
+ *  "Hi " (r/as-element [:strong "world!"])
+ *   ```
  * 
  *   which is equivalent to
  * 
- *  [:div.foo "Hi" [:strong "world!"]]
+ *   ```cljs
+ *   [:div.foo "Hi" [:strong "world!"]]
+ *   ```
  */
 reagent.core.create_element = (function reagent$core$create_element(var_args){
-var G__3564 = arguments.length;
-switch (G__3564) {
+var G__3390 = arguments.length;
+switch (G__3390) {
 case 1:
 return reagent.core.create_element.cljs$core$IFn$_invoke$arity$1((arguments[(0)]));
 
@@ -43,14 +46,14 @@ return reagent.core.create_element.cljs$core$IFn$_invoke$arity$3((arguments[(0)]
 break;
 default:
 var args_arr__4850__auto__ = [];
-var len__4829__auto___3566 = arguments.length;
-var i__4830__auto___3567 = (0);
+var len__4829__auto___3392 = arguments.length;
+var i__4830__auto___3393 = (0);
 while(true){
-if((i__4830__auto___3567 < len__4829__auto___3566)){
-args_arr__4850__auto__.push((arguments[i__4830__auto___3567]));
+if((i__4830__auto___3393 < len__4829__auto___3392)){
+args_arr__4850__auto__.push((arguments[i__4830__auto___3393]));
 
-var G__3568 = (i__4830__auto___3567 + (1));
-i__4830__auto___3567 = G__3568;
+var G__3394 = (i__4830__auto___3393 + (1));
+i__4830__auto___3393 = G__3394;
 continue;
 } else {
 }
@@ -95,15 +98,15 @@ return cljs.core.apply.call(null,reagent.core.global$module$react.createElement,
 }));
 
 /** @this {Function} */
-(reagent.core.create_element.cljs$lang$applyTo = (function (seq3560){
-var G__3561 = cljs.core.first.call(null,seq3560);
-var seq3560__$1 = cljs.core.next.call(null,seq3560);
-var G__3562 = cljs.core.first.call(null,seq3560__$1);
-var seq3560__$2 = cljs.core.next.call(null,seq3560__$1);
-var G__3563 = cljs.core.first.call(null,seq3560__$2);
-var seq3560__$3 = cljs.core.next.call(null,seq3560__$2);
+(reagent.core.create_element.cljs$lang$applyTo = (function (seq3386){
+var G__3387 = cljs.core.first.call(null,seq3386);
+var seq3386__$1 = cljs.core.next.call(null,seq3386);
+var G__3388 = cljs.core.first.call(null,seq3386__$1);
+var seq3386__$2 = cljs.core.next.call(null,seq3386__$1);
+var G__3389 = cljs.core.first.call(null,seq3386__$2);
+var seq3386__$3 = cljs.core.next.call(null,seq3386__$2);
 var self__4816__auto__ = this;
-return self__4816__auto__.cljs$core$IFn$_invoke$arity$variadic(G__3561,G__3562,G__3563,seq3560__$3);
+return self__4816__auto__.cljs$core$IFn$_invoke$arity$variadic(G__3387,G__3388,G__3389,seq3386__$3);
 }));
 
 (reagent.core.create_element.cljs$lang$maxFixedArity = (3));
@@ -112,22 +115,15 @@ return self__4816__auto__.cljs$core$IFn$_invoke$arity$variadic(G__3561,G__3562,G
  * Turns a vector of Hiccup syntax into a React element. Returns form
  *   unchanged if it is not a vector.
  */
-reagent.core.as_element = (function reagent$core$as_element(form){
-return reagent.impl.template.as_element.call(null,form);
-});
-/**
- * Returns an adapter for a native React class, that may be used
- *   just like a Reagent component function or class in Hiccup forms.
- */
-reagent.core.adapt_react_class = (function reagent$core$adapt_react_class(var_args){
-var G__3570 = arguments.length;
-switch (G__3570) {
-case 2:
-return reagent.core.adapt_react_class.cljs$core$IFn$_invoke$arity$2((arguments[(0)]),(arguments[(1)]));
+reagent.core.as_element = (function reagent$core$as_element(var_args){
+var G__3396 = arguments.length;
+switch (G__3396) {
+case 1:
+return reagent.core.as_element.cljs$core$IFn$_invoke$arity$1((arguments[(0)]));
 
 break;
-case 1:
-return reagent.core.adapt_react_class.cljs$core$IFn$_invoke$arity$1((arguments[(0)]));
+case 2:
+return reagent.core.as_element.cljs$core$IFn$_invoke$arity$2((arguments[(0)]),(arguments[(1)]));
 
 break;
 default:
@@ -136,52 +132,42 @@ throw (new Error(["Invalid arity: ",cljs.core.str.cljs$core$IFn$_invoke$arity$1(
 }
 });
 
-(reagent.core.adapt_react_class.cljs$core$IFn$_invoke$arity$2 = (function (c,opts){
+(reagent.core.as_element.cljs$core$IFn$_invoke$arity$1 = (function (form){
+return reagent.impl.protocols.as_element.call(null,reagent.impl.template.default_compiler,form);
+}));
+
+(reagent.core.as_element.cljs$core$IFn$_invoke$arity$2 = (function (form,compiler){
+return reagent.impl.protocols.as_element.call(null,compiler,form);
+}));
+
+(reagent.core.as_element.cljs$lang$maxFixedArity = 2);
+
+/**
+ * Returns an adapter for a native React class, that may be used
+ *   just like a Reagent component function or class in Hiccup forms.
+ */
+reagent.core.adapt_react_class = (function reagent$core$adapt_react_class(c){
 if(cljs.core.truth_(c)){
 } else {
 throw (new Error(["Assert failed: ",["Component"," must not be nil"].join(''),"\n","c"].join('')));
 }
 
-return reagent.impl.template.adapt_react_class.call(null,c,opts);
-}));
-
-(reagent.core.adapt_react_class.cljs$core$IFn$_invoke$arity$1 = (function (c){
-return reagent.core.adapt_react_class.call(null,c,cljs.core.PersistentArrayMap.EMPTY);
-}));
-
-(reagent.core.adapt_react_class.cljs$lang$maxFixedArity = 2);
-
+return reagent.impl.template.adapt_react_class.call(null,c);
+});
 /**
  * Returns an adapter for a Reagent component, that may be used from
  *   React, for example in JSX. A single argument, props, is passed to
  *   the component, converted to a map.
  */
-reagent.core.reactify_component = (function reagent$core$reactify_component(c){
-if(cljs.core.truth_(c)){
-} else {
-throw (new Error(["Assert failed: ",["Component"," must not be nil"].join(''),"\n","c"].join('')));
-}
-
-return reagent.impl.component.reactify_component.call(null,c);
-});
-/**
- * Render a Reagent component into the DOM. The first argument may be
- *   either a vector (using Reagent's Hiccup syntax), or a React element.
- *   The second argument should be a DOM node.
- * 
- *   Optionally takes a callback that is called when the component is in place.
- * 
- *   Returns the mounted component instance.
- */
-reagent.core.render = (function reagent$core$render(var_args){
-var G__3573 = arguments.length;
-switch (G__3573) {
-case 2:
-return reagent.core.render.cljs$core$IFn$_invoke$arity$2((arguments[(0)]),(arguments[(1)]));
+reagent.core.reactify_component = (function reagent$core$reactify_component(var_args){
+var G__3399 = arguments.length;
+switch (G__3399) {
+case 1:
+return reagent.core.reactify_component.cljs$core$IFn$_invoke$arity$1((arguments[(0)]));
 
 break;
-case 3:
-return reagent.core.render.cljs$core$IFn$_invoke$arity$3((arguments[(0)]),(arguments[(1)]),(arguments[(2)]));
+case 2:
+return reagent.core.reactify_component.cljs$core$IFn$_invoke$arity$2((arguments[(0)]),(arguments[(1)]));
 
 break;
 default:
@@ -190,64 +176,91 @@ throw (new Error(["Invalid arity: ",cljs.core.str.cljs$core$IFn$_invoke$arity$1(
 }
 });
 
-(reagent.core.render.cljs$core$IFn$_invoke$arity$2 = (function (comp,container){
-return reagent.dom.render.call(null,comp,container);
+(reagent.core.reactify_component.cljs$core$IFn$_invoke$arity$1 = (function (c){
+return reagent.core.reactify_component.call(null,c,reagent.impl.template.default_compiler);
 }));
 
-(reagent.core.render.cljs$core$IFn$_invoke$arity$3 = (function (comp,container,callback){
-return reagent.dom.render.call(null,comp,container,callback);
+(reagent.core.reactify_component.cljs$core$IFn$_invoke$arity$2 = (function (c,compiler){
+if(cljs.core.truth_(c)){
+} else {
+throw (new Error(["Assert failed: ",["Component"," must not be nil"].join(''),"\n","c"].join('')));
+}
+
+return reagent.impl.component.reactify_component.call(null,c,compiler);
 }));
 
-(reagent.core.render.cljs$lang$maxFixedArity = 3);
+(reagent.core.reactify_component.cljs$lang$maxFixedArity = 2);
 
 /**
- * Remove a component from the given DOM node.
- */
-reagent.core.unmount_component_at_node = (function reagent$core$unmount_component_at_node(container){
-return reagent.dom.unmount_component_at_node.call(null,container);
-});
-reagent.core.as_component = reagent.core.as_element;
-reagent.core.render_component = reagent.core.render;
-/**
- * Force re-rendering of all mounted Reagent components. This is
- *   probably only useful in a development environment, when you want to
- *   update components in response to some dynamic changes to code.
+ * Creates JS class based on provided Clojure map, for example:
  * 
- *   Note that force-update-all may not update root components. This
- *   happens if a component 'foo' is mounted with `(render [foo])` (since
- *   functions are passed by value, and not by reference, in
- *   ClojureScript). To get around this you'll have to introduce a layer
- *   of indirection, for example by using `(render [#'foo])` instead.
- */
-reagent.core.force_update_all = (function reagent$core$force_update_all(){
-reagent.ratom.flush_BANG_.call(null);
-
-reagent.dom.force_update_all.call(null);
-
-return reagent.impl.batching.flush_after_render.call(null);
-});
-goog.exportSymbol('reagent.core.force_update_all', reagent.core.force_update_all);
-/**
- * Create a component, React style. Should be called with a map,
- *   looking like this:
- * 
- *  {:get-initial-state (fn [this])
- *   :component-will-receive-props (fn [this new-argv])
- *   :should-component-update (fn [this old-argv new-argv])
- *   :component-will-mount (fn [this])
- *   :component-did-mount (fn [this])
- *   :component-will-update (fn [this new-argv])
- *   :component-did-update (fn [this old-argv])
- *   :component-will-unmount (fn [this])
- *   :reagent-render (fn [args....])}   ;; or :render (fn [this])
+ *   ```cljs
+ *   {;; Constructor
+ * :constructor (fn [this props])
+ * :get-initial-state (fn [this])
+ * ;; Static methods
+ * :get-derived-state-from-props (fn [props state] partial-state)
+ * :get-derived-state-from-error (fn [error] partial-state)
+ * ;; Methods
+ * :get-snapshot-before-update (fn [this old-argv new-argv] snapshot)
+ * :should-component-update (fn [this old-argv new-argv])
+ * :component-did-mount (fn [this])
+ * :component-did-update (fn [this old-argv old-state snapshot])
+ * :component-will-unmount (fn [this])
+ * :component-did-catch (fn [this error info])
+ * :reagent-render (fn [args....])
+ * ;; Or alternatively:
+ * :render (fn [this])
+ * ;; Deprecated methods:
+ * :UNSAFE_component-will-receive-props (fn [this new-argv])
+ * :UNSAFE_component-will-update (fn [this new-argv new-state])
+ * :UNSAFE_component-will-mount (fn [this])}
+ *   ```
  * 
  *   Everything is optional, except either :reagent-render or :render.
+ * 
+ *   Map keys should use `React.Component` method names (https://reactjs.org/docs/react-component.html),
+ *   and can be provided in snake-case or camelCase.
+ * 
+ *   State can be initialized using constructor, which matches React.Component class,
+ *   or using getInitialState which matches old React createClass function and is
+ *   now implemented by Reagent for compatibility.
+ * 
+ *   State can usually be anything, e.g. Cljs object. But if using getDerivedState
+ *   methods, the state has to be plain JS object as React implementation uses
+ *   Object.assign to merge partial state into the current state.
+ * 
+ *   React built-in static methods or properties are automatically defined as statics.
  */
-reagent.core.create_class = (function reagent$core$create_class(spec){
-return reagent.impl.component.create_class.call(null,spec);
+reagent.core.create_class = (function reagent$core$create_class(var_args){
+var G__3402 = arguments.length;
+switch (G__3402) {
+case 1:
+return reagent.core.create_class.cljs$core$IFn$_invoke$arity$1((arguments[(0)]));
+
+break;
+case 2:
+return reagent.core.create_class.cljs$core$IFn$_invoke$arity$2((arguments[(0)]),(arguments[(1)]));
+
+break;
+default:
+throw (new Error(["Invalid arity: ",cljs.core.str.cljs$core$IFn$_invoke$arity$1(arguments.length)].join('')));
+
+}
 });
+
+(reagent.core.create_class.cljs$core$IFn$_invoke$arity$1 = (function (spec){
+return reagent.impl.component.create_class.call(null,spec,reagent.impl.template.default_compiler);
+}));
+
+(reagent.core.create_class.cljs$core$IFn$_invoke$arity$2 = (function (spec,compiler){
+return reagent.impl.component.create_class.call(null,spec,compiler);
+}));
+
+(reagent.core.create_class.cljs$lang$maxFixedArity = 2);
+
 /**
- * Returns the current React component (a.k.a this) in a component
+ * Returns the current React component (a.k.a `this`) in a component
  *   function.
  */
 reagent.core.current_component = (function reagent$core$current_component(){
@@ -266,7 +279,7 @@ return reagent.impl.component.state_atom.call(null,this$);
 });
 /**
  * Returns the state of a component, as set with replace-state or set-state.
- *   Equivalent to (deref (r/state-atom this))
+ *   Equivalent to `(deref (r/state-atom this))`
  */
 reagent.core.state = (function reagent$core$state(this$){
 if(reagent.impl.component.reagent_component_QMARK_.call(null,this$)){
@@ -278,7 +291,7 @@ return cljs.core.deref.call(null,reagent.core.state_atom.call(null,this$));
 });
 /**
  * Set state of a component.
- *   Equivalent to (reset! (state-atom this) new-state)
+ *   Equivalent to `(reset! (state-atom this) new-state)`
  */
 reagent.core.replace_state = (function reagent$core$replace_state(this$,new_state){
 if(reagent.impl.component.reagent_component_QMARK_.call(null,this$)){
@@ -295,7 +308,7 @@ return cljs.core.reset_BANG_.call(null,reagent.core.state_atom.call(null,this$),
 });
 /**
  * Merge component state with new-state.
- *   Equivalent to (swap! (state-atom this) merge new-state)
+ *   Equivalent to `(swap! (state-atom this) merge new-state)`
  */
 reagent.core.set_state = (function reagent$core$set_state(this$,new_state){
 if(reagent.impl.component.reagent_component_QMARK_.call(null,this$)){
@@ -317,8 +330,8 @@ return cljs.core.swap_BANG_.call(null,reagent.core.state_atom.call(null,this$),c
  *   re-rendered, even is their arguments have not changed.
  */
 reagent.core.force_update = (function reagent$core$force_update(var_args){
-var G__3576 = arguments.length;
-switch (G__3576) {
+var G__3405 = arguments.length;
+switch (G__3405) {
 case 1:
 return reagent.core.force_update.cljs$core$IFn$_invoke$arity$1((arguments[(0)]));
 
@@ -381,20 +394,151 @@ throw (new Error(["Assert failed: ",["Expected a reagent component, not ",cljs.c
 return reagent.impl.component.get_argv.call(null,this$);
 });
 /**
- * Returns the root DOM node of a mounted component.
+ * Function which normalizes and combines class values to a string
+ * 
+ *   Reagent allows classes to be defined as:
+ *   - Strings
+ *   - Named objects (Symbols or Keywords)
+ *   - Collections of previous types
  */
-reagent.core.dom_node = (function reagent$core$dom_node(this$){
-return reagent.dom.dom_node.call(null,this$);
+reagent.core.class_names = (function reagent$core$class_names(var_args){
+var G__3411 = arguments.length;
+switch (G__3411) {
+case 0:
+return reagent.core.class_names.cljs$core$IFn$_invoke$arity$0();
+
+break;
+case 1:
+return reagent.core.class_names.cljs$core$IFn$_invoke$arity$1((arguments[(0)]));
+
+break;
+case 2:
+return reagent.core.class_names.cljs$core$IFn$_invoke$arity$2((arguments[(0)]),(arguments[(1)]));
+
+break;
+default:
+var args_arr__4850__auto__ = [];
+var len__4829__auto___3413 = arguments.length;
+var i__4830__auto___3414 = (0);
+while(true){
+if((i__4830__auto___3414 < len__4829__auto___3413)){
+args_arr__4850__auto__.push((arguments[i__4830__auto___3414]));
+
+var G__3415 = (i__4830__auto___3414 + (1));
+i__4830__auto___3414 = G__3415;
+continue;
+} else {
+}
+break;
+}
+
+var argseq__4851__auto__ = (new cljs.core.IndexedSeq(args_arr__4850__auto__.slice((2)),(0),null));
+return reagent.core.class_names.cljs$core$IFn$_invoke$arity$variadic((arguments[(0)]),(arguments[(1)]),argseq__4851__auto__);
+
+}
 });
+
+(reagent.core.class_names.cljs$core$IFn$_invoke$arity$0 = (function (){
+return null;
+}));
+
+(reagent.core.class_names.cljs$core$IFn$_invoke$arity$1 = (function (class$){
+return reagent.impl.util.class_names.call(null,class$);
+}));
+
+(reagent.core.class_names.cljs$core$IFn$_invoke$arity$2 = (function (class1,class2){
+return reagent.impl.util.class_names.call(null,class1,class2);
+}));
+
+(reagent.core.class_names.cljs$core$IFn$_invoke$arity$variadic = (function (class1,class2,others){
+return cljs.core.apply.call(null,reagent.impl.util.class_names,class1,class2,others);
+}));
+
+/** @this {Function} */
+(reagent.core.class_names.cljs$lang$applyTo = (function (seq3408){
+var G__3409 = cljs.core.first.call(null,seq3408);
+var seq3408__$1 = cljs.core.next.call(null,seq3408);
+var G__3410 = cljs.core.first.call(null,seq3408__$1);
+var seq3408__$2 = cljs.core.next.call(null,seq3408__$1);
+var self__4816__auto__ = this;
+return self__4816__auto__.cljs$core$IFn$_invoke$arity$variadic(G__3409,G__3410,seq3408__$2);
+}));
+
+(reagent.core.class_names.cljs$lang$maxFixedArity = (2));
+
 /**
- * Utility function that merges two maps, handling :class and :style
- *   specially, like React's transferPropsTo.
+ * Utility function that merges some maps, handling `:class` and `:style`.
+ * 
+ *   The :class value is always normalized (using `class-names`) even if no
+ *   merging is done.
  */
-reagent.core.merge_props = (function reagent$core$merge_props(defaults,props){
+reagent.core.merge_props = (function reagent$core$merge_props(var_args){
+var G__3420 = arguments.length;
+switch (G__3420) {
+case 0:
+return reagent.core.merge_props.cljs$core$IFn$_invoke$arity$0();
+
+break;
+case 1:
+return reagent.core.merge_props.cljs$core$IFn$_invoke$arity$1((arguments[(0)]));
+
+break;
+case 2:
+return reagent.core.merge_props.cljs$core$IFn$_invoke$arity$2((arguments[(0)]),(arguments[(1)]));
+
+break;
+default:
+var args_arr__4850__auto__ = [];
+var len__4829__auto___3422 = arguments.length;
+var i__4830__auto___3423 = (0);
+while(true){
+if((i__4830__auto___3423 < len__4829__auto___3422)){
+args_arr__4850__auto__.push((arguments[i__4830__auto___3423]));
+
+var G__3424 = (i__4830__auto___3423 + (1));
+i__4830__auto___3423 = G__3424;
+continue;
+} else {
+}
+break;
+}
+
+var argseq__4851__auto__ = (new cljs.core.IndexedSeq(args_arr__4850__auto__.slice((2)),(0),null));
+return reagent.core.merge_props.cljs$core$IFn$_invoke$arity$variadic((arguments[(0)]),(arguments[(1)]),argseq__4851__auto__);
+
+}
+});
+
+(reagent.core.merge_props.cljs$core$IFn$_invoke$arity$0 = (function (){
+return reagent.impl.util.merge_props.call(null);
+}));
+
+(reagent.core.merge_props.cljs$core$IFn$_invoke$arity$1 = (function (defaults){
+return reagent.impl.util.merge_props.call(null,defaults);
+}));
+
+(reagent.core.merge_props.cljs$core$IFn$_invoke$arity$2 = (function (defaults,props){
 return reagent.impl.util.merge_props.call(null,defaults,props);
-});
+}));
+
+(reagent.core.merge_props.cljs$core$IFn$_invoke$arity$variadic = (function (defaults,props,others){
+return cljs.core.apply.call(null,reagent.impl.util.merge_props,defaults,props,others);
+}));
+
+/** @this {Function} */
+(reagent.core.merge_props.cljs$lang$applyTo = (function (seq3417){
+var G__3418 = cljs.core.first.call(null,seq3417);
+var seq3417__$1 = cljs.core.next.call(null,seq3417);
+var G__3419 = cljs.core.first.call(null,seq3417__$1);
+var seq3417__$2 = cljs.core.next.call(null,seq3417__$1);
+var self__4816__auto__ = this;
+return self__4816__auto__.cljs$core$IFn$_invoke$arity$variadic(G__3418,G__3419,seq3417__$2);
+}));
+
+(reagent.core.merge_props.cljs$lang$maxFixedArity = (2));
+
 /**
- * Render dirty components immediately to the DOM.
+ * Render dirty components immediately.
  * 
  *   Note that this may not work in event handlers, since React.js does
  *   batching of updates there.
@@ -408,22 +552,22 @@ return reagent.impl.batching.flush.call(null);
  *   re-rendered.
  */
 reagent.core.atom = (function reagent$core$atom(var_args){
-var G__3581 = arguments.length;
-switch (G__3581) {
+var G__3428 = arguments.length;
+switch (G__3428) {
 case 1:
 return reagent.core.atom.cljs$core$IFn$_invoke$arity$1((arguments[(0)]));
 
 break;
 default:
 var args_arr__4850__auto__ = [];
-var len__4829__auto___3583 = arguments.length;
-var i__4830__auto___3584 = (0);
+var len__4829__auto___3430 = arguments.length;
+var i__4830__auto___3431 = (0);
 while(true){
-if((i__4830__auto___3584 < len__4829__auto___3583)){
-args_arr__4850__auto__.push((arguments[i__4830__auto___3584]));
+if((i__4830__auto___3431 < len__4829__auto___3430)){
+args_arr__4850__auto__.push((arguments[i__4830__auto___3431]));
 
-var G__3585 = (i__4830__auto___3584 + (1));
-i__4830__auto___3584 = G__3585;
+var G__3432 = (i__4830__auto___3431 + (1));
+i__4830__auto___3431 = G__3432;
 continue;
 } else {
 }
@@ -445,11 +589,11 @@ return cljs.core.apply.call(null,reagent.ratom.atom,x,rest);
 }));
 
 /** @this {Function} */
-(reagent.core.atom.cljs$lang$applyTo = (function (seq3579){
-var G__3580 = cljs.core.first.call(null,seq3579);
-var seq3579__$1 = cljs.core.next.call(null,seq3579);
+(reagent.core.atom.cljs$lang$applyTo = (function (seq3426){
+var G__3427 = cljs.core.first.call(null,seq3426);
+var seq3426__$1 = cljs.core.next.call(null,seq3426);
 var self__4816__auto__ = this;
-return self__4816__auto__.cljs$core$IFn$_invoke$arity$variadic(G__3580,seq3579__$1);
+return self__4816__auto__.cljs$core$IFn$_invoke$arity$variadic(G__3427,seq3426__$1);
 }));
 
 (reagent.core.atom.cljs$lang$maxFixedArity = (1));
@@ -460,8 +604,8 @@ return self__4816__auto__.cljs$core$IFn$_invoke$arity$variadic(G__3580,seq3579__
  *   Reagent atoms (or track, etc), the value will be updated whenever
  *   the atom changes.
  * 
- *   In other words, @(track foo bar) will produce the same result
- *   as (foo bar), but foo will only be called again when the atoms it
+ *   In other words, `@(track foo bar)` will produce the same result
+ *   as `(foo bar)`, but foo will only be called again when the atoms it
  *   depends on changes, and will only trigger updates of components when
  *   its result changes.
  * 
@@ -469,14 +613,14 @@ return self__4816__auto__.cljs$core$IFn$_invoke$arity$variadic(G__3580,seq3579__
  */
 reagent.core.track = (function reagent$core$track(var_args){
 var args__4835__auto__ = [];
-var len__4829__auto___3588 = arguments.length;
-var i__4830__auto___3589 = (0);
+var len__4829__auto___3435 = arguments.length;
+var i__4830__auto___3436 = (0);
 while(true){
-if((i__4830__auto___3589 < len__4829__auto___3588)){
-args__4835__auto__.push((arguments[i__4830__auto___3589]));
+if((i__4830__auto___3436 < len__4829__auto___3435)){
+args__4835__auto__.push((arguments[i__4830__auto___3436]));
 
-var G__3590 = (i__4830__auto___3589 + (1));
-i__4830__auto___3589 = G__3590;
+var G__3437 = (i__4830__auto___3436 + (1));
+i__4830__auto___3436 = G__3437;
 continue;
 } else {
 }
@@ -499,11 +643,11 @@ return reagent.ratom.make_track.call(null,f,args);
 (reagent.core.track.cljs$lang$maxFixedArity = (1));
 
 /** @this {Function} */
-(reagent.core.track.cljs$lang$applyTo = (function (seq3586){
-var G__3587 = cljs.core.first.call(null,seq3586);
-var seq3586__$1 = cljs.core.next.call(null,seq3586);
+(reagent.core.track.cljs$lang$applyTo = (function (seq3433){
+var G__3434 = cljs.core.first.call(null,seq3433);
+var seq3433__$1 = cljs.core.next.call(null,seq3433);
 var self__4816__auto__ = this;
-return self__4816__auto__.cljs$core$IFn$_invoke$arity$variadic(G__3587,seq3586__$1);
+return self__4816__auto__.cljs$core$IFn$_invoke$arity$variadic(G__3434,seq3433__$1);
 }));
 
 /**
@@ -513,14 +657,14 @@ return self__4816__auto__.cljs$core$IFn$_invoke$arity$variadic(G__3587,seq3586__
  */
 reagent.core.track_BANG_ = (function reagent$core$track_BANG_(var_args){
 var args__4835__auto__ = [];
-var len__4829__auto___3593 = arguments.length;
-var i__4830__auto___3594 = (0);
+var len__4829__auto___3440 = arguments.length;
+var i__4830__auto___3441 = (0);
 while(true){
-if((i__4830__auto___3594 < len__4829__auto___3593)){
-args__4835__auto__.push((arguments[i__4830__auto___3594]));
+if((i__4830__auto___3441 < len__4829__auto___3440)){
+args__4835__auto__.push((arguments[i__4830__auto___3441]));
 
-var G__3595 = (i__4830__auto___3594 + (1));
-i__4830__auto___3594 = G__3595;
+var G__3442 = (i__4830__auto___3441 + (1));
+i__4830__auto___3441 = G__3442;
 continue;
 } else {
 }
@@ -543,11 +687,11 @@ return reagent.ratom.make_track_BANG_.call(null,f,args);
 (reagent.core.track_BANG_.cljs$lang$maxFixedArity = (1));
 
 /** @this {Function} */
-(reagent.core.track_BANG_.cljs$lang$applyTo = (function (seq3591){
-var G__3592 = cljs.core.first.call(null,seq3591);
-var seq3591__$1 = cljs.core.next.call(null,seq3591);
+(reagent.core.track_BANG_.cljs$lang$applyTo = (function (seq3438){
+var G__3439 = cljs.core.first.call(null,seq3438);
+var seq3438__$1 = cljs.core.next.call(null,seq3438);
 var self__4816__auto__ = this;
-return self__4816__auto__.cljs$core$IFn$_invoke$arity$variadic(G__3592,seq3591__$1);
+return self__4816__auto__.cljs$core$IFn$_invoke$arity$variadic(G__3439,seq3438__$1);
 }));
 
 /**
@@ -568,21 +712,23 @@ return reagent.ratom.dispose_BANG_.call(null,x);
  * 
  *   Use for example like this:
  * 
+ *   ```cljs
  *   (wrap (:foo @state)
  *      swap! state assoc :foo)
+ *   ```
  * 
  *   Probably useful only for passing to child components.
  */
 reagent.core.wrap = (function reagent$core$wrap(var_args){
 var args__4835__auto__ = [];
-var len__4829__auto___3599 = arguments.length;
-var i__4830__auto___3600 = (0);
+var len__4829__auto___3446 = arguments.length;
+var i__4830__auto___3447 = (0);
 while(true){
-if((i__4830__auto___3600 < len__4829__auto___3599)){
-args__4835__auto__.push((arguments[i__4830__auto___3600]));
+if((i__4830__auto___3447 < len__4829__auto___3446)){
+args__4835__auto__.push((arguments[i__4830__auto___3447]));
 
-var G__3601 = (i__4830__auto___3600 + (1));
-i__4830__auto___3600 = G__3601;
+var G__3448 = (i__4830__auto___3447 + (1));
+i__4830__auto___3447 = G__3448;
 continue;
 } else {
 }
@@ -605,13 +751,13 @@ return reagent.ratom.make_wrapper.call(null,value,reset_fn,args);
 (reagent.core.wrap.cljs$lang$maxFixedArity = (2));
 
 /** @this {Function} */
-(reagent.core.wrap.cljs$lang$applyTo = (function (seq3596){
-var G__3597 = cljs.core.first.call(null,seq3596);
-var seq3596__$1 = cljs.core.next.call(null,seq3596);
-var G__3598 = cljs.core.first.call(null,seq3596__$1);
-var seq3596__$2 = cljs.core.next.call(null,seq3596__$1);
+(reagent.core.wrap.cljs$lang$applyTo = (function (seq3443){
+var G__3444 = cljs.core.first.call(null,seq3443);
+var seq3443__$1 = cljs.core.next.call(null,seq3443);
+var G__3445 = cljs.core.first.call(null,seq3443__$1);
+var seq3443__$2 = cljs.core.next.call(null,seq3443__$1);
 var self__4816__auto__ = this;
-return self__4816__auto__.cljs$core$IFn$_invoke$arity$variadic(G__3597,G__3598,seq3596__$2);
+return self__4816__auto__.cljs$core$IFn$_invoke$arity$variadic(G__3444,G__3445,seq3443__$2);
 }));
 
 /**
@@ -619,18 +765,23 @@ return self__4816__auto__.cljs$core$IFn$_invoke$arity$variadic(G__3597,G__3598,s
  * 
  *   Behaves like a Reagent atom but focuses updates and derefs to
  *   the specified path within the wrapped Reagent atom. e.g.,
- *  (let [c (cursor ra [:nested :content])]
- *    ... @c ;; equivalent to (get-in @ra [:nested :content])
- *    ... (reset! c 42) ;; equivalent to (swap! ra assoc-in [:nested :content] 42)
- *    ... (swap! c inc) ;; equivalence to (swap! ra update-in [:nested :content] inc)
- *    )
+ * 
+ *   ```cljs
+ *   (let [c (cursor ra [:nested :content])]
+ *  ... @c ;; equivalent to (get-in @ra [:nested :content])
+ *  ... (reset! c 42) ;; equivalent to (swap! ra assoc-in [:nested :content] 42)
+ *  ... (swap! c inc) ;; equivalence to (swap! ra update-in [:nested :content] inc)
+ *  )
+ *   ```
  * 
  *   The first parameter can also be a function, that should look
  *   something like this:
  * 
- *  (defn set-get
- *    ([k] (get-in @state k))
- *    ([k v] (swap! state assoc-in k v)))
+ *   ```cljs
+ *   (defn set-get
+ *  ([k] (get-in @state k))
+ *  ([k v] (swap! state assoc-in k v)))
+ *   ```
  * 
  *   The function will be called with one argument – the path passed to
  *   cursor – when the cursor is deref'ed, and two arguments (path and
@@ -638,7 +789,7 @@ return self__4816__auto__.cljs$core$IFn$_invoke$arity$variadic(G__3597,G__3598,s
  * 
  *   Given that set-get function, (and that state is a Reagent atom, or
  *   another cursor) these cursors are equivalent:
- *   (cursor state [:foo]) and (cursor set-get [:foo]).
+ *   `(cursor state [:foo])` and `(cursor set-get [:foo])`.
  * 
  *   Note that a cursor is lazy: its value will not change until it is
  *   used. This may be noticed with add-watch.
@@ -647,21 +798,21 @@ reagent.core.cursor = (function reagent$core$cursor(src,path){
 return reagent.ratom.cursor.call(null,src,path);
 });
 /**
- * Swaps the value of a to be (apply f current-value-of-atom args).
+ * Swaps the value of a to be `(apply f current-value-of-atom args)`.
  * 
  *   rswap! works like swap!, except that recursive calls to rswap! on
  *   the same atom are allowed – and it always returns nil.
  */
 reagent.core.rswap_BANG_ = (function reagent$core$rswap_BANG_(var_args){
 var args__4835__auto__ = [];
-var len__4829__auto___3608 = arguments.length;
-var i__4830__auto___3609 = (0);
+var len__4829__auto___3455 = arguments.length;
+var i__4830__auto___3456 = (0);
 while(true){
-if((i__4830__auto___3609 < len__4829__auto___3608)){
-args__4835__auto__.push((arguments[i__4830__auto___3609]));
+if((i__4830__auto___3456 < len__4829__auto___3455)){
+args__4835__auto__.push((arguments[i__4830__auto___3456]));
 
-var G__3610 = (i__4830__auto___3609 + (1));
-i__4830__auto___3609 = G__3610;
+var G__3457 = (i__4830__auto___3456 + (1));
+i__4830__auto___3456 = G__3457;
 continue;
 } else {
 }
@@ -690,8 +841,8 @@ return or__4223__auto__;
 } else {
 return (a.rswapfs = []);
 }
-})().push((function (p1__3602_SHARP_){
-return cljs.core.apply.call(null,f,p1__3602_SHARP_,args);
+})().push((function (p1__3449_SHARP_){
+return cljs.core.apply.call(null,f,p1__3449_SHARP_,args);
 }));
 } else {
 (a.rswapping = true);
@@ -699,19 +850,20 @@ return cljs.core.apply.call(null,f,p1__3602_SHARP_,args);
 try{cljs.core.swap_BANG_.call(null,a,(function (state){
 var s = cljs.core.apply.call(null,f,state,args);
 while(true){
-var temp__5755__auto__ = (function (){var G__3607 = a.rswapfs;
-if((G__3607 == null)){
+var temp__5755__auto__ = (function (){var G__3454 = a;
+var G__3454__$1 = (((G__3454 == null))?null:G__3454.rswapfs);
+if((G__3454__$1 == null)){
 return null;
 } else {
-return G__3607.shift();
+return G__3454__$1.shift();
 }
 })();
 if((temp__5755__auto__ == null)){
 return s;
 } else {
 var sf = temp__5755__auto__;
-var G__3611 = sf.call(null,s);
-s = G__3611;
+var G__3458 = sf.call(null,s);
+s = G__3458;
 continue;
 }
 break;
@@ -726,13 +878,13 @@ return null;
 (reagent.core.rswap_BANG_.cljs$lang$maxFixedArity = (2));
 
 /** @this {Function} */
-(reagent.core.rswap_BANG_.cljs$lang$applyTo = (function (seq3603){
-var G__3604 = cljs.core.first.call(null,seq3603);
-var seq3603__$1 = cljs.core.next.call(null,seq3603);
-var G__3605 = cljs.core.first.call(null,seq3603__$1);
-var seq3603__$2 = cljs.core.next.call(null,seq3603__$1);
+(reagent.core.rswap_BANG_.cljs$lang$applyTo = (function (seq3450){
+var G__3451 = cljs.core.first.call(null,seq3450);
+var seq3450__$1 = cljs.core.next.call(null,seq3450);
+var G__3452 = cljs.core.first.call(null,seq3450__$1);
+var seq3450__$2 = cljs.core.next.call(null,seq3450__$1);
 var self__4816__auto__ = this;
-return self__4816__auto__.cljs$core$IFn$_invoke$arity$variadic(G__3604,G__3605,seq3603__$2);
+return self__4816__auto__.cljs$core$IFn$_invoke$arity$variadic(G__3451,G__3452,seq3450__$2);
 }));
 
 /**
@@ -757,14 +909,14 @@ return reagent.impl.batching.do_after_render.call(null,f);
  */
 reagent.core.partial = (function reagent$core$partial(var_args){
 var args__4835__auto__ = [];
-var len__4829__auto___3614 = arguments.length;
-var i__4830__auto___3615 = (0);
+var len__4829__auto___3461 = arguments.length;
+var i__4830__auto___3462 = (0);
 while(true){
-if((i__4830__auto___3615 < len__4829__auto___3614)){
-args__4835__auto__.push((arguments[i__4830__auto___3615]));
+if((i__4830__auto___3462 < len__4829__auto___3461)){
+args__4835__auto__.push((arguments[i__4830__auto___3462]));
 
-var G__3616 = (i__4830__auto___3615 + (1));
-i__4830__auto___3615 = G__3616;
+var G__3463 = (i__4830__auto___3462 + (1));
+i__4830__auto___3462 = G__3463;
 continue;
 } else {
 }
@@ -782,15 +934,63 @@ return reagent.impl.util.make_partial_fn.call(null,f,args);
 (reagent.core.partial.cljs$lang$maxFixedArity = (1));
 
 /** @this {Function} */
-(reagent.core.partial.cljs$lang$applyTo = (function (seq3612){
-var G__3613 = cljs.core.first.call(null,seq3612);
-var seq3612__$1 = cljs.core.next.call(null,seq3612);
+(reagent.core.partial.cljs$lang$applyTo = (function (seq3459){
+var G__3460 = cljs.core.first.call(null,seq3459);
+var seq3459__$1 = cljs.core.next.call(null,seq3459);
 var self__4816__auto__ = this;
-return self__4816__auto__.cljs$core$IFn$_invoke$arity$variadic(G__3613,seq3612__$1);
+return self__4816__auto__.cljs$core$IFn$_invoke$arity$variadic(G__3460,seq3459__$1);
 }));
 
-reagent.core.component_path = (function reagent$core$component_path(c){
-return reagent.impl.component.component_path.call(null,c);
+/**
+ * Creates Compiler object with given `opts`,
+ *   this can be passed to `render`, `as-element` and other functions to control
+ *   how they turn the Reagent-style Hiccup into React components and elements.
+ */
+reagent.core.create_compiler = (function reagent$core$create_compiler(opts){
+return reagent.impl.template.create_compiler.call(null,opts);
 });
+/**
+ * Globally sets the Compiler object used by `render`, `as-element` and other
+ *   calls by default, when no `compiler` parameter is provided.
+ * 
+ *   Use `nil` value to restore the original default compiler.
+ */
+reagent.core.set_default_compiler_BANG_ = (function reagent$core$set_default_compiler_BANG_(compiler){
+return reagent.impl.template.set_default_compiler_BANG_.call(null,(((compiler == null))?reagent.impl.template.default_compiler_STAR_:compiler));
+});
+reagent.core.render = (function reagent$core$render(var_args){
+var args__4835__auto__ = [];
+var len__4829__auto___3465 = arguments.length;
+var i__4830__auto___3466 = (0);
+while(true){
+if((i__4830__auto___3466 < len__4829__auto___3465)){
+args__4835__auto__.push((arguments[i__4830__auto___3466]));
+
+var G__3467 = (i__4830__auto___3466 + (1));
+i__4830__auto___3466 = G__3467;
+continue;
+} else {
+}
+break;
+}
+
+var argseq__4836__auto__ = ((((0) < args__4835__auto__.length))?(new cljs.core.IndexedSeq(args__4835__auto__.slice((0)),(0),null)):null);
+return reagent.core.render.cljs$core$IFn$_invoke$arity$variadic(argseq__4836__auto__);
+});
+
+(reagent.core.render.cljs$core$IFn$_invoke$arity$variadic = (function (_){
+throw (new Error("Reagent.core/render function was moved to reagent.dom namespace in Reagent v1.0."));
+
+return null;
+}));
+
+(reagent.core.render.cljs$lang$maxFixedArity = (0));
+
+/** @this {Function} */
+(reagent.core.render.cljs$lang$applyTo = (function (seq3464){
+var self__4817__auto__ = this;
+return self__4817__auto__.cljs$core$IFn$_invoke$arity$variadic(cljs.core.seq.call(null,seq3464));
+}));
+
 
 //# sourceMappingURL=core.js.map
