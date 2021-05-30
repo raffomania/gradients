@@ -1,0 +1,1 @@
+{:output-dir "resources/public/js/development", :externs ["closure-js/externs"], :optimizations :none, :preloads [devtools.preload], :output-to "resources/public/js/main.js", :asset-path "js/development", :output-wrapper false, :source-map true, :libs ["closure-js/libs"], :external-config #:devtools{:config {:features-to-install [:formatters :hints]}}, :main "gradients.core"}

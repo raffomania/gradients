@@ -1,0 +1,9 @@
+input[type='range'] {
+    width: 80vw;
+}
+
+canvas {
+    max-height: 50vh;
+    margin: 10px auto;
+    display: block;
+}
