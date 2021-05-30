@@ -20,8 +20,6 @@
 
   :aliases {"fig" ["trampoline" "run" "-m" "figwheel.main"]}
 
-  :hooks [leiningen.cljsbuild]
-
   :clean-targets ^{:protect false} ["resources/public/js" :target-path]
 
   :cljsbuild
