@@ -12,7 +12,7 @@ A simple wallpaper generator with some sliders, letting you experiment quickly a
 
 After installing leiningen, run:
 
-    lein figwheel
+    lein fig
 
 ## Contributions
 
